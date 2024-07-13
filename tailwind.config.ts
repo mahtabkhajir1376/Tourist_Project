@@ -12,7 +12,16 @@ const config: Config = {
         "header-image": "url('../../public/image/header.png')",
        
       },
+      fontFamily: {
+        iransans: ['IRANSans', 'sans-serif'],
+      },
     },
+    fontWeight: {
+      light: '100',
+      normal: '200',
+      medium: '300',
+      bold: '400',
+    }
   },
   plugins: [],
 };
