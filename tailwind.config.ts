@@ -9,11 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "header-image": "url('../../public/image/header.png')",
+       
+      },
+      fontFamily: {
+        iransans: ['IRANSans', 'sans-serif'],
       },
     },
+    fontWeight: {
+      light: '100',
+      normal: '200',
+      medium: '300',
+      bold: '400',
+    }
   },
   plugins: [],
 };
