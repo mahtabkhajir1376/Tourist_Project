@@ -14,7 +14,8 @@ type data = {
   bgColor: string;
   widthImage: string;
   span?: string;
-  padding:string
+  padding:string,
+  text?:string
 };
 
 type dataBanner = data[];
@@ -27,7 +28,8 @@ const dataBanner: dataBanner = [
     bgColor: "bg-[#DBF9F2]",
     widthImage: "w-[60%]",
     span: "col-span-2",
-    padding:"pr-5"
+    padding:"pr-[30px]",
+    text:"ببین منو ، از دستش نده !"
   },
   {
     title: "بریم جنوب عشق و حال ؟",
@@ -42,7 +44,7 @@ const dataBanner: dataBanner = [
     describe: "7 روز بریم کرمانشاه تا ببینی چه جاهایی تو ایران داریم !",
     image: "/image/chamedan2.svg",
     bgColor: "bg-[#FFF3D9]",
-    widthImage: "w-[50%]",
+    widthImage: "w-[46%]",
     padding:"pr-5"
   },
 ];
@@ -50,7 +52,7 @@ const dataBanner: dataBanner = [
 const Banner: React.FC = () => {
   return (
     <>
-      <div className="w-[89%] gap-5 my-0 mx-auto grid grid-cols-3 min-h-[515px] ">
+      <div className="w-[90%] gap-5 my-0 mx-auto grid grid-cols-3 min-h-[455px]  ">
         <div className="col-span-1  grid grid-rows-2 gap-5">
           <div
             className={`${dataBanner[1].bgColor} flex flex-row justify-between w-full relative   rounded-md`}
@@ -62,11 +64,11 @@ const Banner: React.FC = () => {
             />
             <img
               src={dataBanner[1].image}
-              className={` bottom-0 absolute left-0 ${dataBanner[1].widthImage}`}
+              className={` bottom-0 absolute left-0 rounded-md ${dataBanner[1].widthImage}`}
             />
           </div>
           <div
-            className={`${dataBanner[2].bgColor} flex flex-row justify-between w-full relative   rounded-md`}
+            className={`${dataBanner[2].bgColor} flex flex-row justify-between w-full relative rounded-md   `}
           >
             <Paragraph
               title={dataBanner[2].title}
@@ -76,7 +78,7 @@ const Banner: React.FC = () => {
             />
             <img
               src={dataBanner[2].image}
-              className={` bottom-0 absolute left-0 ${dataBanner[2].widthImage}`}
+              className={` bottom-0 absolute left-0 rounded-md ${dataBanner[2].widthImage}`}
             />
           </div>
         </div>
@@ -87,11 +89,12 @@ const Banner: React.FC = () => {
             title={dataBanner[0].title}
             paragraph={dataBanner[0].describe}
             padding={dataBanner[0].padding}
+            text={dataBanner[0].title}
 
           />
           <img
             src={dataBanner[0].image}
-            className={` bottom-0 absolute left-0 ${dataBanner[0].widthImage} `}
+            className={` bottom-0 absolute left-0   ${dataBanner[0].widthImage}`}
           />
         </div>
       </div>
