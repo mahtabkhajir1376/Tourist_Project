@@ -10,6 +10,9 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "header-image": "url('../../public/image/header.png')",
+        "star-option":"url('../../public/svg/star option.svg')",
+        "lock-option":"url('../../public/svg/lock option.svg')",
+        "shop-option":"url('../../public/svg/shop option.svg')"
        
       },
       fontFamily: {
