@@ -89,7 +89,7 @@ const Banner: React.FC = () => {
             title={dataBanner[0].title}
             paragraph={dataBanner[0].describe}
             padding={dataBanner[0].padding}
-            text={dataBanner[0].title}
+            text={dataBanner[0].text}
 
           />
           <img
