@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Category from "@/components/Category";
 import Banner from "@/components/Banner";
 import "./globals.css";
+import Options from "@/components/Options";
+import TourGallary from "@/components/TourGallary";
 
 
 export default function Home() {
@@ -10,6 +12,8 @@ export default function Home() {
     <Header/>
     <Category/>
     <Banner/>
+    <Options/>
+    <TourGallary/>
     </main>
   );
 }
