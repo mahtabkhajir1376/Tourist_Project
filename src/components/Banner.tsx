@@ -94,7 +94,7 @@ const Banner: React.FC = () => {
           />
           <img
             src={dataBanner[0].image}
-            className={` bottom-0 absolute left-0   ${dataBanner[0].widthImage}`}
+            className={` bottom-0 absolute left-0 rounded-md   ${dataBanner[0].widthImage}`}
           />
         </div>
       </div>

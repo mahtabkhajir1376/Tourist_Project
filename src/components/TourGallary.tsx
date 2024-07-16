@@ -28,7 +28,7 @@ const imageData:ImageData =[
 
 const TourGallary:React.FC = () => {
   return (
-    <div className="grid grid-cols-6  w-[88%] h-[800px] mx-auto my-0 gap-5">
+    <div className="grid grid-cols-6  w-[90%] h-[800px] mx-auto my-0 gap-5">
       <div className="col-span-4  grid grid-rows-2 gap-5">
         <ImageLayout ImageSrc={imageData[1].imageSrc} span="row-span-1" header={imageData[1].header} capacity={imageData[1].Capacity} position={imageData[1].position}/>
 
