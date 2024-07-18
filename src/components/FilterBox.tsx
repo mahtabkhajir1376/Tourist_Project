@@ -19,10 +19,10 @@ const dataButton:dataButton=[
 
 
   return (
-    <div className='bg-white flex flex-row justify-around items-center w-[53%] mx-auto mt-[20%] px-2 py-3  rounded-full shadow-xl'>
+    <div className='bg-white flex flex-row justify-around items-center w-[53%] mx-auto mt-[20%] px-2 py-3  rounded-full shadow-xl '>
         {
             dataButton.map((Btn)=>{
-                return <Button bgColor='bg-white' titleBtn={Btn.title} fontSize='text-sm' border='border-[1px] border-[#01A657]' width={Btn.width} borderRadius='rounded-full' padding='py-3 px-2 '/>
+                return <Button bgColor='bg-white' titleBtn={Btn.title} fontSize='text-sm font-medium' border='border-[1px] border-[#01A657]' width={Btn.width} borderRadius='rounded-full' padding='py-3 px-2 '/>
             })
         }
 

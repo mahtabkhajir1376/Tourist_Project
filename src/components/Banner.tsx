@@ -15,7 +15,9 @@ type data = {
   widthImage: string;
   span?: string;
   padding:string,
-  text?:string
+  text?:string,
+  fontSizeparagraph:string,
+  fontSizetitle:string
 };
 
 type dataBanner = data[];
@@ -23,13 +25,16 @@ type dataBanner = data[];
 const dataBanner: dataBanner = [
   {
     title: "یه سفر خارجمون نشه ؟",
-    describe: `یه سفر داریم لس آنجلس اگه نری باخت دادی ، جمع کن بریم ! `,
+    describe: `یه سفر داریم لس آنجلس اگه نری باخت دادی ،
+     جمع کن بریم ! `,
     image: "/image/azadi.svg",
     bgColor: "bg-[#DBF9F2]",
     widthImage: "w-[60%]",
     span: "col-span-2",
-    padding:"pr-[30px]",
-    text:"ببین منو ، از دستش نده !"
+    padding:"pr-[30px] ",
+    text:"ببین منو ، از دستش نده !",
+    fontSizeparagraph:"text-xl font-regular",
+    fontSizetitle:"text-2xl font-demiBold"
   },
   {
     title: "بریم جنوب عشق و حال ؟",
@@ -37,7 +42,9 @@ const dataBanner: dataBanner = [
     image: "/image/chamedan.svg",
     bgColor: "bg-[#DEF0FB]",
     widthImage: "w-full",
-    padding:"pr-20"
+    padding:"pr-20 ",
+    fontSizeparagraph:"text-base font-light",
+    fontSizetitle:"text-base font-medium"
   },
   {
     title: "تور گردشگری 7 روزه تاریخی",
@@ -45,7 +52,9 @@ const dataBanner: dataBanner = [
     image: "/image/chamedan2.svg",
     bgColor: "bg-[#FFF3D9]",
     widthImage: "w-[46%]",
-    padding:"pr-5"
+    padding:"pr-5",
+   fontSizeparagraph:"text-base font-light",
+    fontSizetitle:"text-base font-medium"
   },
 ];
 
@@ -61,10 +70,13 @@ const Banner: React.FC = () => {
               title={dataBanner[1].title}
               paragraph={dataBanner[1].describe}
               padding={dataBanner[1].padding}
+              fontSizeparagraph={dataBanner[1].fontSizeparagraph}
+              fontSizetitle={dataBanner[1].fontSizetitle}
+              
             />
             <img
               src={dataBanner[1].image}
-              className={` bottom-0 absolute left-0 rounded-md ${dataBanner[1].widthImage}`}
+              className={` bottom-0 absolute left-0 rounded-md w-full h-full ${dataBanner[1].widthImage}`}
             />
           </div>
           <div
@@ -74,6 +86,8 @@ const Banner: React.FC = () => {
               title={dataBanner[2].title}
               paragraph={dataBanner[2].describe}
               padding={dataBanner[2].padding}
+              fontSizeparagraph={dataBanner[2].fontSizeparagraph}
+              fontSizetitle={dataBanner[2].fontSizetitle}
 
             />
             <img
@@ -90,6 +104,8 @@ const Banner: React.FC = () => {
             paragraph={dataBanner[0].describe}
             padding={dataBanner[0].padding}
             text={dataBanner[0].text}
+            fontSizeparagraph={dataBanner[0].fontSizeparagraph}
+            fontSizetitle={dataBanner[0].fontSizetitle}
 
           />
           <img

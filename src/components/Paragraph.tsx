@@ -6,14 +6,16 @@ type PARAGRAPH ={
     paragraph:string,
     padding:string,
     text?:string,
+    fontSizetitle:string,
+    fontSizeparagraph:string
 }
 
-const Paragraph:React.FC<PARAGRAPH>=({title,paragraph,padding,text})=> {
+const Paragraph:React.FC<PARAGRAPH>=({title,paragraph,padding,text,fontSizetitle,fontSizeparagraph})=> {
   return (
     <div className={`flex flex-col justify-around items-start w-[65%] py-2  ${padding}`}  >
     <div>
-      <h4 className="text-base font-semibold mb-7 ">{title}</h4>
-      <p className="text-base font-light leading-6  ">
+      <h4 className={` mb-7 ${fontSizetitle} `}>{title}</h4>
+      <p className={` leading-6 ${fontSizeparagraph}`}   >
        {paragraph } 
       </p>
     </div>
