@@ -9,8 +9,8 @@ const Navbar:React.FC=()=> {
   return (
     <nav className="flex flex-row items-center justify-between px-12 py-2 ">
       <div className="flex flex-row justify-between items-center w-[25%]">
-        <a href="" className="bg-gradient-to-r from-[#7B4794] to-[#01A688]   text-transparent bg-clip-text flex flex-row justify-center items-center text-2xl font-">
-          <img src="/svg/Logo.png" className="w-6 m-2  text-2xl font-regular" alt="" />
+        <a href="" className="bg-gradient-to-r from-[#7B4794] to-[#01A688]   text-transparent bg-clip-text flex flex-row justify-center items-center  text-2xl font-bold">
+          <img src="/svg/Logo.png" className="w-6 m-2 " alt="" />
           سفرجو
         </a>
 
