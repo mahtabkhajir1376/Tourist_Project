@@ -65,4 +65,13 @@
       font-weight: 900;
       src: url('/font/IRANSansX-Black.woff') format('woff'),
     }
-}  
+} 
+@layer base{
+  @font-face {
+    font-family: 'iransansNumber';
+    font-style:medium;
+    font-weight: 500;
+    src: url('/font/IRANSansXFaNum-Medium.woff2') format('woff2'),
+  }
+}
+

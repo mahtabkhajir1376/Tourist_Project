@@ -14,7 +14,7 @@ const TourCard: React.FC<TOURCARD> = ({
   capacity,
 }) => {
   return (
-    <div className="flex flex-row justify-between items-center w-[23%] h-48">
+    <div className="flex flex-row justify-around items-center w-[23%] h-48">
       <img src={imageSrc} alt="" />
       <div className="">
         <span className="text-xl font-light">{tourDays}</span>

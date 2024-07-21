@@ -18,6 +18,7 @@ const config: Config = {
       },
       fontFamily: {
         iransans: ['IRANSans', 'sans-serif'],
+        iransansNumber:['iransansNumber']
       },
     },
     fontWeight: {

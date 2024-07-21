@@ -58,7 +58,7 @@ const tourData: TOURDATA = [
 
 const PopularTour=()=> {
   return (
-    <div className="flex flex-row justify-around items-center flex-wrap h-[453px] w-[84%] mx-auto my-20">
+    <div className="flex flex-row justify-around items-center flex-wrap h-[453px]">
     {tourData.map((item) => {
       return (
         <TourCard
