@@ -34,6 +34,6 @@ const config: Config = {
       Black:'900'
     }
   },
-  plugins: [],
+  plugins: [require('daisyui'),],
 };
 export default config;
