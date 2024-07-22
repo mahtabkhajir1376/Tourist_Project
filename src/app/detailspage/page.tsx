@@ -3,6 +3,7 @@ import ImageGallarydetailtour from '@/components/ImageGallarydetailtour';
 import Navbar from '@/components/Navbar';
 import TourOptions from '@/components/TourOptions';
 import BuyForm from '@/components/BuyForm';
+import LawsandDocuments from '@/components/LawsandDocuments';
 
 function DetailsPage() {
   return (
@@ -13,6 +14,7 @@ function DetailsPage() {
     <TourOptions/>
     <BuyForm/>
     </div>
+    <LawsandDocuments/>
     </div>
   )
 }
