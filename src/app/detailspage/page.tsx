@@ -1,9 +1,9 @@
 import React from 'react';
-import ImageGallarydetailtour from '@/components/ImageGallarydetailtour';
+import ImageGallarydetailtour from '@/components/detailpage/ImageGallarydetailtour';
 import Navbar from '@/components/Navbar';
-import TourOptions from '@/components/TourOptions';
-import BuyForm from '@/components/BuyForm';
-import LawsandDocuments from '@/components/LawsandDocuments';
+import TourOptions from '@/components/detailpage/TourOptions';
+import BuyForm from '@/components/detailpage/BuyForm';
+import LawsandDocuments from '@/components/detailpage/LawsandDocuments';
 
 function DetailsPage() {
   return (

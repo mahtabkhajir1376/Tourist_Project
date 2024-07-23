@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+import Button from "../landing/Button";
 
 const BuyForm: React.FC = () => {
   return (
