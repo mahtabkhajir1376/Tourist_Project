@@ -53,7 +53,7 @@ const SpecialdiscountSwiper: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-row justify-between items-center w-[84%] mx-auto my-10">
+      <div className="flex flex-row justify-between items-center w-[90%] mx-auto my-5">
         <h3 className="text-[28px] font-medium">تخفیف های ویژه</h3>
         <a
           href=""
