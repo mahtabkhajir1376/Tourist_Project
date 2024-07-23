@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import TourOptions from '@/components/detailpage/TourOptions';
 import BuyForm from '@/components/detailpage/BuyForm';
 import LawsandDocuments from '@/components/detailpage/LawsandDocuments';
+import TourProgressSwiper from '@/components/detailpage/TourProgressSwiper';
 
 function DetailsPage() {
   return (
@@ -14,6 +15,7 @@ function DetailsPage() {
     <TourOptions/>
     <BuyForm/>
     </div>
+    <TourProgressSwiper/>
     <LawsandDocuments/>
     </div>
   )
