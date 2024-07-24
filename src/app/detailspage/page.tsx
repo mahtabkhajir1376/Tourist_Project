@@ -5,7 +5,7 @@ import TourOptions from '@/components/detailpage/TourOptions';
 import BuyForm from '@/components/detailpage/BuyForm';
 import LawsandDocuments from '@/components/detailpage/LawsandDocuments';
 import TourProgressSwiper from '@/components/detailpage/TourProgressSwiper';
-import SingleComment from '@/components/detailpage/SingleComment';
+import Comments from '@/components/detailpage/Comments';
 
 function DetailsPage() {
   return (
@@ -18,7 +18,7 @@ function DetailsPage() {
     </div>
     <TourProgressSwiper/>
     <LawsandDocuments/>
-    <SingleComment/>
+    <Comments/>
     </div>
   )
 }

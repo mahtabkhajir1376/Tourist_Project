@@ -18,7 +18,8 @@ const BuyForm: React.FC = () => {
           </span>
         </div>
         <h2 className="text-base font-light">انتخاب بازه‌ی زمانی:</h2>
-        <select className="bg-[#E8EDEC4D] w-full text-[#707070] text-sm font-regular py-[13.5px] px-[14px] rounded-md mt-5 mb-10 outline-none ">
+        <div className="flex flex-row bg-[#E8EDEC4D] w-full mt-5 mb-10 rounded-md  justify-between items-center">
+        <select className=" w-full text-[#707070] bg-[#E8EDEC4D] rounded-md text-sm font-regular py-[13.5px] px-[14px]  outline-none appearance-none">
           <option disabled selected>
             بازه زمانی دلخواه را مشخص کنید
           </option>
@@ -32,8 +33,12 @@ const BuyForm: React.FC = () => {
             از 26 تیر تا 29 تیر
           </option>
         </select>
+        <img src="/svg/arrowdown.svg" className="px-4  cursor-pointer" alt="" />
+        </div>
+
         <h2 className="text-base font-light">انتخاب تعداد :</h2>
-        <select className="bg-[#E8EDEC4D] w-full text-[#707070] text-sm font-regular py-[13.5px] px-[14px] rounded-md mt-5 mb-4 outline-none ">
+        <div className="flex flex-row bg-[#E8EDEC4D] w-full mt-5 mb-4 rounded-md  justify-between items-center">
+        <select className="bg-[#E8EDEC4D] w-full text-[#707070] text-sm font-regular py-[13.5px] px-[14px] rounded-md  outline-none appearance-none">
           <option disabled selected>
             تعداد نفرات
           </option>
@@ -44,6 +49,8 @@ const BuyForm: React.FC = () => {
             کودکان :
           </option>
         </select>
+        <img src="/svg/arrowdown.svg" className="px-4" alt="" />
+        </div>
         <p className="text-[#707070] text-xs font-light mx-auto">
           *کودکان زیر 5 سال جزو تعداد نفرات محسوب نمیشوند
         </p>
