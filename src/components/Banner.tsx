@@ -7,6 +7,11 @@ type BANNER = {
   span: string;
 };
 
+type BANNER3 = {
+  imageSrc: string;
+  padding: string;
+  span: string;
+};
 type data = {
   title: string;
   describe: string;
