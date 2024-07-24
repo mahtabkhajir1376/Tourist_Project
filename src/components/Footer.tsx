@@ -58,7 +58,11 @@ export default function Footer() {
                     <a href={destination.url} className="nav-link">{destination.label}</a>  
                   </li>  
                 ))}  
+<<<<<<< HEAD
               </ul>
+=======
+              </ul>  
+>>>>>>> 9d4767f02756a0df54a936567ed23f4f876ac1da
             </div>  
             <div>  
               <h2 className='mb-6 text-lg font-medium text-[ #000000] '>خدمات مشتریان</h2>  
@@ -77,7 +81,11 @@ export default function Footer() {
           </div> 
         </div>  
       </div>  
+<<<<<<< HEAD
       <div className='w-[515px] h-[50px] top-[476.86px] gap-2.5 ml-[65%] '>
+=======
+      <div className='w-[515px] h-[50px] top-[476.86px] gap-2.5 ml-[65%] pt-20'>
+>>>>>>> 9d4767f02756a0df54a936567ed23f4f876ac1da
           <a href="" className='bg-gradient-to-r from-[#7B4794] to-[#01A688] text-transparent bg-clip-text flex flex-row justify items-center text-sm font-normal leading-[30px]'>کلیه حقوق این سرویس (وب‌سایت) محفوظ و متعلق به شرکت سفرهای سفرجو می‌باشد. </a>
         </div> 
     </footer>  
