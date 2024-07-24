@@ -31,7 +31,7 @@ const customerServices: Link[] = [
   
 export default function Footer() {  
   return (  
-    <footer className='bg-white ' dir='ltr'>  
+    <footer className='font-iransans ' dir='ltr'>  
       <div className="mx-auto w-full max-w-screen-xl p-16   ">  
         <div className='md:flex justify-between'>  
           <div className='mb-6 md:mb-0 '>  
@@ -39,8 +39,8 @@ export default function Footer() {
               <img src="/svg/Logo.png" className="w-6 m-2" alt="" />  
               سفرجو  
             </a>  
-            <div className='w-[250px] h-[30px]  m-4'>
-            <p className='font-normal text-lg '>ما را در شبکه های اجتماعی دنبال کنید  </p> 
+            <div className='w-[277px] h-[30px]  m-4'>
+            <p className='medium text-lg '>ما را در شبکه های اجتماعی دنبال کنید  </p> 
             </div> 
             <div className='flex flex-row  justify-between items-start m-2 '>  
               {socialIcons.map((icon, index) => (  
@@ -51,22 +51,18 @@ export default function Footer() {
   
           <div className='grid grid-cols-2 sm:gap-6 sm:grid-cols-3  w-[687.62px] h-[220px] gap-[101px]'>  
             <div className=''>  
-              <h2 className='mb-6 text-lg font-medium text-gray-900'>مقصد های پر تکرار</h2>  
-              <ul className='text-[ #000000] font-normal leading-[30px] '>  
+              <h2 className='mb-6 text-lg medium text-gray-900'>مقصد های پر تکرار</h2>  
+              <ul className='text-[ #000000] regular text-sm leading-[30px] '>  
                 {frequentDestinations.map((destination, index) => (  
                   <li key={index} className='mb-4'>  
                     <a href={destination.url} className="nav-link">{destination.label}</a>  
                   </li>  
                 ))}  
-<<<<<<< HEAD
-              </ul>
-=======
               </ul>  
->>>>>>> 9d4767f02756a0df54a936567ed23f4f876ac1da
             </div>  
             <div>  
-              <h2 className='mb-6 text-lg font-medium text-[ #000000] '>خدمات مشتریان</h2>  
-              <ul className='text-[ #000000] font-normal leading-[30px]'>  
+              <h2 className='mb-6 text-lg medium text-[ #000000] '>خدمات مشتریان</h2>  
+              <ul className='text-[ #000000] regular text-sm leading-[30px]'>  
                 {customerServices.map((service, index) => (  
                   <li key={index} className='mb-4'>  
                     <a href={service.url} className="nav-link">{service.label}</a>  
@@ -75,17 +71,13 @@ export default function Footer() {
               </ul>  
             </div>  
             <div>  
-              <h2 className='mb-6 text-[ #000000] text-lg font-medium  gap-[18px]'>ارتباط با ما</h2>  
+              <h2 className='mb-6 text-[ #000000] text-lg medium  gap-[18px]'>ارتباط با ما</h2>  
               <ContactInfo  />  
             </div>  
           </div> 
         </div>  
       </div>  
-<<<<<<< HEAD
       <div className='w-[515px] h-[50px] top-[476.86px] gap-2.5 ml-[65%] '>
-=======
-      <div className='w-[515px] h-[50px] top-[476.86px] gap-2.5 ml-[65%] pt-20'>
->>>>>>> 9d4767f02756a0df54a936567ed23f4f876ac1da
           <a href="" className='bg-gradient-to-r from-[#7B4794] to-[#01A688] text-transparent bg-clip-text flex flex-row justify items-center text-sm font-normal leading-[30px]'>کلیه حقوق این سرویس (وب‌سایت) محفوظ و متعلق به شرکت سفرهای سفرجو می‌باشد. </a>
         </div> 
     </footer>  
