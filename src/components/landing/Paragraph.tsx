@@ -5,32 +5,32 @@ type PARAGRAPH ={
     title:string,
     paragraph:string,
     padding:string,
-    text?:string,
+    fontSizeparagraph:string,
     fontSizetitle:string,
-    fontSizeparagraph:string
+    text?:string
 }
 
-const Paragraph:React.FC<PARAGRAPH>=({title,paragraph,padding,text,fontSizetitle,fontSizeparagraph})=> {
+const Paragraph:React.FC<PARAGRAPH>=({title,paragraph,padding,fontSizetitle,fontSizeparagraph,text})=> {
   return (
-    <div className={`flex flex-col justify-around items-start w-[65%] py-2  ${padding}`}  >
+    <div className={`flex flex-col justify-around items-start xl:w-[68%] sm:w-[78%] ${padding}`}  >
     <div>
-      <h4 className={` mb-7 ${fontSizetitle} `}>{title}</h4>
-      <p className={` leading-6 ${fontSizeparagraph}`}   >
-       {paragraph } 
+      <h4 className={`xl:text-base sm:text-xs  font-semibold xl:mb-7 sm:mb-5 sm:mt-2 ${fontSizetitle}`}>{title}</h4>
+      <p className={`xl:text-base font-light sm:text-xs ${fontSizeparagraph}`}>
+        {paragraph}
       </p>
     </div>
-    <div className='flex flex-col justify-around items-start'>
     <Button
       titleBtn="رزرو"
       borderRadius="rounded-md"
-      fontSize="text-sm font-semibold"
+      fontSize="xl:text-sm font-semibold sm:text-xs"
       bgColor="bg-white"
-      width="w-28"
-      padding="py-2"
+      width="xl:w-20 sm:w-14 md:w-16"
+      padding="py-1"
+      margin="sm:mt-3 sm:mb-2"
     />
-    <span className='text-xs font-normal mt-3' >{text}</span>
-    </div>
+    <p>{text}</p>
   </div>
   )
 }
-export default Paragraph
+
+export default Paragraph;
