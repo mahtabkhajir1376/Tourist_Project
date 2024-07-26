@@ -2,7 +2,7 @@ import Header from "@/components/landing/Header";
 import Category from "@/components/landing/Category";
 import Banner from "@/components/landing/Banner";
 import  Footer from "@/components/Footer";
-import WhatModelDoYouWant from "@/components/showlist/WhatModelDoYouWant";
+import WhatModelDoYouWant from "@/components/landing/WhatModelDoYouWant";
 import SwiperTourabroad from "@/components/showlist/SwiperTourabroad";
 import PopularTourSwiper from "@/components/landing/PopularTourSwiper";
 import SpecialdiscountSwiper from "@/components/landing/SpecialdiscountSwiper";
@@ -20,8 +20,8 @@ export default function Home() {
     <PopularTourSwiper/>
     <SpecialdiscountSwiper/>
     <Options/>
-    <SwiperTourabroad/> 
     <WhatModelDoYouWant/>
+    <SwiperTourabroad/> 
     <Footer />
     </main>
   );
