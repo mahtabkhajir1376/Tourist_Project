@@ -33,7 +33,7 @@ const dataBanner:dataBanner = [
     span: "col-span-2",
     padding:"pr-[30px] ",
     text:"ببین منو ، از دستش نده !",
-    fontSizeparagraph:"text-xl font-regular",
+    fontSizeparagraph:"text-2xl font-medium",
     fontSizetitle:"text-2xl font-demiBold"
   },
   {
@@ -42,7 +42,7 @@ const dataBanner:dataBanner = [
     image: "/image/chamedan.svg",
     bgColor: "bg-[#DEF0FB]",
     widthImage: "w-full",
-    padding:"xl:pr-20 2xl:pr-20 sm:pr-8 md:pr-10 ",
+    padding:" 2xl:pr-20   xl:pr-20 2xl:pr-20 sm:pr-8 md:pr-10 ",
     fontSizeparagraph:"text-base font-light",
     fontSizetitle:"text-base font-medium"
   },
@@ -51,8 +51,8 @@ const dataBanner:dataBanner = [
     describe: "7 روز بریم کرمانشاه تا ببینی چه جاهایی تو ایران داریم !",
     image: "/image/chamedan2.svg",
     bgColor: "bg-[#FFF3D9]",
-    widthImage: "xl:w-[48%] sm:w-[35%] md:w-[40%]",
-    padding:"xl:pr-20 sm:pr-8 md:pr-8",
+    widthImage: "xl:w-[48%] sm:w-[35%] md:w-[40%] 2xl:w-[42%]",
+    padding:"2xl:pr-5 xl:pr-20 sm:pr-8 md:pr-8",
    fontSizeparagraph:"text-base font-light",
     fontSizetitle:"text-base font-medium"
   },
@@ -61,7 +61,7 @@ const dataBanner:dataBanner = [
 const Banner: React.FC = () => {
   return (
     <>
-      <div className="xl:w-[89%] sm:w-full xl:gap-5 sm:gap-2 my-0 mx-auto grid grid-cols-3 sm:min-h-max md:min-h-max lg:min-h-96 xl:min-h-lvh">
+      <div className="xl:w-[89%] sm:w-full xl:gap-5 sm:gap-2 my-0 mx-auto grid grid-cols-3 sm:min-h-max md:min-h-max lg:min-h-96 xl:min-h-lvh 2xl:min-h-[450px]">
         <div className="col-span-1  grid grid-rows-2 sm:gap-2 xl:gap-5">
           <div
             className={`${dataBanner[1].bgColor} flex flex-row justify-between w-full relative rounded-md`}
@@ -97,7 +97,7 @@ const Banner: React.FC = () => {
           </div>
         </div>
         <div
-          className={`${dataBanner[0].bgColor} flex flex-row justify-between w-full relative ${dataBanner[0].span}   rounded-md`}
+          className={`${dataBanner[0].bgColor} flex flex-row justify-between w-full relative ${dataBanner[0].span} rounded-md`}
         >
           <Paragraph
             title={dataBanner[0].title}

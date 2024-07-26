@@ -19,6 +19,7 @@ const Paragraph:React.FC<PARAGRAPH>=({title,paragraph,padding,fontSizetitle,font
         {paragraph}
       </p>
     </div>
+    <div>
     <Button
       titleBtn="رزرو"
       borderRadius="rounded-md"
@@ -28,7 +29,8 @@ const Paragraph:React.FC<PARAGRAPH>=({title,paragraph,padding,fontSizetitle,font
       padding="py-1"
       margin="sm:mt-3 sm:mb-2"
     />
-    <p>{text}</p>
+    <p className='2xl:text-base 2xl:font-regular xl:text-base  sm:text-xs md:text-sm lg:text-base'>{text}</p>
+    </div>
   </div>
   )
 }
