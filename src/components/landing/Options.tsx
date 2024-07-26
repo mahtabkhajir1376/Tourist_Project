@@ -8,17 +8,17 @@ type DataOption =Option[]
 
 
 const dataOption:DataOption =[
-    {title:"تنوع تور ها",imageSrc:"/svg/star.svg",bgImage:"/svg/Shapeone.svg",describtion:"هر مدل توری که بخوای ما داریم",position:"top-[31%] right-[10%]"},
-    {title:"قیمت‌های به‌صرفه",imageSrc:"/svg/shop.svg",bgImage:"/svg/Shapetwo.svg",describtion:"با کف قیمت میتونی بری سفر",position:"top-[28%] right-[10%]"},
-    {title:"امن و معتبر",imageSrc:"/svg/lock.svg",bgImage:"/svg/Shapethree.svg",describtion:"با خیالت راحت بلیت بخر",position:"top-[27%] right-[10%]"},
+    {title:"تنوع تور ها",imageSrc:"/svg/stargreen.svg",describtion:"هر مدل توری که بخوای ما داریم",width:"2xl:w-[78%]"},
+    {title:"قیمت‌های به‌صرفه",imageSrc:"/svg/greenshop.svg",describtion:"با کف قیمت میتونی بری سفر",width:"2xl:w-[75%]"},
+    {title:"امن و معتبر",imageSrc:"/svg/greenlock.svg",describtion:"با خیالت راحت بلیت بخر",width:"2xl:w-[65%]"},
 ]
 
 
   return (
-    <div className="flex flex-row justify-around items-center w-[90%] mx-auto my-0 h-[553px] ">
-      <SingleOption title={dataOption[0].title} imageSrc={dataOption[0].imageSrc} bgImage={dataOption[0].bgImage} describtion={dataOption[0].describtion} position={dataOption[0].position} />
-      <SingleOption title={dataOption[1].title} imageSrc={dataOption[1].imageSrc} bgImage={dataOption[1].bgImage} describtion={dataOption[1].describtion} position={dataOption[1].position}  />
-      <SingleOption title={dataOption[2].title} imageSrc={dataOption[2].imageSrc} bgImage={dataOption[2].bgImage} describtion={dataOption[2].describtion} position={dataOption[2].position} />
+    <div className="flex flex-row justify-around items-center 2xl:w-[90%] xl:w-[90%] sm:w-full mx-auto my-0 h-[553px] ">
+      <SingleOption title={dataOption[0].title} imageSrc={dataOption[0].imageSrc}  describtion={dataOption[0].describtion}  width={dataOption[0].width} />
+      <SingleOption title={dataOption[1].title} imageSrc={dataOption[1].imageSrc}  describtion={dataOption[1].describtion} width={dataOption[1].width}   />
+      <SingleOption title={dataOption[2].title} imageSrc={dataOption[2].imageSrc}  describtion={dataOption[2].describtion} width={dataOption[2].width}  />
     </div>
   );
 };
