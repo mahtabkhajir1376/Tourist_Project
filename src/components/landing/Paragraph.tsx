@@ -19,16 +19,18 @@ const Paragraph:React.FC<PARAGRAPH>=({title,paragraph,padding,fontSizetitle,font
         {paragraph}
       </p>
     </div>
+    <div>
     <Button
       titleBtn="رزرو"
       borderRadius="rounded-md"
-      fontSize="xl:text-sm font-semibold sm:text-xs"
+      fontSize="xl:text-sm  font-iransansNumber font-medium 2xl:text-base sm:text-xs"
       bgColor="bg-white"
-      width="xl:w-20 sm:w-14 md:w-16"
+      width="xl:w-20 sm:w-14 md:w-16 2xl:w-28"
       padding="py-1"
       margin="sm:mt-3 sm:mb-2"
     />
-    <p>{text}</p>
+    <p className='2xl:text-base  font-iransansNumber xl:text-base lg:text-sm md:text-sm sm:text-xs font-regular'>{text}</p>
+    </div>
   </div>
   )
 }
