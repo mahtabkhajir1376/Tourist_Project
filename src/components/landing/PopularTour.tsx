@@ -23,7 +23,7 @@ const TourCardDiscount: React.FC<Props> = ({imageSrc,tourTitle,tourLocation,prim
           <div className="flex flex-col justify-between items-center xl:px-4 sm:px-1 " key={key}>
           <img src={imageSrc} alt=""  />
           <Button
-            bgColor="bg-white"
+            bgColor="bg-[#E8FCFF]"
             titleBtn="مشاهده"
             fontSize="xl:text-[12px] sm:text-[8px] md:text-[10px] lg:text-xs font-medium"
             width="xl:w-24 absolute xl:bottom-[42%] xl:left-[6%] sm:bottom-[45%] sm:left-[5%] md:bottom-[43%] lg:bottom-[38%] xl:bottom-[34%] 2xl:bottom-[35%]"

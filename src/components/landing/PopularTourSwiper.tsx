@@ -51,8 +51,8 @@ const dataDiscount: DataDiscount = [
 const SpecialdiscountSwiper: React.FC = () => {
   return (
     <>
-      <div className="flex flex-row justify-between items-center w-[90%] mx-auto my-5">
-        <h3 className="xl:text-[28px] font-medium sm:text-[20px] md:text-[22px] lg:text-[24px] 2xl:text-[28px]  ">
+      <div className="flex flex-row justify-between items-center w-[90%] mx-auto mt-24">
+        <h3 className="xl:text-[28px] font-medium sm:text-lg md:text-[22px] lg:text-[24px] 2xl:text-[28px]  ">
           تورهای محبوب
         </h3>
       </div>
@@ -60,7 +60,7 @@ const SpecialdiscountSwiper: React.FC = () => {
         slidesPerView={2.6}
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper w-[90%] mx-auto my-0"
+        className="mySwiper w-[90%] mx-auto mb-24"
       >
         {dataDiscount.map((item, index) => {
           return (
