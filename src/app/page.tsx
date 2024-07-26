@@ -6,6 +6,7 @@ import WhatModelDoYouWant from "@/components/showlist/WhatModelDoYouWant";
 import SwiperTourabroad from "@/components/showlist/SwiperTourabroad";
 import PopularTourSwiper from "@/components/landing/PopularTourSwiper";
 import SpecialdiscountSwiper from "@/components/landing/SpecialdiscountSwiper";
+import Options from "@/components/landing/Options";
 
 import "./globals.css";
 
@@ -18,6 +19,7 @@ export default function Home() {
     <Banner/>
     <PopularTourSwiper/>
     <SpecialdiscountSwiper/>
+    <Options/>
     <SwiperTourabroad/> 
     <WhatModelDoYouWant/>
     <Footer />
