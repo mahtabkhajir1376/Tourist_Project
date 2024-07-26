@@ -1,9 +1,11 @@
-import Header from "@/components/Header";
-import Category from "@/components/Category";
-import Banner from "@/components/Banner";
+import Header from "@/components/landing/Header";
+import Category from "@/components/landing/Category";
+import Banner from "@/components/landing/Banner";
 import  Footer from "@/components/Footer";
-import WhatModelDoYouWant from "@/components/WhatModelDoYouWant";
-import SwiperTourabroad from "@/components/SwiperTourabroad";
+import WhatModelDoYouWant from "@/components/showlist/WhatModelDoYouWant";
+import SwiperTourabroad from "@/components/showlist/SwiperTourabroad";
+import PopularTourSwiper from "@/components/landing/PopularTourSwiper";
+import SpecialdiscountSwiper from "@/components/landing/SpecialdiscountSwiper";
 
 import "./globals.css";
 
@@ -14,6 +16,8 @@ export default function Home() {
     <Header/>
     <Category/>
     <Banner/>
+    <PopularTourSwiper/>
+    <SpecialdiscountSwiper/>
     <SwiperTourabroad/> 
     <WhatModelDoYouWant/>
     <Footer />

@@ -22,14 +22,14 @@ type data = {
 
 type dataBanner = data[];
 
-const dataBanner: dataBanner = [
+const dataBanner:dataBanner = [
   {
     title: "یه سفر خارجمون نشه ؟",
     describe: `یه سفر داریم لس آنجلس اگه نری باخت دادی ،
      جمع کن بریم ! `,
     image: "/image/azadi.svg",
     bgColor: "bg-[#DBF9F2]",
-    widthImage: "w-[60%]",
+    widthImage: "xl:w-[60%] sm:w-[50%] md:w-[55%]",
     span: "col-span-2",
     padding:"pr-[30px] ",
     text:"ببین منو ، از دستش نده !",
@@ -42,7 +42,7 @@ const dataBanner: dataBanner = [
     image: "/image/chamedan.svg",
     bgColor: "bg-[#DEF0FB]",
     widthImage: "w-full",
-    padding:"pr-20 ",
+    padding:"xl:pr-20 2xl:pr-20 sm:pr-8 md:pr-10 ",
     fontSizeparagraph:"text-base font-light",
     fontSizetitle:"text-base font-medium"
   },
@@ -51,8 +51,8 @@ const dataBanner: dataBanner = [
     describe: "7 روز بریم کرمانشاه تا ببینی چه جاهایی تو ایران داریم !",
     image: "/image/chamedan2.svg",
     bgColor: "bg-[#FFF3D9]",
-    widthImage: "w-[46%]",
-    padding:"pr-5",
+    widthImage: "xl:w-[48%] sm:w-[35%] md:w-[40%]",
+    padding:"xl:pr-20 sm:pr-8 md:pr-8",
    fontSizeparagraph:"text-base font-light",
     fontSizetitle:"text-base font-medium"
   },
@@ -61,10 +61,10 @@ const dataBanner: dataBanner = [
 const Banner: React.FC = () => {
   return (
     <>
-      <div className="w-[90%] gap-5 my-0 mx-auto grid grid-cols-3 min-h-[455px]  ">
-        <div className="col-span-1  grid grid-rows-2 gap-5">
+      <div className="xl:w-[89%] sm:w-full xl:gap-5 sm:gap-2 my-0 mx-auto grid grid-cols-3 sm:min-h-max md:min-h-max lg:min-h-96 xl:min-h-lvh">
+        <div className="col-span-1  grid grid-rows-2 sm:gap-2 xl:gap-5">
           <div
-            className={`${dataBanner[1].bgColor} flex flex-row justify-between w-full relative   rounded-md`}
+            className={`${dataBanner[1].bgColor} flex flex-row justify-between w-full relative rounded-md`}
           >
             <Paragraph
               title={dataBanner[1].title}
@@ -106,6 +106,7 @@ const Banner: React.FC = () => {
             text={dataBanner[0].text}
             fontSizeparagraph={dataBanner[0].fontSizeparagraph}
             fontSizetitle={dataBanner[0].fontSizetitle}
+            
 
           />
           <img

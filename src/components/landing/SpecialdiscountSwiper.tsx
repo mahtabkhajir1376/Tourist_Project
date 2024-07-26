@@ -52,12 +52,12 @@ const dataDiscount: DataDiscount = [
 const SpecialdiscountSwiper: React.FC = () => {
 
   return (
-    <>
-      <div className="flex flex-row justify-between items-center w-[90%] mx-auto my-5">
-        <h3 className="text-[28px] font-medium">تخفیف های ویژه</h3>
+    <div className="bg-[#E8FCFF] h-[738px] flex flex-col items-center justify-center">
+      <div className="flex flex-row justify-between items-center w-[90%] mx-auto  ">
+        <h3 className="xl:text-[28px] font-medium sm:text-[20px] md:text-[22px] lg:text-[24px] 2xl:text-[28px]  ">تخفیف های ویژه</h3>
         <a
           href=""
-          className="flex flex-row justify-around items-center text-lg font-regular w-[12%] text-[#01A657]"
+          className="flex flex-row justify-around items-center xl:text-lg 2xl:text-lg sm:text-sm lg:text-base  font-regular xl:w-[12%] 2xl:w-[12%]  text-[#01A657]"
         >
           مشاهده بیشتر
           <svg
@@ -66,6 +66,7 @@ const SpecialdiscountSwiper: React.FC = () => {
             viewBox="0 0 28 28"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="sm:w-4 lg:w-6"
           >
             <path
               fill-rule="evenodd"
@@ -80,11 +81,11 @@ const SpecialdiscountSwiper: React.FC = () => {
         slidesPerView={2.6 }
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper w-[90%] mx-auto my-0"
+        className="mySwiper w-[90%] mx-auto my-0 "
       >
         {dataDiscount.map((item, index) => {
           return (
-            <SwiperSlide className="w-[30%] h-[473px] my-10 mx-auto relative">
+            <SwiperSlide className="w-[30%]  my-10 mx-auto relative">
               <TourCardDiscount
                 key={index}
                 imageSrc={item.imageSrc}
@@ -99,7 +100,7 @@ const SpecialdiscountSwiper: React.FC = () => {
           );
         })}
       </Swiper>
-    </>
+    </div>
   );
 };
 
