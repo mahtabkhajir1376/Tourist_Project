@@ -1,20 +1,15 @@
 import React from 'react'
-import Navbar from '@/components/Navbar'
-import Numberofpeople from '@/components/Numberofpeople'
-import PriceRange from '@/components/PriceRange'
-import TravelCategory from '@/components/TravelCategory'
-import DateTime from '@/components/DateTime'
-import TheDesiredCity from '@/components/TheDesiredCity'
-import ShowListCart from '@/components/ShowListCart'
-import Specialdiscounts from '@/components/showlist/Specialdiscounts'
 import PriceRange from '@/components/showlist/PriceRange'
 import TravelCategory from '@/components/showlist/TravelCategory'
 import DateTime from '@/components/showlist/DateTime'
 import TheDesiredCity from '@/components/showlist/TheDesiredCity'
 import ShowListCart from '@/components/showlist/ShowListCart'
 import Footer from '@/components/Footer'
+import Numberofpeople from '@/components/Numberofpeople'
+import Navbar from '@/components/Navbar'
 
 export default function page() {
+
   return (
     <>
     <div className='font-iransans bg-[#F8F8F8] '>
