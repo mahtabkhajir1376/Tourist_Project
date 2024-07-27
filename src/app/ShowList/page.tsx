@@ -6,6 +6,12 @@ import TravelCategory from '@/components/TravelCategory'
 import DateTime from '@/components/DateTime'
 import TheDesiredCity from '@/components/TheDesiredCity'
 import ShowListCart from '@/components/ShowListCart'
+import Specialdiscounts from '@/components/showlist/Specialdiscounts'
+import PriceRange from '@/components/showlist/PriceRange'
+import TravelCategory from '@/components/showlist/TravelCategory'
+import DateTime from '@/components/showlist/DateTime'
+import TheDesiredCity from '@/components/showlist/TheDesiredCity'
+import ShowListCart from '@/components/showlist/ShowListCart'
 import Footer from '@/components/Footer'
 
 export default function page() {

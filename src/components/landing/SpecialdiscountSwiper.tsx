@@ -50,41 +50,28 @@ const dataDiscount: DataDiscount = [
 ];
 
 const SpecialdiscountSwiper: React.FC = () => {
-
   return (
-    <>
-      <div className="flex flex-row justify-between items-center w-[90%] mx-auto my-5">
-        <h3 className="text-[28px] font-medium">تخفیف های ویژه</h3>
+    <div className="bg-[#E8FCFF] h-[738px] flex flex-col items-center justify-center">
+      <div className="flex flex-row justify-between items-center w-[90%] mx-auto  ">
+        <h3 className="xl:text-[28px] font-medium sm:text-lg md:text-[22px] lg:text-[24px] 2xl:text-[28px]  ">
+          تخفیف های ویژه
+        </h3>
         <a
           href=""
-          className="flex flex-row justify-around items-center text-lg font-regular w-[12%] text-[#01A657]"
+          className="flex flex-row justify-around items-center xl:text-lg 2xl:text-lg sm:text-xs lg:text-base  font-regular xl:w-[12%] 2xl:w-[12%]  text-[#01A657]"
         >
           مشاهده بیشتر
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 28 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M18.0822 23.3321C17.8803 23.3321 17.675 23.2796 17.4883 23.1688C16.03 22.3054 8.75 17.8044 8.75 13.9988C8.75 10.1943 16.0288 5.69209 17.4883 4.82876C18.0448 4.50092 18.76 4.68409 19.0867 5.23709C19.4157 5.79242 19.2313 6.50759 18.6783 6.83542C15.6158 8.65076 11.0833 12.1823 11.0833 13.9988C11.0833 15.8188 15.6147 19.3491 18.6783 21.1621C19.2313 21.4899 19.4157 22.2051 19.0867 22.7604C18.8697 23.1279 18.4812 23.3321 18.0822 23.3321Z"
-              fill="#01A657"
-            />
-          </svg>
         </a>
       </div>
       <Swiper
-        slidesPerView={2.6 }
+        slidesPerView={2.6}
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper w-[90%] mx-auto my-0"
+        className="mySwiper w-[90%] mx-auto my-0 "
       >
         {dataDiscount.map((item, index) => {
           return (
-            <SwiperSlide className="w-[30%] h-[473px] my-10 mx-auto relative">
+            <SwiperSlide className="w-[30%]  my-10 mx-auto relative">
               <TourCardDiscount
                 key={index}
                 imageSrc={item.imageSrc}
@@ -99,7 +86,7 @@ const SpecialdiscountSwiper: React.FC = () => {
           );
         })}
       </Swiper>
-    </>
+    </div>
   );
 };
 
