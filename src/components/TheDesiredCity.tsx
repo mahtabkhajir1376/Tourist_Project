@@ -1,57 +1,58 @@
-import React from 'react';
+import React from 'react';  
 
-interface RadioOption {
-  label: string;
-  value: string;
-}
+interface RadioOption {  
+  label: string;  
+  value: string;  
+}  
 
-const categories: RadioOption[] = [
-  { label: ' اردبیل ', value: 'beach' },
-  { label: ' رامسر ', value: 'forest' },
-  { label: ' کیش ', value: 'eco' },
-  { label: ' قشم ', value: 'eco' },
-];
+const categories: RadioOption[] = [  
+  { label: ' اردبیل ', value: 'beach' },  
+  { label: ' رامسر ', value: 'forest' },  
+  { label: ' کیش ', value: 'eco' },  
+  { label: ' قشم ', value: 'eco' },  
+];  
 
-const otherCategories: RadioOption[] = [
-  { label: ' مشهد ', value: 'historical' },
-  { label: ' اصفهان ', value: 'pilgrimage' },
-  { label: ' یزد ', value: 'foreign' },
-  { label: ' تهران  ', value: 'eco' },
-];
+const otherCategories: RadioOption[] = [  
+  { label: ' مشهد ', value: 'historical' },  
+  { label: ' اصفهان ', value: 'pilgrimage' },  
+  { label: ' یزد ', value: 'foreign' },  
+  { label: ' تهران  ', value: 'eco' },  
+];  
 
-const TravelCategory: React.FC = () => {
-  return (
-    <div className="  mt-[75px]  ">
-        <div className='flex flex-row w-[428px] h-[32px] justify-between '>
-      <h2 className=" font-iransans medium text-base  mb-4"> شهر مورد نظر : </h2>
-      <input type="text" placeholder=' جست و جوی شهر مورد نظر  ' className='bg-white shadow-md shadow-slate-300 w-[274px] h-[32px] rounded-md 	font-iransans  text-[10px] font-thin gap-2.5 p-2' />
-      </div>
-      <div className=" flex justify-between  mr-[32px]  ml-[140px] items-center mt-[22px] ">
-        {categories.map((category) => (
-          <label key={category.value} className="flex items-center w-[80px] h-[24px] ">
-            <input
-              type="radio"
-              value={category.value}
-              className="form-radio  accent-[#7B4794] m-2 "
-            />
-            <span className="ml-2 text-right text-base font-medium leading-6">{category.label}</span>
-          </label>
-        ))}
-      </div>
-      <div className=" flex justify-between  mr-[32px]  ml-[140px] items-center mt-[22px] ">
-        {otherCategories.map((category) => (
-          <label key={category.value} className="flex items-center text-base font-medium leading-6 ">
-            <input
-              type="radio"
-              value={category.value}
-              className="form-radio  accent-[#7B4794] m-2  "
-            />
-            <span className="ml-2 text-right text-base font-medium leading-6">{category.label}</span>
-          </label>
-        ))}
-      </div>
-    </div>
-  );
-};
+const TravelCategory: React.FC = () => {  
+  return (  
+    <div className="mt-20">  
+      <div className="flex flex-col sm:flex-row w-full max-w-lg mx-auto mb-4 items-center">  
+        <h2 className="font-iransans text-base">شهر مورد نظر:</h2>  
+        <div className="relative flex-grow mt-2 sm:mt-0">  
+          <input  
+            type="text"  
+            placeholder=" جست و جوی شهر مورد نظر  "  
+            className="bg-white shadow-md w-full h-8 rounded-md font-iransans text-sm pl-10 pr-2"  
+          />  
+          <img src="/svg/search.svg" className="absolute left-2 top-1/2 transform -translate-y-1/2" />  
+        </div>  
+      </div>  
 
-export default TravelCategory;
+      <div className="flex flex-wrap justify-around mt-6">  
+        {categories.map((category) => (  
+          <label key={category.value} className="flex items-center w-1/2 sm:w-auto mb-2">  
+            <input type="radio" name="radio-5" value={category.value} className="radio radio-success w-5 h-5" />  
+            <span className="ml-1 text-base font-medium">{category.label}</span>  
+          </label>  
+        ))}  
+      </div>  
+
+      <div className="flex flex-wrap justify-around mt-4">  
+        {otherCategories.map((category) => (  
+          <label key={category.value} className="flex items-center w-1/2 sm:w-auto mb-2">  
+            <input type="radio" name="radio-5" value={category.value} className="radio radio-success w-5 h-5" />  
+            <span className="ml-1 text-base font-medium">{category.label}</span>  
+          </label>  
+        ))}  
+      </div>  
+    </div>                  
+  );  
+};  
+
+export default TravelCategory;  

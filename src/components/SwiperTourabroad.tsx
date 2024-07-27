@@ -71,7 +71,6 @@ function SwiperTourabroad() {
         </div>
         <div className="flex flex-row w-[148px] h-[28px] top-[18px] left-[77px] p-3 ">
           <a href="#" className="text-[#01A657] font-normal text-lg leading-7 w-[106px] h-[27px]">مشاهده بیشتر</a>
-          <img src="/svg/IconNextinSwiper.png" alt="" className="w-[28px] h-[28px]" />
         </div>
       </div>
 
