@@ -12,7 +12,7 @@ function DetailsPage() {
     <div className='font-iransans'>
     <Navbar/>
     <ImageGallarydetailtour/>
-    <div className='flex flex-row w-[90%] justify-between  mx-auto my-0 h-[985px]'>
+    <div className='flex flex-row 2xl:w-[90%] sm:w-[95%] lg:w-[90%] justify-between  mx-auto my-0 h-[985px]'>
     <TourOptions/>
     <BuyForm/>
     </div>
