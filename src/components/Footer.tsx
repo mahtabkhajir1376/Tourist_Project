@@ -99,7 +99,7 @@ function ContactInfo() {
     <div className='flex flex-col gap-4'>
       {contactItems.map((item, index) => (
         <div key={index} className='flex items-center gap-2'>
-          <img src={item.imageSrc} alt="" className='w-4 h-4 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-6 xl:h-6' />
+          <img src={item.imageSrc} alt="" className='w-4gi h-4 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-6 xl:h-6' />
           <p className='text-sm font-normal'>{item.text}</p>
         </div>
       ))}
