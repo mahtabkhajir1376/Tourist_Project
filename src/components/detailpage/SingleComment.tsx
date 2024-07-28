@@ -9,7 +9,7 @@ export type CommentData = data[];
 const SingleComment:React.FC<data> = ({userName,comment}) => {
 
   return (
-    <div className="w-full h-[262px] shadow-2xl  2xl:px-6 sm:px-2 2xl:py-[74px] sm:py-2 font-iransansNumber rounded-md ">
+    <div className="2xl:w-[90%] h-[262px] shadow-md  2xl:px-6 sm:px-2 2xl:py-[74px] sm:py-2 font-iransansNumber rounded-md ">
       <div className="flex flex-col mb-6">
         <h6 className="mb-3 text-xs font-regular"> {userName}</h6>
         <div className="flex flex-row w-[29%] justify-between items-center">
