@@ -28,16 +28,15 @@ const Comments: React.FC = () => {
   ];
 
   return (
-    <>
       <Swiper
         slidesPerView={3}
         centeredSlides={true}
-        spaceBetween={30}
+        spaceBetween={5}
         grabCursor={true}
         pagination={{
           type: "fraction",
         }}
-        className=" 2xl:w-[80%] sm:w-[90%]"
+        className=" 2xl:w-[90%] sm:w-[90%] my-20 h-[300px]"
       >
         {comment.map((comment) => {
           return (
@@ -47,7 +46,6 @@ const Comments: React.FC = () => {
           );
         })}
       </Swiper>
-    </>
   );
 };
 

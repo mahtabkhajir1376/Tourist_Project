@@ -6,6 +6,7 @@ import BuyForm from '@/components/detailpage/BuyForm';
 import LawsandDocuments from '@/components/detailpage/LawsandDocuments';
 import TourProgressSwiper from '@/components/detailpage/TourProgressSwiper';
 import Comments from '@/components/detailpage/Comments';
+import Footer from '@/components/Footer';
 
 function DetailsPage() {
   return (
@@ -19,6 +20,7 @@ function DetailsPage() {
     <TourProgressSwiper/>
     <LawsandDocuments/>
     <Comments/>
+    <Footer/>
     </div>
   )
 }
