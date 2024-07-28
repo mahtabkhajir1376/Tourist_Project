@@ -1,16 +1,52 @@
-import React from "react";
+"use client";
 import SingleComment from "./SingleComment";
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { CommentData } from "./SingleComment";
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Comments: React.FC = () => {
+  const comment: CommentData = [
+    {
+      userName: "کاظم میرانی",
+      comment:
+        "من اولین باره با تور شما سفر میکنم خیلی تجربه خوب و با خاطرات خوب برام ثبت شد عالی بود الخصوص تورلیدر که بسیار سرزنده و شاد و با حوصله بود ما تونستیم هر جایی که میخواستیم بریم و ایشون هم بهمون راهنمایی میکرد",
+    },
+    {
+      userName: "کاظم میرانی",
+      comment:
+        "من اولین باره با تور شما سفر میکنم خیلی تجربه خوب و با خاطرات خوب برام ثبت شد عالی بود الخصوص تورلیدر که بسیار سرزنده و شاد و با حوصله بود ما تونستیم هر جایی که میخواستیم بریم و ایشون هم بهمون راهنمایی میکرد",
+    },
+    {
+      userName: "کاظم میرانی",
+      comment:
+        "من اولین باره با تور شما سفر میکنم خیلی تجربه خوب و با خاطرات خوب برام ثبت شد عالی بود الخصوص تورلیدر که بسیار سرزنده و شاد و با حوصله بود ما تونستیم هر جایی که میخواستیم بریم و ایشون هم بهمون راهنمایی میکرد",
+    },
+  ];
+
   return (
     <>
-    <h2 className="flex flex-row w-[90%] mx-auto mt-40 mb-[78px] font-iransansNumber text-[32px] font-medium">نظرات مسافران :</h2>
-    <div className="flex flex-row justify-around items-center w-[79%] mx-auto">
-      <SingleComment />
-      <SingleComment />
-      <SingleComment />
-    </div>
+      <Swiper
+        slidesPerView={3}
+        centeredSlides={true}
+        spaceBetween={30}
+        grabCursor={true}
+        pagination={{
+          type: "fraction",
+        }}
+        className=" 2xl:w-[80%] sm:w-[90%]"
+      >
+        {comment.map((comment) => {
+          return (
+            <SwiperSlide>
+              <SingleComment userName={comment.userName} comment={comment.comment} />
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </>
   );
 };
