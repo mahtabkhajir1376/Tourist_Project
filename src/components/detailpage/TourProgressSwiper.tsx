@@ -38,7 +38,7 @@ const dataProgress: DataProgress = [
 const TourProgressSwiper: React.FC = () => {
   return (
     <>
-      <h3 className="text-2xl font-demiBold w-[90%] mx-auto mt-20 mb-9">
+      <h3 className="2xl:text-2xl sm:text-lg md:text-xl xl:text-2xl font-demiBold w-[90%] mx-auto 2xl:mt-20  mb-9 sm:mt-5 ">
         گزارش تصویری از روند تور :
       </h3>
 
@@ -53,8 +53,8 @@ const TourProgressSwiper: React.FC = () => {
             <SwiperSlide className="w-[30%] h-[495px]  mx-auto relative ml-2">
               <img src={item.imageSrc} alt="" />
               <div className="mt-7">
-                <span className="text-[22px] font-demiBold">{item.day}</span>
-                <p className="mt-7 text-xl font-regular leading-[30px]">{item.describtion}</p>
+                <span className="2xl:text-[22px] font-demiBold sm:text-sm md:text-base xl:text-lg">{item.day}</span>
+                <p className="2xl:mt-7 sm:mt-2 2xl:text-xl sm:text-xs md:text-base xl:text-lg font-regular leading-[30px] ">{item.describtion}</p>
               </div>
             </SwiperSlide>
           );
