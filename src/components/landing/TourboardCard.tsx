@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import Link from "next/link";
 
 type Props = {
   imageSrc: string;
@@ -28,6 +29,7 @@ const TourboardCard: React.FC<Props> = ({
       key={key}
     >
       <img src={imageSrc} alt="" />
+      <Link href={"/detailspage"}>
       <Button
         bgColor="bg-[#DDFFF8]"
         titleBtn="رزرو"
@@ -36,6 +38,7 @@ const TourboardCard: React.FC<Props> = ({
         borderRadius="rounded-md"
         padding="xl:py-2 xl:px-8 sm:px-3 sm:py-1 lg:py-2 lg:px-6 "
       />
+      </Link>
       <svg
         width="28"
         height="29"
