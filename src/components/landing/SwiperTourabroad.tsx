@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation"; 
 import { Navigation } from "swiper/modules"; 
 import TourboardCard from "./TourboardCard";
+import Link from "next/link";
 
 
 const CardSlider = [ 
@@ -70,12 +71,12 @@ const SwiperTouraboard: React.FC = () => {
         <h3 className="xl:text-[28px] font-medium sm:text-lg md:text-[22px] lg:text-[24px] 2xl:text-[28px]  ">
         تورهای خارج از کشور رو دیدی ؟
         </h3>
-        <a
-          href=""
+        <Link
+          href="/ShowList"
           className="flex flex-row justify-around items-center xl:text-lg 2xl:text-lg sm:text-xs lg:text-base  font-regular xl:w-[12%] 2xl:w-[12%]  text-[#01A657]"
         >
           مشاهده بیشتر
-        </a>
+        </Link>
       </div>
       <Swiper
         slidesPerView={2.6}

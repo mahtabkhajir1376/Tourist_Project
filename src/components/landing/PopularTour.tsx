@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "./Button";
-import Percent from "./Percent";
-
+import Link from "next/link";
 
 
 type Props ={
@@ -22,6 +21,7 @@ const TourCardDiscount: React.FC<Props> = ({imageSrc,tourTitle,tourLocation,prim
   return (      
           <div className="flex flex-col justify-between items-center xl:px-4 sm:px-1 " key={key}>
           <img src={imageSrc} alt=""  />
+          <Link href={"/detailspage"}>
           <Button
             bgColor="bg-[#E8FCFF]"
             titleBtn="مشاهده"
@@ -30,6 +30,7 @@ const TourCardDiscount: React.FC<Props> = ({imageSrc,tourTitle,tourLocation,prim
             borderRadius="rounded-md"
             padding="xl:py-2 xl:px-8 sm:px-3 sm:py-1 lg:py-2 lg:px-6 "
           />
+          </Link>
           <svg
             width="28"
             height="29"

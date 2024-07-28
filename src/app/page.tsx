@@ -7,6 +7,7 @@ import SwiperTourabroad from "@/components/landing/SwiperTourabroad";
 import PopularTourSwiper from "@/components/landing/PopularTourSwiper";
 import SpecialdiscountSwiper from "@/components/landing/SpecialdiscountSwiper";
 import Options from "@/components/landing/Options";
+import TourGallary from "@/components/landing/TourGallary";
 
 import "./globals.css";
 
@@ -22,6 +23,7 @@ export default function Home() {
     <Options/>
     <WhatModelDoYouWant/>
     <SwiperTourabroad/> 
+    <TourGallary/>
     <Footer />
     </main>
   );

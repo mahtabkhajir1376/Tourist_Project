@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const images = [
   {
@@ -38,8 +39,8 @@ const WhatModelDoYouWant = () => {
               <h2 className="font-medium  2xl:text-[22px] xl:text-[22px] sm:text-sm lg:text-lg ">{image.title}</h2>
               <h4 className="font-light 2xl:text-base xl:text-base sm:text-[12px] lg:text-lg  mt-2">{image.subtitle}</h4>
             </div>
-            <a
-              href=""
+            <Link
+              href="/ShowList"
               className="text-[#01A657]  font-medium 2xl:text-sm xl:text-sm sm:text-[12px] lg:text-sm  flex flex-row justify-between items-center 2xl:w-[23%] xl:w-[23%] sm:w-[38%] lg:w-[26%]"
             >
               مشاهده
@@ -48,7 +49,7 @@ const WhatModelDoYouWant = () => {
                 alt=""
                 className="text-[#01A657]  2xl:w-3 xl:w-3 sm:w-3  "
               />
-            </a>
+            </Link>
           </div>
         ))}
       </div>
