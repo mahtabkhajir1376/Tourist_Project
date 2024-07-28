@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../landing/Button";
+import Link from "next/link";
 
 const BuyForm: React.FC = () => {
   return (
@@ -59,6 +60,7 @@ const BuyForm: React.FC = () => {
         <h6 className="font-light 2xl:text-base sm:text-xs md:text-sm lg:text-base">مجموع قیمت :</h6>
         <p className="w-[20%] font-regular 2xl:text-base sm:text-xs md:text-sm lg:text-base">2.750.000</p>
       </div>
+      <Link href={"/detailspage/buyform"} className="flex flex-row justify-center" >
       <Button
         bgColor="bg-[#01A657]"
         titleBtn="تایید و ادامه"
@@ -67,8 +69,9 @@ const BuyForm: React.FC = () => {
         width="w-[85.5%]"
         padding="py-[10.5px]"
         textColor="text-white"
-        margin="mx-auto"
+        margin="mx-auto my-0"
       />
+      </Link>
     </div>
   );
 };
