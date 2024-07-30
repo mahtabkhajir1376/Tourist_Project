@@ -13,7 +13,8 @@ const config: Config = {
         "header-image": "url('../../public/image/header.png')",
         "star-option":"url('../../public/svg/Shapeone.svg')",
         "lock-option":"url('../../public/svg/Shapetwo.svg')",
-        "shop-option":"url('../../public/svg/Shapethree.svg')"
+        "shop-option":"url('../../public/svg/Shapethree.svg')",
+        "wave":"url('../../public/svg/Wave.svg')"
        
       },
       fontFamily: {
