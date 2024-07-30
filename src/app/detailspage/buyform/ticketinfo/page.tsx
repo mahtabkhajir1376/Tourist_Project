@@ -49,7 +49,7 @@ const TicketPage: React.FC = () => {
         </div>
       </div>
       <Link
-        href={"/detailspage/buyform/ticketinfo/buyrecive"}
+        href={"/detailspage/buyform/ticketinfo/booking-error"}
         className="w-full mx-auto my-10  flex flex-row justify-center"
       >
         <Button
