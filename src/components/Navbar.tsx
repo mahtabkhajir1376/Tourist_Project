@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Navbar:React.FC=()=> {
   const navbarData = [
@@ -27,10 +28,10 @@ const Navbar:React.FC=()=> {
         })}
       </div>
       <div className="xl:w-[14%] sm:w-[20%] md:w-[21%] lg:w-[17%] ">
-        <a href="" className="flex flex-row justify-center items-center">
+      <Link href={"/Loginform"} className="flex flex-row justify-center" >
           <img src="/svg/person.svg" alt="" className="ml-3" />
-          ورود / ثبت نام
-        </a>
+          ورود / ثبت نام 
+        </Link>
       </div>
     </nav>
   );
