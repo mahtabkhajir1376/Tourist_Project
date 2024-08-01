@@ -16,7 +16,7 @@ const PasswordForm = () => {
         className="absolute top-5 right-5 2xl:w-32 sm:w-20 h-auto"
       />
 
-      <div className=" bg-white rounded-xl shadow-lg shadow-[#E3EbE9] 2xl:w-[36%] sm:w-[50%] w-[30%] 2xl:h-[750px] xl:h-[750px] sm:h-[500px] z-10 2xl:mt-20 sm:mt-20 md:mt-24 mb-24 lg:mt-36 xl:mt-20 flex flex-col items-center justify-center">
+      <div className=" bg-white rounded-xl shadow-lg shadow-[#E3EbE9] 2xl:w-[36%] sm:w-[50%]  2xl:h-[600px]  z-10 mt-24 mb-14 flex flex-col items-center justify-center">
         <img
           src="/image/LoginForm/BackgroundLogin1.png"
           alt="BackgroundLogin"
@@ -42,7 +42,7 @@ const PasswordForm = () => {
             />
             <img src="/svg/visibleeye.svg" alt="" />
           </label>
-          <Link href="/login-password/change-password" className="2xl:w-[50%] sm:w-[70%]  mt-[32px]">
+          <Link href="" className="2xl:w-[50%] sm:w-[70%]  mt-[32px]">
           <button className="btn btn-success text-white 2xl:text-sm md:text-[10px] lg:text-xs xl:text-sm  w-full  sm:text-[8px]  rounded-md ">
             ورود با رمز عبور
           </button>
@@ -51,10 +51,10 @@ const PasswordForm = () => {
             className="flex flex-row justify-between items-center font-medium 2xl:text-xs sm:text-[8px]  text-[#01A657] w-[50%] mt-5 
           "
           >
-            <Link href="">
+            <Link href="/login-password/change-password">
               فراموشی رمز
             </Link>
-            <Link href="">
+            <Link href="/Loginform/">
               ورود با رمز یکبار مصرف
             </Link>
           </div>
