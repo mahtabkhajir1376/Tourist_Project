@@ -1,9 +1,12 @@
 import React from 'react'
-
-function page() {
+const  ChangePassword:React.FC=()=> {
+  
   return (
-    <div>page</div>
+    <div>
+
+    </div>
   )
 }
 
-export default page
+export default ChangePassword;
+
