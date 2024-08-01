@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Login: React.FC = () => {
   return (
@@ -39,9 +40,11 @@ const Login: React.FC = () => {
           <button className="btn btn-success text-white text-sm leading-5 w-[271px] h-[42px] rounded-md mt-[32px]">
             دریافت کد
           </button>
+          <Link href="/login-password">
           <button className="btn btn-outline btn-success text-white text-sm leading-5 w-[271px] h-[42px] rounded-md mt-[11px]">
             ورود با رمز عبور
           </button>
+          </Link>
           <p className="text-[10px] text-[#000000] font-ultraLight font-iransansNumber mt-[45px]">
             ورود به سایت به معنای پذیرش قوانین است
           </p>
