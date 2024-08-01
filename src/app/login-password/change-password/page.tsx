@@ -1,5 +1,4 @@
 import React from 'react'
-
 const  ChangePassword:React.FC=()=> {
   
   return (
@@ -10,3 +9,4 @@ const  ChangePassword:React.FC=()=> {
 }
 
 export default ChangePassword;
+
