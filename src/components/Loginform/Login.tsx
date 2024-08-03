@@ -37,11 +37,17 @@ const Login: React.FC = () => {
             placeholder="شماره موبایل"
             className="input input-bordered max-w-xs w-[380px] h-[42px] rounded-md bg-[#E8EDEC4D] font-iransansNumber text-xs leading-[18px] mt-[32px]"
           />
-          <button className="btn btn-success text-white text-sm leading-5 w-[271px] h-[42px] rounded-md mt-[32px]">
+          <Link href={"/Loginform/ReceiveCode"}>
+          <button className="btn btn-success text-white text-sm leading-5 w-[271px] h-[42px] rounded-md mt-[32px] font-iransans ">
             دریافت کد
           </button>
+
+          </Link>
+          <button className="btn btn-outline btn-success text-white text-sm  font-iransansNumber leading-5 w-[271px] h-[42px] rounded-md mt-[11px]">
+
           <Link href="/login-password">
           <button className="btn btn-outline btn-success text-white text-sm leading-5 w-[271px] h-[42px] rounded-md mt-[11px]">
+
             ورود با رمز عبور
           </button>
           </Link>
