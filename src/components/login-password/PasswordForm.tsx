@@ -3,10 +3,14 @@ import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
+import { SubmitHandler } from "react-hook-form";
 
-const PasswordForm = () => {
+interface Data {
+  phone_number: string;
+  password: string;
+}
 
-
+const PasswordForm: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -15,8 +19,37 @@ const PasswordForm = () => {
     criteriaMode: "all",
   });
 
-  const onSubmitform = (data) => {
-    return console.log(data);
+  const logIn = async (data: Data) => {
+    console.log("Sending data:", data);
+
+    try {
+      const response = await fetch(
+        "http://mokhtari.v1r.ir/SafarJoo/api/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+          credentials: "include",
+        }
+      );
+
+      if (!response.ok) {
+        const errorResponse = await response.json();
+        console.error("Error response from server:", errorResponse);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const json = await response.json();
+      console.log("Token:", json.token);
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+    }
+  };
+
+  const onSubmitform: SubmitHandler<Data> = (data) => {
+    logIn(data);
   };
 
   return (
@@ -42,6 +75,8 @@ const PasswordForm = () => {
         <form
           className="flex flex-col items-center justify-center w-full py-2 bg-white rounded-b-lg"
           onSubmit={handleSubmit(onSubmitform)}
+          method="POST"
+          action="/login"
         >
           <h1 className="  font-iransansNumber font-medium 2xl:text-xl sm:text-sm md:text-base">
             ورود با رمز عبور
@@ -52,8 +87,10 @@ const PasswordForm = () => {
           <input
             type="number"
             placeholder="شماره موبایل"
-            className={`input  max-w-xs w-full sm:w-1/2 md:w-[70%] h-[42px] rounded-md ${errors.phoneNumber? "bg-red-200 border-red-600":""}  bg-[#E8EDEC4D] 2xl:text-xs sm:text-[8px] md:text-[10px]  mt-3`}
-            {...register("phoneNumber", {
+            className={`input  max-w-xs w-full sm:w-1/2 md:w-[70%] h-[42px] rounded-md ${
+              errors.phone_number ? "bg-red-200 border-red-600" : ""
+            }  bg-[#E8EDEC4D] 2xl:text-xs sm:text-[8px] md:text-[10px]  mt-3`}
+            {...register("phone_number", {
               pattern: {
                 value: /(\+98|0)?9\d{9}/,
                 message: "شماره تماس نامعتبر است",
@@ -63,23 +100,32 @@ const PasswordForm = () => {
           />
           <ErrorMessage
             errors={errors}
-            name="phoneNumber"
+            name="phone_number"
             render={({ messages }) =>
               messages &&
               Object.entries(messages).map(([type, message]) => (
-                <p key={type} className="text-xs text-[#D23D3D]  w-full max-w-xs mt-2">{message}</p>
+                <p
+                  key={type}
+                  className="text-xs text-[#D23D3D]  w-full max-w-xs mt-2"
+                >
+                  {message}
+                </p>
               ))
             }
           />
 
-          <label className={`input input-ghost  ${errors.password? "bg-red-200 border-red-600" : ""}  flex items-center gap-2 bg-[#E8EDEC4D] mt-[32px]  w-full max-w-xs sm:w-1/2 h-[42px] md:w-[70%] rounded-md`}>
+          <label
+            className={`input input-ghost  ${
+              errors.password ? "bg-red-200 border-red-600" : ""
+            }  flex items-center gap-2 bg-[#E8EDEC4D] mt-[32px]  w-full max-w-xs sm:w-1/2 h-[42px] md:w-[70%] rounded-md`}
+          >
             <input
-              type="password"
+              type="text"
               className={`grow max-w-xs rounded-md   sm:text-[8px] md:text-[10px]  2xl:text-xs bg-[#E8EDEC4D] `}
               placeholder="رمز عبور"
               {...register("password", {
                 pattern: {
-                  value: /[a-z]+[A-Z]+\d+/,
+                  value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
                   message: "رمز عبور نامعتبر است",
                 },
                 required: "این فیلد اجباری می باشد",
@@ -93,11 +139,19 @@ const PasswordForm = () => {
             render={({ messages }) =>
               messages &&
               Object.entries(messages).map(([type, message]) => (
-                <p className="text-xs text-[#D23D3D] w-full max-w-xs mt-2" key={type}>{message}</p>
+                <p
+                  className="text-xs text-[#D23D3D] w-full max-w-xs mt-2"
+                  key={type}
+                >
+                  {message}
+                </p>
               ))
             }
           />
-          <button className="btn btn-success text-white 2xl:text-sm md:text-[10px] lg:text-xs xl:text-sm 2xl:w-[50%] sm:w-[70%]  mt-[32px]  w-full  sm:text-[8px]  rounded-md ">
+          <button
+            type="submit"
+            className="btn btn-success text-white 2xl:text-sm md:text-[10px] lg:text-xs xl:text-sm 2xl:w-[50%] sm:w-[70%]  mt-[32px]  w-full  sm:text-[8px]  rounded-md "
+          >
             ورود با رمز عبور
           </button>
 
