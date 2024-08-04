@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 const Login: React.FC = () => {
   return (
@@ -9,14 +9,13 @@ const Login: React.FC = () => {
         alt="wave"
         className="absolute left-0 bottom-0 w-full h-[463px] object-cover"
       />
-      
-      
+
       <img
-        src="/image/LoginForm/Logo.png" 
+        src="/image/LoginForm/Logo.png"
         alt="logo"
-        className="absolute top-5 right-5 w-32 h-auto" 
+        className="absolute top-5 right-5 w-32 h-auto"
       />
-      
+
       <div className="bg-white rounded-xl shadow-lg w-[550px] h-[750px] z-10 mt-[57px] mb-[100px]">
         <div className="mb-6">
           <img
@@ -38,18 +37,14 @@ const Login: React.FC = () => {
             className="input input-bordered max-w-xs w-[380px] h-[42px] rounded-md bg-[#E8EDEC4D] font-iransansNumber text-xs leading-[18px] mt-[32px]"
           />
           <Link href={"/Loginform/ReceiveCode"}>
-          <button className="btn btn-success text-white text-sm leading-5 w-[271px] h-[42px] rounded-md mt-[32px] font-iransans ">
-            دریافت کد
-          </button>
-
+            <button className="btn btn-success text-white text-sm leading-5 w-[271px] h-[42px] rounded-md mt-[32px] font-iransans ">
+              دریافت کد
+            </button>
           </Link>
-          <button className="btn btn-outline btn-success text-white text-sm  font-iransansNumber leading-5 w-[271px] h-[42px] rounded-md mt-[11px]">
-
           <Link href="/login-password">
-          <button className="btn btn-outline btn-success text-white text-sm leading-5 w-[271px] h-[42px] rounded-md mt-[11px]">
-
-            ورود با رمز عبور
-          </button>
+            <button className="btn btn-outline btn-success text-white text-sm leading-5 w-[271px] h-[42px] rounded-md mt-[11px]">
+              ورود با رمز عبور
+            </button>
           </Link>
           <p className="text-[10px] text-[#000000] font-ultraLight font-iransansNumber mt-[45px]">
             ورود به سایت به معنای پذیرش قوانین است
