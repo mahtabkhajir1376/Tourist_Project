@@ -93,14 +93,14 @@ const ChangePassword = () => {
             />
             {passwordeye ? (
               <img
-                src="/svg/visibleeye.svg"
+                src="/svg/loginIcons/visibleeye.svg"
                 alt=""
                 onClick={handlepasswordeyeclick}
                 className="cursor-pointer"
               />
             ) : (
               <img
-                src="/svg/Hideeyeicon.svg"
+                src="/svg/loginIcons/Hideeyeicon.svg"
                 alt=""
                 onClick={handlepasswordeyeclick}
                 className="cursor-pointer"
@@ -148,14 +148,14 @@ const ChangePassword = () => {
             />
             {repeatpasswordeye ? (
               <img
-                src="/svg/visibleeye.svg"
+                src="/svg/loginIcons/visibleeye.svg"
                 alt=""
                 onClick={handlerepeatpasswordeyeclick}
                 className="cursor-pointer"
               />
             ) : (
               <img
-                src="/svg/Hideeyeicon.svg"
+                src="/svg/loginIcons/Hideeyeicon.svg"
                 alt=""
                 onClick={handlerepeatpasswordeyeclick}
                 className="cursor-pointer"
