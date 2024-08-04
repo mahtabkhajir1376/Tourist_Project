@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { SubmitHandler } from "react-hook-form";
@@ -11,6 +11,12 @@ interface Data {
 }
 
 const PasswordForm: React.FC = () => {
+  const [passwordeye, setpasswordeye] = useState<boolean>(false);
+
+  const handlepasswordeyeclick = () => {
+    setpasswordeye(!passwordeye);
+  };
+
   const {
     register,
     handleSubmit,
@@ -66,7 +72,7 @@ const PasswordForm: React.FC = () => {
         className="absolute top-5 right-5 2xl:w-32 sm:w-20 h-auto"
       />
 
-      <div className=" bg-white rounded-xl shadow-lg shadow-[#E3EbE9] 2xl:w-[36%] sm:w-[50%]  2xl:h-[600px]  z-10 mt-24 mb-20 flex flex-col items-center justify-center">
+      <div className=" bg-white rounded-xl shadow-lg shadow-[#E3EbE9] 2xl:w-[36%] sm:w-[50%]  2xl:h-[600px]  z-10 my-40 flex flex-col items-center justify-center">
         <img
           src="/image/LoginForm/BackgroundLogin1.png"
           alt="BackgroundLogin"
@@ -76,7 +82,6 @@ const PasswordForm: React.FC = () => {
           className="flex flex-col items-center justify-center w-full py-2 bg-white rounded-b-lg"
           onSubmit={handleSubmit(onSubmitform)}
           method="POST"
-          action="/login"
         >
           <h1 className="  font-iransansNumber font-medium 2xl:text-xl sm:text-sm md:text-base">
             ورود با رمز عبور
@@ -120,18 +125,33 @@ const PasswordForm: React.FC = () => {
             }  flex items-center gap-2 bg-[#E8EDEC4D] mt-[32px]  w-full max-w-xs sm:w-1/2 h-[42px] md:w-[70%] rounded-md`}
           >
             <input
-              type="text"
+              type={passwordeye ? "text" : "password"}
               className={`grow max-w-xs rounded-md   sm:text-[8px] md:text-[10px]  2xl:text-xs bg-[#E8EDEC4D] `}
               placeholder="رمز عبور"
               {...register("password", {
                 pattern: {
-                  value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+                  value:
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/,
                   message: "رمز عبور نامعتبر است",
                 },
                 required: "این فیلد اجباری می باشد",
               })}
             />
-            <img src="/svg/visibleeye.svg" alt="" />
+            {passwordeye ? (
+              <img
+                src="/svg/visibleeye.svg"
+                alt=""
+                onClick={handlepasswordeyeclick}
+                className="cursor-pointer"
+              />
+            ) : (
+              <img
+                src="/svg/Hideeyeicon.svg"
+                alt=""
+                onClick={handlepasswordeyeclick}
+                className="cursor-pointer"
+              />
+            )}
           </label>
           <ErrorMessage
             errors={errors}
