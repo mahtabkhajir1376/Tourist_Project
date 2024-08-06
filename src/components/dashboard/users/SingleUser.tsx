@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const SingleUser = () => {
   return (
@@ -17,7 +18,9 @@ const SingleUser = () => {
       <div className="flex flex-row justify-around items-center w-[12%]">
         <img src="/svg/dashboard/trash_icon.svg" alt="" className="w-6 h-6 cursor-pointer opacity-40 hover:opacity-100" />
         <img src="/svg/dashboard/Edit_icon.svg" alt="" className="w-6 h-6 cursor-pointer hover:opacity-100 opacity-80 " />
+        <Link href="/dashboard/users/user_info">
         <img src="/svg/loginIcons/visibleeye.svg" alt="" className="w-6 h-6 cursor-pointer hover:opacity-100 opacity-80" />
+        </Link>
       </div>
     </div>
   );
