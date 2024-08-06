@@ -1,17 +1,15 @@
-import React from 'react';
-import Dashboard from '@/components/Dashboard';
-
-
+import React from "react";
+import Dashboard from "@/components/Dashboard";
 
 export default function DashboardLayout({
-    children,
-  }: {
-    children: React.ReactNode
-  }) {
-    return(
-        <main className='flex flex-row' >
-            <Dashboard/>
-            {children}</main>
-    )
-  }
-
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+      <main className="flex flex-row bg-[#FCFCFC]">
+        <Dashboard />
+        {children}
+      </main>
+  );
+}

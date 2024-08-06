@@ -22,7 +22,7 @@ const Dashboard: React.FC = () => {
   ];
 
   return (
-    <div className="w-[20%] shadow-2xl h-[663px]  my-4 mr-11 flex flex-col justify-around items-center font-iransansNumber">
+    <div className="w-[29%] shadow-2xl h-[663px]  my-4 mr-11 flex flex-col justify-around items-center font-iransansNumber">
       <div className="bg-gradient-to-r from-[#7B4794] from-50%  to-[#01A688]  text-transparent bg-clip-text  w-full  mr-2 flex flex-row justify-start items-center text-2xl font-demiBold ">
         <img
           src="/svg/logo-new/Logo_dashboard.svg"
