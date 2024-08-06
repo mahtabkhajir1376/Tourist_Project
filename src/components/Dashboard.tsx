@@ -46,7 +46,7 @@ const Dashboard: React.FC = () => {
       </div>
       <Link
         href="/"
-        className="flex flex-row justify-start items-center w-full text-[#333333]  hover:bg-[#D8BFD829] pr-9 py-4 hover:border-l-8 hover:border-[#7B4794]  hover:rounded-l-md"
+        className="flex flex-row justify-start items-center w-full text-[#333333]  hover:bg-[#D8BFD829] pr-9 py-4 hover:border-l-8 hover:border-[#D23D3D]  hover:rounded-l-md"
       >
         <img src="/svg/dashboard/logout_icon.svg" alt="" />
         <p className="mr-5 text-base font-medium">خروج از حساب کاربری</p>
