@@ -1,132 +1,85 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import HeartCheckbox from "./LikeCheckBox";
 
 interface Card {
+  id: string;
   destination: string;
-  origin: string;
+  tour_detail: {
+    title: string;
+    description: string;
+    details: {
+      services: string;
+    };
+  };
+
   price: string;
-  comment: string;
-  person: string;
-  moreDetails: string;
-  moreThenDetails: string;
-  amountOfSatisfaction: string;
-  src: string;
+  capacity: number;
 }
 
-const cardSlider: Card[] = [
-  {
-    destination: " کمپ جنگل گیسوم ",
-    origin: " مبدا تهران ",
-    price: "قیمت :1.500.000 تومان",
-    comment: "35",
-    moreDetails: "3 شب / طبیعت گردی / کمپ / چادر ",
-    moreThenDetails: "امکانات : غذا / تورلیدر / عکاس",
-    amountOfSatisfaction: "3.2 ",
-    person: "12",
-    src: "/image/GreenMountian.png",
-  },
-  {
-    destination: " کمپ جنگل گیسوم ",
-    origin: " مبدا تهران ",
-    price: "قیمت :1.500.000 تومان",
-    comment: "35",
-    moreDetails: "3 شب / طبیعت گردی / کمپ / چادر ",
-    moreThenDetails: "امکانات : غذا / تورلیدر / عکاس",
-    person: "12",
-    amountOfSatisfaction: "3.2 ",
-    src: "/image/Road.png",
-  },
-  {
-    destination: " کمپ جنگل گیسوم ",
-    origin: " مبدا تهران ",
-    price: "قیمت :1.500.000 تومان",
-    comment: "35",
-    moreDetails: "3 شب / طبیعت گردی / کمپ / چادر ",
-    moreThenDetails: "امکانات : غذا / تورلیدر / عکاس",
-    person: "12",
-    amountOfSatisfaction: "3.2 ",
-    src: "/image/CloudJungle.png",
-  },
-];
-
 const ShowListCart: React.FC = () => {
-  const [tourdata, settourdata] = useState<object>({});
+  const [tourdata, settourdata] = useState<{ data: Card[] }>({ data: [] });
 
   useEffect(() => {
-    fetch("http://mokhtari.v1r.ir/SafarJoo/api/tour")
+    fetch("http://mokhtari.v1r.ir/SafarJoo/api/trip")
       .then((Response) => Response.json())
       .then((tourdata) => settourdata(tourdata))
       .catch((error) => console.log(error));
-  },[]);
+  }, []);
 
-console.log(tourdata)
+  console.log(tourdata.data);
 
   return (
-    <div className="flex flex-col w-[821px] h-[230px] gap-8 top-[50px] ">
-      {cardSlider.map((card, index) => (
-        <div key={index} className="bg-white p-[12px] pl-[24px] pr-[24px]">
-          <div className="flex flex-row justify-between mb-4">
-            <div className="relative flex flex-row">
-              <img
-                src={card.src}
-                alt={card.destination}
-                className="w-[280px] h-[280px] rounded-xl"
-              />
-              <img
-                src="/svg/like.svg"
-                alt="Like"
-                className="absolute top-2 left-2 w-[24px] h-[24px] cursor-pointer"
-              />
-            </div>
-            <div className="flex flex-row w-[511px] h-[231px] mb-[35px] justify-between items-center">
-              <div className="flex flex-col text-base font-medium w-[271px] h-[188px] gap-[20px] mt-[12px] mr-[15px] mb-3">
-                <p>{card.destination}</p>
-                <p>{card.moreDetails}</p>
-                <p>{card.moreThenDetails}</p>
-                <p>{card.price}</p>
-              </div>
-              <div className="flex flex-col justify-between items-end text-base font-medium  w-[135px] h-[188px] gap-[20px]  ">
-                <div className="flex flex-row items-center justify-center gap-[14px]   ">
-                  <p>{card.amountOfSatisfaction}</p>
-                  <img
-                    src="/image/iconShowlistcartStar.png"
-                    alt=""
-                    className="w-[24px] h-[24px]"
-                  />
-                </div>
-                <div className="flex flex-row items-center justify-center  gap-[14px]  ">
-                  <p>{card.comment}</p>
-                  <img
-                    src="/image/iconShowlistcartComment.png"
-                    alt=""
-                    className="w-[24px] h-[24px]"
-                  />
-                </div>
-                <div className="flex flex-row items-center justify-center gap-[14px]  ">
-                  <p>{card.person}</p>
-                  <img
-                    src="/image/iconShowlistcartPerson.png"
-                    alt=""
-                    className="w-[24px] h-[24px]"
-                  />
-                </div>
-                <div className="flex flex-row items-center justify-center gap-[14px]   ">
-                  <p>{card.origin}</p>
-                  <img
-                    src="/image/iconShowlistcartLocation.png"
-                    alt=""
-                    className="w-[24px] h-[24px]"
-                  />
-                </div>
-                <div className=" flex flex-col mt-10 ">
-                  <button className=" bg-[#01A657] text-white rounded-md h-[42px] w-[489px]  ">
-                    {" "}
-                    مشاهده و رزرو{" "}
-                  </button>
-                </div>
+    <div className="flex flex-col w-[60%] mb-24 ">
+      {tourdata.data.map((item) => (
+        <div
+          key={item.id}
+          className="flex flex-row justify-center items-center mb-4 bg-white w-full rounded-md h-[280px]   "
+        >
+          <img
+            src="/image/CloudJungle.png"
+            alt=""
+            className=" rounded-xl py-6 pr-2 relative w-72 h-72  "
+          />
+          <HeartCheckbox position="bottom-[86px] left-11" />
+          <div className="flex flex-col justify-between items-center text-base font-medium w-full py-6 pl-7 mx-auto my-0 h-full ">
+            <div className="flex flex-row w-full justify-between items-center pb-5">
+              <p className="font-medium text-base">{item.tour_detail.title}</p>
+              <div className="flex flex-row items-center justify-between  w-[11%] ">
+                <p>3.2</p>
+                <img src="/svg/showlist/star-show-list.svg" alt="" />
               </div>
             </div>
+            <div className="flex flex-row w-full justify-between items-center pb-5">
+              <p className="font-medium text-base">
+                {item.tour_detail.description}
+              </p>
+              <div className="flex flex-row items-center  justify-between  w-[11%]  ">
+                <p>35</p>
+                <img src="/svg/showlist/chat-show-list.svg" alt="" />
+              </div>
+            </div>
+            <div className="flex flex-row w-full justify-between items-center pb-5">
+              <p className="font-medium text-base">{` امکانات : ${item.tour_detail.details.services}`}</p>
+              <div className="flex flex-row items-center  justify-between  w-[11%] ">
+                <p>{item.capacity}</p>
+                <img src="/svg/showlist/pepoul-show-list.svg" alt="" />
+              </div>
+            </div>
+            <div className="flex flex-row w-full justify-between items-center pb-5">
+              <p className="font-medium text-base">
+                {`قیمت : ${item.price}`}
+                <span className="font-medium text-xs mr-2">تومان</span>
+              </p>
+              <div className="flex flex-row items-center  justify-between  w-[20%]  ">
+                <p>مبدا : تهران</p>
+                <img src="/svg/showlist/Location-show-list.svg" alt="" />
+              </div>
+            </div>
+            <button className=" bg-[#01A657] text-white rounded-md h-[42px] w-full font-demiBold  ">
+              مشاهده و رزرو
+            </button>
           </div>
         </div>
       ))}
