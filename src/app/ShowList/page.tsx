@@ -16,7 +16,7 @@ export default function page() {
         تخفیف های ویژه
       </h1>
       <div className="flex flex-row w-[90%]  justify-between items-start mx-auto my-0 ">
-        <div className="flex flex-col  w-[35%] h-[950px] rounded-md py-8 px-6  shadow-xl shadow-[#E3EBE9]  bg-white ">
+        <div className="flex flex-col  w-[35%] h-[946px] rounded-md py-8 px-7  shadow-xl shadow-[#E3EBE9]  bg-white ">
           <Numberofpeople />
           <DateTime />
           <PriceRange />
