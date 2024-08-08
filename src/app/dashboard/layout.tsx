@@ -9,7 +9,7 @@ export default function DashboardLayout({
     children: React.ReactNode
   }) {
     return(
-        <main className='flex flex-row' >
+        <main className='flex flex-row  bg-[#F8F8F8] ' >
             <Dashboard/>
             {children}</main>
     )
