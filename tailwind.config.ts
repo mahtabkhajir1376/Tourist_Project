@@ -14,7 +14,8 @@ const config: Config = {
         "star-option":"url('../../public/svg/Shapeone.svg')",
         "lock-option":"url('../../public/svg/Shapetwo.svg')",
         "shop-option":"url('../../public/svg/Shapethree.svg')",
-        "wave":"url('../../public/svg/Wave.svg')"
+        "wave":"url('../../public/svg/Wave.svg')",
+        "uplode-file":"url('../../public/svg/dashboard/uplode_file_icon.svg')"
        
       },
       fontFamily: {
