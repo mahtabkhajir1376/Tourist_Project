@@ -8,8 +8,8 @@ type MenuItem = {
 type Menu = MenuItem[];
 
 const menu: Menu = [
-  { title: "بنر هدر", link: "" },
-  { title: "بنر اول", link: "" },
+  { title: "بنر هدر", link: "/dashboard/banners/" },
+  { title: "بنر اول", link: "/dashboard/banners/first_banners/" },
   { title: "بنر شهر ها", link: "" },
 ];
 

@@ -1,31 +1,25 @@
 import React from "react";
-import Header from "@/components/dashboard/banners/Header";
+import Category from "@/components/dashboard/banners/first_banners/Category";
 import UplodeBanner from "@/components/dashboard/banners/UplodeBanner";
-import GuideForUplodeImage from "@/components/dashboard/banners/GuideForUplodeImage";
+import Header from "@/components/dashboard/banners/Header";
 import Button from "@/components/landing/Button";
 
-function page() {
-  const Banner = [
-    "بنر شماره 1",
-    "بنر شماره 2",
-    "بنر شماره 3",
-    "بنر شماره 4",
-    "بنر شماره 5",
-    "بنر شماره 6",
-    "بنر شماره 7",
-    "بنر شماره 8",
-    "بنر شماره 9",
-  ];
+const banner = ["بنر شماره 1", "بنر شماره 2", "بنر شماره 3"];
 
+function page() {
   return (
     <div className="w-full">
       <Header />
-      <div className=" flex flex-row flex-wrap justify-between items-center w-[88.5%] my-9 mx-auto ">
-        {Banner.map((item) => {
-          return <UplodeBanner numberOfimage={item} />;
-        })}
+      <div className="flex flex-col my-4">
+      {banner.map((item) => {
+        return (
+          <div className="flex flex-row w-[88.5%] mx-auto my-3 justify-between items-center ">
+            <UplodeBanner numberOfimage={item} />
+            <Category />
+          </div>
+        );
+      })}
       </div>
-      <GuideForUplodeImage />
       <div className="flex flex-row justify-end w-[88.5%] mx-auto my-0 ">
         <Button
           bgColor="bg-[#01A657]"
