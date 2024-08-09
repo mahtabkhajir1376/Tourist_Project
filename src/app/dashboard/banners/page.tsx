@@ -22,7 +22,7 @@ function page() {
       <Header />
       <div className=" flex flex-row flex-wrap justify-between items-center w-[88.5%] my-9 mx-auto ">
         {Banner.map((item) => {
-          return <UplodeBanner numberOfimage={item} />;
+          return <UplodeBanner numberOfimage={item} margin="mb-5" width="w-[30%]" />;
         })}
       </div>
       <GuideForUplodeImage />

@@ -11,10 +11,10 @@ function page() {
     <div className="w-full">
       <Header />
       <div className="flex flex-col my-4">
-      {banner.map((item) => {
+      {banner.map((item,index) => {
         return (
-          <div className="flex flex-row w-[88.5%] mx-auto my-3 justify-between items-center ">
-            <UplodeBanner numberOfimage={item} />
+          <div   key={index} className="flex flex-row w-[88.5%] mx-auto my-3 justify-between items-center ">
+            <UplodeBanner numberOfimage={item} margin="mb-5" width="w-[30%]" />
             <Category />
           </div>
         );
