@@ -19,8 +19,8 @@ const otherCategories: RadioOption[] = [
 
 const TravelCategory: React.FC = () => {  
   return (  
-    <div className="mt-20  h-auto   font-iransansNumber ">  
-      <h2 className="font-iransans medium text-base mb-4"> دسته بندی ها : </h2>  
+    <div className="mt-24  h-auto   font-iransansNumber ">  
+      <h2 className=" font-medium text-base mb-5 "> دسته بندی ها : </h2>  
       <div className="grid grid-cols-2 sm:grid-cols-3  font-iransansNumber ">  
         {categories.map((category) => (  
           <label key={category.value} className="flex items-center text-base font-medium leading-6  "> 

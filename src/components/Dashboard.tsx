@@ -22,7 +22,7 @@ const Dashboard: React.FC = () => {
   ];
 
   return (
-    <div className="w-[20%] shadow-2xl h-[663px]  my-4 mr-11 flex flex-col justify-around items-center font-iransansNumber">
+    <div className="w-[29%] shadow-2xl h-[663px]  my-4 mr-11 flex flex-col justify-around items-center font-iransansNumber">
       <div className="bg-gradient-to-r from-[#7B4794] from-50%  to-[#01A688]  text-transparent bg-clip-text  w-full  mr-2 flex flex-row justify-start items-center text-2xl font-demiBold ">
         <img
           src="/svg/logo-new/Logo_dashboard.svg"
@@ -46,7 +46,7 @@ const Dashboard: React.FC = () => {
       </div>
       <Link
         href="/"
-        className="flex flex-row justify-start items-center w-full text-[#333333]  hover:bg-[#D8BFD829] pr-9 py-4 hover:border-l-8 hover:border-[#7B4794]  hover:rounded-l-md"
+        className="flex flex-row justify-start items-center w-full text-[#333333]  hover:bg-[#D8BFD829] pr-9 py-4 hover:border-l-8 hover:border-[#D23D3D]  hover:rounded-l-md"
       >
         <img src="/svg/dashboard/logout_icon.svg" alt="" />
         <p className="mr-5 text-base font-medium">خروج از حساب کاربری</p>
