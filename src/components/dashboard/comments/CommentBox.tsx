@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const CommentBox: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const CommentBox: React.FC = () => {
           بسیار ضعیف بود.
         </p>
         <div className="flex flex-row justify-between items-center w-full">
-          <a href="" className="text-xs font-regular text-[#01A657]">مشاهده تور</a>
+          <Link href="/dashboard/comments/tourinfo" className="text-xs font-regular text-[#01A657]">مشاهده تور</Link>
           <div className="flex flex-row justify-between items-center w-[18%]" >
             <img src="/svg/dashboard/trash_icon.svg" alt="" className=" cursor-pointer opacity-40 hover:opacity-100" />
             <img src="/svg/dashboard/cross_icon.svg" alt="" className=" cursor-pointer opacity-40 hover:opacity-100" />
