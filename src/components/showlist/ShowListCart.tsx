@@ -6,9 +6,11 @@ import HeartCheckbox from "./LikeCheckBox";
 interface Card {
   id: string;
   destination: string;
+  meal:string;
   tour_detail: {
     title: string;
     description: string;
+   
     details: {
       services: string;
     };
@@ -61,7 +63,7 @@ const ShowListCart: React.FC = () => {
               </div>
             </div>
             <div className="flex flex-row w-full justify-between items-center pb-5">
-              <p className="font-medium text-base">{` امکانات : ${item.tour_detail.details.services}`}</p>
+              <p className="font-medium text-base">{` امکانات : ${item.meal}`}</p>
               <div className="flex flex-row items-center  justify-between  w-[11%] ">
                 <p>{item.capacity}</p>
                 <img src="/svg/showlist/pepoul-show-list.svg" alt="" />
