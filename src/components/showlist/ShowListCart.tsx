@@ -46,7 +46,7 @@ const ShowListCart: React.FC = () => {
           />
           <HeartCheckbox position="bottom-[86px] left-11" />
           <div className="flex flex-col justify-between items-center text-base font-medium w-full py-6 pl-7 mx-auto my-0 h-full ">
-            <div className="flex flex-row w-full justify-between items-center pb-5">
+            <div className="flex flex-row w-full justify-between items-center pb-5i-login">
               <p className="font-medium text-base">{item.tour_detail.title}</p>
               <div className="flex flex-row items-center justify-between  w-[11%] ">
                 <p>3.2</p>

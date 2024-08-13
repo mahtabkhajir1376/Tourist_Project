@@ -6,8 +6,8 @@ const LawsandDocuments: React.FC = () => {
       <div className="mb-[78px] mt-40 font-iransansNumber">
         <h3 className="font-medium 2xl:text-[32px] mb-8  sm:text-lg lg:text-xl ">مدارک مورد نیاز :</h3>
         <li className="2xl:text-[22px] sm:text-sm  lg:text-base font-regular   2xl:leading-[56px] sm:leading-[30px] lg:leading-[40px]">
-          اسکن رنگی پاسپورت مسافر با حداقل 7 ماه اعتبار
-        </li>
+`          اسکن رنگی پاسپورت مسافر با حداقل 7 ماه اعتبار
+`        </li>
         <li className=" font-regular  leading-[56px] 2xl:text-[22px] sm:text-sm 2xl:leading-[56px] sm:leading-[30px]  lg:leading-[40px] ">
           بیمه مسافرتی حداقل 30,000 دلار به تعداد روزهای سفر 
         </li>
