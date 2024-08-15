@@ -5,9 +5,9 @@ import Pagination from "@/components/dashboard/comments/Pagination";
 
 function page() {
   return (
-    <div className="w-full">
+    <div className="w-full relative h-lvh  overflow-y-auto">
       <Header />
-      <div className="flex flex-row  flex-wrap justify-between items-center 2xl:w-[88%] md:w-[95%] mx-auto my-4">
+      <div className="flex flex-row  flex-wrap justify-between items-center 2xl:w-[88%] md:w-[88%] xl:w-[88%] mx-auto my-4">
         <CommentBox />
         <CommentBox />
         <CommentBox />

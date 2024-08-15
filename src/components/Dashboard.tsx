@@ -28,7 +28,7 @@ const Dashboard: React.FC = () => {
 
 
   return (
-    <div className={`2xl:w-[25%] md:w-[26%] sm:w-[27%] lg:w-[23%] xl:w-[20%] shadow-2xl 2xl:h-[663px] xl:h-[663px] sm:h-[520px]  my-4 mr-4 flex flex-col justify-around items-center font-iransansNumber   sticky top-0 h-screen`}>
+    <div className={`2xl:w-[25%] md:w-[30%] sm:w-[27%] lg:w-[27%] xl:w-[20%] shadow-2xl 2xl:h-[663px] xl:h-[663px] sm:h-[520px]  my-4 mr-4 flex flex-col justify-around items-center font-iransansNumber   sticky top-0 h-screen`}>
      <div className="bg-gradient-to-r from-[#7B4794] from-50%  to-[#01A688]  text-transparent bg-clip-text  w-full  my-2 mr-2 flex flex-row justify-start items-center 2xl:text-2xl xl:text-2xl lg:text-lg font-demiBold ">
         <img
           src="/svg/logo-new/Logo_dashboard.svg"

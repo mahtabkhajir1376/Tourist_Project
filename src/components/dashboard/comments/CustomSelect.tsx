@@ -10,7 +10,6 @@ const customStyles = {
       boxShadow: "none",
       padding: "8px 16px",
       width: "full",
-      borderRadius: "12px",
   
       "&:hover": {
         borderColor: "#85d2ad",
@@ -28,6 +27,7 @@ const customStyles = {
   };
 
   const options = [
+    { value: "All option", label: "همه موارد" },
     { value: "Awaiting review", label: "در انتظار بررسی" },
     { value: "accepted", label: " تائید شده" },
     { value: "not_confirmed", label: "تائید نشده" },
@@ -40,7 +40,7 @@ const customStyles = {
         <img
           src="/svg/arrowdown.svg"
           alt=""
-          className="block cursor-pointer w-6 h-6"
+          className="block cursor-pointer 2xl:w-6 2xl:h-6 md:w-3 md:h-3 lg:w-5 lg:h-5 "
         />
       </components.DropdownIndicator>
     );
@@ -56,10 +56,10 @@ function CustomSelect() {
     styles={customStyles}
     components={{ DropdownIndicator, IndicatorSeparator: null }}
     defaultValue={options[0]}
-    className="shadow-md"
+    className="shadow-md  2xl:w-[20%] md:w-[21%] md:px-2 2xl:text-sm md:text-[10px] lg:text-xs xl:text-sm bg-white rounded-xl "
   />
 
   )
 }
 
-export default CustomSelect
+export default CustomSelect;
