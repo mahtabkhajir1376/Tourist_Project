@@ -20,16 +20,16 @@ const options = [
 
 export default function Option() {
   return (
-    <div className='w-[321px] h-[348px] font-iransansNumber'>
+    <div className='w-[30%] h-[350px]  font-iransansNumber flex flex-col justify-between items-center'>
       {options.map((option, index) => (
-        <div key={index} className='bg-white w-[320px] h-[100px] rounded-xl flex items-center pr-[24px] pl-[24px] gap-[24px] mb-[22px]'>
-          <img src={option.imgSrc} alt={option.title} className='w-[40px] h-[40px] mr-[16px]' />
-          <div>
+        <div key={index} className='bg-white w-full py-4  rounded-xl flex flex-row  items-center px-6 '>
+          <img src={option.imgSrc} alt={option.title} className='w-10 h-10 mr-[16px]' />
+          <div className='mr-5'>
             <p className='font-regular text-sm leading-5 mb-2'>{option.title}</p>
             <p className='text-xs font-light text-[#707070]'>{option.description}</p>
           </div>
         </div>
-      ))}
+      ))} 
     </div>
   );
 }
