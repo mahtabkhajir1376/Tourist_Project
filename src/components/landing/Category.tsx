@@ -5,7 +5,7 @@ const Category: React.FC = () => {
   type data = {
     title: String;
     src: string;
-    imageHeight?: string;
+    imageHeight?:string;
   };
 
   type categoryDate = data[];
@@ -35,3 +35,10 @@ const Category: React.FC = () => {
 };
 
 export default Category;
+
+
+
+
+
+
+
