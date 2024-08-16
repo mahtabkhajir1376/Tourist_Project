@@ -14,7 +14,7 @@ const SingleUser = () => {
 
   return (
     <div
-      className="bg-white flex flex-row justify-between items-center 2xl:0w-[98%] md:w-[95%] lg:w-[97%] font-iransansNumber mx-auto my-6 rounded-md py-2 px-5 border-r-2 border-[#01A657]  cursor-pointer"
+      className="bg-white flex flex-row justify-between items-center 2xl:w-[98%] md:w-[95%] lg:w-[97%] font-iransansNumber mx-auto my-6 rounded-md py-2 px-5 border-r-2 border-[#01A657]  cursor-pointer"
       onClick={toggleModal}
     >
       <div className="flex flex-row justify-between items-center 2xl:w-[23%] md:w-[31%] lg:w-[33%]">

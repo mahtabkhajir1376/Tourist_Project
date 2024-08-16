@@ -17,13 +17,13 @@ function page() {
   return (
     <div className="w-full   relative h-lvh  overflow-y-auto  font-iransansNumber  ">
       <SearchBox />
-      <div className="flex flex-row justify-start items-center w-[80%] mx-auto my-0">
+      <div className="flex flex-row justify-start items-center 2xl:w-[80%] md:w-[80%] lg:w-[80%] xl:w-[80%] mx-auto my-0">
         <button
-          className="flex flex-row justify-center items-center bg-white w-[19%] py-4 rounded-xl"
+          className="flex flex-row justify-center items-center bg-white 2xl:w-[19%] md:w-[25%] lg:w-[20%] xl:w-[20%] 2xl:py-4 lg:py-3 md:py-2 rounded-xl"
           onClick={toggleModal}
         >
-          <img src="/svg/showlist/positive_icon.svg" alt="" />
-          <p className="mr-3 text-[#01A657] text-sm font-medium">
+          <img src="/svg/showlist/positive_icon.svg" alt="md:w-2 md:h-2 lg:w-3 lg:h-3" />
+          <p className="mr-2 text-[#01A657] 2xl:text-sm md:text-[10px] lg:text-xs font-medium">
             اضافه کردن کاربر
           </p>
         </button>
