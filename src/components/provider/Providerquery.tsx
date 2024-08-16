@@ -11,4 +11,6 @@ export const Providerquery = ({ children }: { children: ReactNode }) => {
   );
 };
 
+
 export default Providerquery;
+

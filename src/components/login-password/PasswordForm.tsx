@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { SubmitHandler } from "react-hook-form";
 
+
 interface Data {
   phone_number: string;
   password: string;
@@ -24,6 +25,12 @@ const PasswordForm: React.FC = () => {
   } = useForm({
     criteriaMode: "all",
   });
+
+
+
+
+
+
 
   const logIn = async (data: Data) => {
     console.log("Sending data:", data);
@@ -131,9 +138,9 @@ const PasswordForm: React.FC = () => {
               placeholder="رمز عبور"
               {...register("password", {
                 pattern: {
-                  value:
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/,
-                    message:" رمز عبور باید شامل حداقل یک حرف بزرگ،یک حرف کوچک،یک عدد باشد"
+                  value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/,
+                  message:
+                    " رمز عبور باید شامل حداقل یک حرف بزرگ،یک حرف کوچک،یک عدد باشد",
                 },
                 required: "این فیلد اجباری می باشد",
               })}
@@ -175,6 +182,8 @@ const PasswordForm: React.FC = () => {
           >
             ورود با رمز عبور
           </button>
+          {mutation.isError && <p>An error occurred: {mutation.error.message}</p>}
+          {mutation.isSuccess && <p>Data posted successfully!</p>}
 
           <div
             className="flex flex-row justify-between items-center font-medium 2xl:text-xs sm:text-[8px]  text-[#01A657] w-[50%] mt-5 

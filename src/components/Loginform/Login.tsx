@@ -78,7 +78,7 @@ const Login: React.FC = () => {
               دریافت کد 
             </button> 
             <Link 
-              href="/login-password" 
+              href="/login" 
               className="btn bg-white btn-success text-success outline-1 outline-success hover:text-white text-sm leading-5 w-full sm:w-[271px] h-[42px] rounded-md mt-3 sm:mt-[11px] font-iransans"
             > 
               ورود با رمز عبور 
