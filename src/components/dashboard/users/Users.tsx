@@ -3,10 +3,15 @@ import SingleUser from "./SingleUser";
 
 const Users = () => {
   return (
-    <div className="w-[80%] mx-auto my-20">
+    <div className="w-[80%] mx-auto mt-4 mb-20">
       <SingleUser />
       <SingleUser />
       <SingleUser />
+      <SingleUser />
+      <SingleUser />
+      <SingleUser />
+      <SingleUser />
+     
     </div>
   );
 };
