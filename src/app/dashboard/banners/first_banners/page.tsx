@@ -24,9 +24,9 @@ function page() {
         <Button
           bgColor="bg-[#01A657]"
           borderRadius="rounded-md"
-          fontSize="font-medium text-base font-iransansNumber "
+          fontSize="font-medium 2xl:text-sm xl:text-sm md:text-xs lg:text-sm font-iransansNumber "
           titleBtn="ثبت نهایی"
-          width="w-[29%] h-[56px]"
+          width="2xl:w-[16%] xl:w-[16%] md:w-[25%] lg:w-[23%] h-10"
           padding="px-6 py-2"
           textColor="text-white"
           margin="my-11"
