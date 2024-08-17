@@ -8,7 +8,7 @@ const banner = ["بنر شماره 1", "بنر شماره 2", "بنر شماره
 
 function page() {
   return (
-    <div className="w-full">
+    <div className="w-full  relative h-lvh  overflow-y-auto">
       <Header />
       <div className="flex flex-col my-4">
       {banner.map((item,index) => {

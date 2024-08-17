@@ -12,10 +12,10 @@ const cityCategories: RadioOption[] = [
 
 const SearchCategory: React.FC = () => {
   return (
-    <div className="flex flex-col w-[61%] shadow-md bg-white h-36 py-6 px-6 rounded-md mr-7">
+    <div className="flex flex-col 2xl:w-[61%] md:w-[90%] shadow-md bg-white h-36 py-6 px-6 rounded-md mr-7">
       <div className="flex flex-row justify-between items-center  mx-auto my-0 w-full ">
-        <h2 className=" text-base font-medium w-[32%]">شهر مورد نظر:</h2>
-        <label className=" flex-row flex  justify-between  items-center gap-2 w-[79%] h-8 shadow-md px-3 rounded-md ">
+        <h2 className=" 2xl:text-base xl:text-base md:text-[10px] lg:text-sm font-medium 2xl:w-[32%] xl:w-[32%] md:w-[23%]">شهر مورد نظر:</h2>
+        <label className=" flex-row flex  justify-between  items-center gap-2 2xl:w-[79%] xl:[59%] md:w-[79%] h-8 shadow-md px-3 rounded-md ">
           <input
             type="text"
             className=" placeholder:text-[10px] placeholder:font-thin outline-none placeholder:text-[#707070]"
@@ -29,7 +29,7 @@ const SearchCategory: React.FC = () => {
             return(
                 <label
                 key={index}
-                className="flex items-center justify-center text-base font-medium w-[17%]"
+                className="flex items-center justify-center  2xl:text-base xl:text-base md:text-[10px] lg:text-sm font-medium 2xl:w-[17%] xl:w-[17%] md:w-[17%]"
               >
                 <input
                   type="radio"
