@@ -2,7 +2,9 @@ import React from 'react'
 
 function page() {
   return (
-    <h1>Reservation</h1>
+    <div className='w-full'>
+
+  </div>
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Pagination() {
   return (
-    <div className="join font-iransansNumber my-0 w-[25%] flex flex-row justify-between items-center mx-auto ">
+    <div className="join font-iransansNumber my-0 w-[20%] flex flex-row justify-between items-center mx-auto py-4  bottom-0 right-[50%] ">
     <button className=" join-item">
       <img src="/svg/dashboard/pagination_arrow_right.svg" alt="" />
     </button>

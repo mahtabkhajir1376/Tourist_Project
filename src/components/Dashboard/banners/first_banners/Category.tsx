@@ -21,13 +21,13 @@ const Category = () => {
         return (
           <label
             key={index}
-            className="flex items-center justify-center text-base font-medium w-[17%]"
+            className="flex items-center justify-center 2xl:text-base xl:text-base md:text-[10px] lg:text-sm font-medium 2xl:w-[17%] xl:w-[17%] md:w-[17%]"
           >
             <input
               type="radio"
               value={item.value}
               name="radio-5"
-              className="radio radio-success bg-[#DDFFF8] border-none  ml-4"
+              className="radio radio-success bg-[#DDFFF8] border-none  ml-4 md:w-4 md:h-4 lg:w-6 lg:h-6"
               defaultChecked
             />
             {item.label}

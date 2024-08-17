@@ -11,12 +11,12 @@ const banner = ["بنر شماره 1", "بنر شماره 2", "بنر شماره
 
 function page() {
   return (
-    <div className='w-full'>
+    <div className='w-full  relative h-lvh  overflow-y-auto'>
         <Header/>
-        <div>
+        <div className='w-full'>
             {banner.map((item,index)=>{
                 return(
-                    <div key={index} className="flex flex-row w-[74%] mr-16 my-4 justify-start items-center ">
+                    <div key={index} className="flex flex-row 2xl:w-[74%] md:w-[87%] 2xl:mr-16 md:mr-10 my-4 justify-start items-center ">
                     <UplodeBanner numberOfimage={item} margin='m-0' width='w-[36%]' />
                     <SearchCategory />
                   </div>
@@ -30,9 +30,9 @@ function page() {
         <Button
           bgColor="bg-[#01A657]"
           borderRadius="rounded-md"
-          fontSize="font-medium text-base font-iransansNumber "
+          fontSize="font-medium 2xl:text-sm xl:text-sm md:text-xs lg:text-sm font-iransansNumber "
           titleBtn="ثبت نهایی"
-          width="w-[29%] h-[56px]"
+          width="2xl:w-[16%] xl:w-[16%] md:w-[25%] lg:w-[23%] h-10"
           padding="px-6 py-2"
           textColor="text-white"
           margin="my-11"

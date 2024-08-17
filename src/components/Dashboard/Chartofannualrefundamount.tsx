@@ -29,6 +29,7 @@ const Chartofannualrefundamount = () => {
     plugins: {
       legend: {
         position: 'top',
+        height:"200px"
       },
       title: {
         display: true,
@@ -101,10 +102,10 @@ const Chartofannualrefundamount = () => {
   const totalSum = data.datasets[0].data.reduce((a, b) => a + b, 0) + data.datasets[1].data.reduce((a, b) => a + b, 0);
 
   return (
-    <div className=" mb-5 bg-white w-[650px] h-[345px] p-4 rounded-xl mr-4">
+    <div className="  bg-white w-[62.5%] p-4 rounded-xl font-iransansNumber\">
       <div className="rounded-xl overflow-hidden">
         <Bar data={data} options={options} className='flex justify-center items-center' />
-        <p className="text-center flex justify-center items-center bg-white rounded text-xs font-medium w-full h ">
+        <p className="text-center flex justify-center items-center bg-white rounded text-xs font-medium w-full font-iransansNumber ">
           مجموع استرداد تا به امروز: {totalSum.toLocaleString()} میلیون تومان
         </p>
       </div>

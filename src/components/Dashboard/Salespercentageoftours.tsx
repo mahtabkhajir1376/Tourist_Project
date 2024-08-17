@@ -20,6 +20,7 @@ const Salespercentageoftours = () => {
         pointHoverRadius: 10,
         pointBorderColor: '#7B4794',
         pointBackgroundColor: '#7B4794',
+        width:"50%",
       },
     ],
   };
@@ -93,13 +94,15 @@ const Salespercentageoftours = () => {
   const totalSum = data.datasets[0].data.reduce((a, b) => a + b, 0);
 
   return (
-    <div className="w-[666px] h-[450px]  bg-white pr-[24px] pl-[24px]  justify-center items-center mr-32   rounded-xl  mb-8 ">
-      <div className="text-right font-medium text-black font-iransansNumber text-sm p-4">
+    <div className="w-[62.5%] h-full  bg-white px-6 pb-4   rounded-xl font-iransansNumber  ">
+      <div className="text-right font-medium text-black font-iransansNumber text-sm py-4 flex flex-row pr-3  ">
         وضعیت درآمد سالانه
       </div>
-      <Line data={data} options={options} />
+      <div className='flex flex-col justify-between h-[410px] items-center '>
+      <Line data={data} options={options}  />
       <div className="text-center mt-4 bg-white p-2 rounded  font-medium text-xs  ">
         مجموع درآمد تا به امروز: {totalSum.toLocaleString()} میلیون تومان
+      </div>
       </div>
     </div>
   );
