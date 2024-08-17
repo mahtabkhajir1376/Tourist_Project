@@ -1,6 +1,15 @@
 "use client"
 import React from 'react';
 import Select, { components } from "react-select";
+import { Options } from 'react-select';
+import { GroupBase } from 'react-select';
+
+interface Props {
+  options:{ value: string; label: string; }[]
+  defaultValue:{},
+  width:string
+
+}
 
 
 const customStyles = {
@@ -26,12 +35,7 @@ const customStyles = {
     }),
   };
 
-  const options = [
-    { value: "All option", label: "همه موارد" },
-    { value: "Awaiting review", label: "در انتظار بررسی" },
-    { value: "accepted", label: " تائید شده" },
-    { value: "not_confirmed", label: "تائید نشده" },
-  ];
+
 
 
   const DropdownIndicator = (props) => {
@@ -49,14 +53,14 @@ const customStyles = {
 
 
 
-function CustomSelect() {
+const CustomSelect:React.FC<Props>=({options,defaultValue,width})=> {
   return (
     <Select
     options={options}
     styles={customStyles}
+    defaultValue={defaultValue}
     components={{ DropdownIndicator, IndicatorSeparator: null }}
-    defaultValue={options[0]}
-    className="shadow-md  2xl:w-[20%] md:w-[21%] md:px-2 2xl:text-sm md:text-[10px] lg:text-xs xl:text-sm bg-white rounded-xl "
+    className={`shadow-md  md:px-2 2xl:text-sm md:text-[10px] lg:text-xs xl:text-sm bg-white rounded-xl ${width} `}
   />
 
   )

@@ -6,6 +6,7 @@ import persian_fa from "react-date-object/locales/persian_fa";
 import "react-multi-date-picker/styles/colors/green.css";
 import Link from "next/link";
 import CustomSelect from "./CustomSelect";
+import { Options } from "react-select";
 
 const Header: React.FC = () => {
   const [dates, setDates] = useState(null);
@@ -20,6 +21,13 @@ const Header: React.FC = () => {
   const openbackDatePicker = () => {
     backdatepickerRef.current.openCalendar();
   };
+
+  const options = [
+    { value: "All option", label: "همه موارد" },
+    { value: "Awaiting review", label: "در انتظار بررسی" },
+    { value: "accepted", label: " تائید شده" },
+    { value: "not_confirmed", label: "تائید نشده" },
+  ];
 
   return (
     <div className="font-iransansNumber 2xl:w-[88%] md:w-[88%] lg:w-[88%] xl:w-[88%] mx-auto my-8 flex flex-row justify-between items-center">
@@ -77,7 +85,7 @@ const Header: React.FC = () => {
             />
           </div>
         </div>
-        <CustomSelect />
+        <CustomSelect options={options} defaultValue={options[0]} width=" 2xl:w-[20%] md:w-[21%]" />
         <Link href="/dashboard">
           <img src="/svg/dashboard/arrow_left.svg" alt="" className="2xl:w-[38px] 2xl:h-[38px] md:w-6 md:h-6" />
         </Link>

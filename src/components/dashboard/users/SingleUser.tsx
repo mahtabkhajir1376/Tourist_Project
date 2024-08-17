@@ -4,8 +4,21 @@ import Modal from "@/components/Modal";
 import PersonalInformation from "./PersonalInformation";
 import BankInformation from "./BankInformation";
 import Button from "@/components/landing/Button";
+import CustomSelect from "../comments/CustomSelect";
 
-const SingleUser = () => {
+interface Props {
+  admin: boolean;
+}
+
+
+const options = [
+  { value: "none", label: "مشخص کردن نقش" },
+  { value: "super_admin", label: "سوپر ادمین" },
+  { value: "admin", label: "ادمین" },
+  { value: "user", label: "کاربر" },
+];
+
+const SingleUser: React.FC<Props> = ({ admin = false }) => {
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
@@ -15,9 +28,9 @@ const SingleUser = () => {
   return (
     <div
       className="bg-white flex flex-row justify-between items-center 2xl:w-[98%] md:w-[95%] lg:w-[97%] font-iransansNumber mx-auto my-6 rounded-md py-2 px-5 border-r-2 border-[#01A657]  cursor-pointer"
-      onClick={toggleModal}
+     
     >
-      <div className="flex flex-row justify-between items-center 2xl:w-[23%] md:w-[31%] lg:w-[33%]">
+      <div className="flex flex-row justify-between items-center 2xl:w-[23%] md:w-[31%] lg:w-[33%]"  onClick={toggleModal}>
         <div className="avatar">
           <div className="2xl:w-12 2xl:h-12 md:w-6 md:h-6 lg:w-10 lg:h-10 xl:w-12 xl:h-12 rounded-full">
             <img src="/image/dashboard/Profile._image.svg" />
@@ -59,6 +72,9 @@ const SingleUser = () => {
           </dialog>
         </Modal>
       </div>
+      {
+        admin ? <CustomSelect options={options} defaultValue={options[0]}/>:null
+      }
     </div>
   );
 };
