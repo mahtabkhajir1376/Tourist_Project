@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import HeartCheckbox from "./LikeCheckBox";
+import axios from 'axios';
+import { useQuery } from "@tanstack/react-query";
 
 interface Card {
   id: string;
@@ -23,14 +25,33 @@ interface Card {
 const ShowListCart: React.FC = () => {
   const [tourdata, settourdata] = useState<{ data: Card[] }>({ data: [] });
 
-  useEffect(() => {
-    fetch("http://mokhtari.v1r.ir/SafarJoo/api/trip")
-      .then((Response) => Response.json())
-      .then((tourdata) => settourdata(tourdata))
-      .catch((error) => console.log(error));
-  }, []);
 
-  console.log(tourdata.data);
+
+
+const fetchCardlist =async(): Promise<Card[]>=>{
+  const response =await axios.get<Card[]>('http://mokhtari.v1r.ir/SafarJoo/api/trip');
+  return response.data;
+}
+
+const { data, error, isLoading }  = useQuery<Card[], Error>({queryKey:['fetchCardlist'],queryFn:fetchCardlist});
+
+console.log(data)
+if (isLoading) {
+  return <div>Loading...</div>;
+}
+
+if (error) {
+  return <div>An error occurred: {error.message}</div>;
+}
+
+  // useEffect(() => {
+  //   fetch("http://mokhtari.v1r.ir/SafarJoo/api/trip")
+  //     .then((Response) => Response.json())
+  //     .then((tourdata) => settourdata(tourdata))
+  //     .catch((error) => console.log(error));
+  // }, []);
+
+  // console.log(tourdata.data);
 
   return (
     <div className="flex flex-col w-[60%] mb-24 ">
