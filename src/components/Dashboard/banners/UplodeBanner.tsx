@@ -8,10 +8,11 @@ type Props ={
   width:string,
   shadow:string,
   border:string,
-  rounded:string
+  rounded:string,
+  height?:string
 }
 
-const UplodeBanner:React.FC<Props> = ({numberOfimage,margin,width,shadow,border,rounded}) => {
+const UplodeBanner:React.FC<Props> = ({numberOfimage,margin,width,shadow,border,rounded,height}) => {
   const [selectedImage, setSelectedImage] = useState<string>("");
 
   const handleImageChange = (event:React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +26,7 @@ const UplodeBanner:React.FC<Props> = ({numberOfimage,margin,width,shadow,border,
   return (
     <label
       htmlFor="file-upload"
-      className= {`${rounded} h-full ${shadow}  ${width} ${border} bg-white  cursor-pointer flex items-center justify-center bg-uplode-file bg-no-repeat bg-center ${margin}   relative`}
+      className= {`${rounded} h-full ${shadow}  ${width} ${border} ${height}  bg-white  cursor-pointer flex items-center justify-center bg-uplode-file bg-no-repeat bg-center ${margin}   relative`}
     >
       <input
         type="file"
