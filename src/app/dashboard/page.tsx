@@ -21,7 +21,7 @@ function page() {
           <Salespercentageoftours />
           <Annualincomestatus percentage={66} />
         </div>
-        <div />
+        <div/>
       </div>
     </>
   )
