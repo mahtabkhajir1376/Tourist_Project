@@ -8,7 +8,7 @@ import Link from "next/link";
 
 function page() {
   return (
-    <div className="font-iransans  w-full relative h-lvh  overflow-y-auto bg-[#F8F8F8]">
+    <div className="font-iransansNumber  w-full relative h-lvh  overflow-y-auto bg-[#F8F8F8]">
       <ProgressBar value="w-[33%]" />
       <GallaryImageUplode />
       <UplodeStoryBanner />
