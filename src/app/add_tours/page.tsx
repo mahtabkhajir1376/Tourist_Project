@@ -9,7 +9,7 @@ import Link from "next/link";
 function page() {
   return (
     <div className="font-iransans  w-full relative h-lvh  overflow-y-auto bg-[#F8F8F8]">
-      <ProgressBar />
+      <ProgressBar value="w-[33%]" />
       <GallaryImageUplode />
       <UplodeStoryBanner />
       <div className="flex flex-row justify-between items-end w-[88.5%] mx-auto mt-28 mb-10 ">

@@ -1,7 +1,12 @@
 import React from "react";
 
 
-const ProgressBar = () => {
+interface Props {
+  value:string
+}
+
+
+const ProgressBar:React.FC<Props> = ({value}) => {
   const titles = [
     { icon: "/svg/purpuleperson.svg", title: "بارگذاری تصاویر" },
     { icon: "/svg/dashboard/calender.svg", title: "ویژگی و اطلاعات دقیق" },
@@ -26,7 +31,7 @@ const ProgressBar = () => {
           })}
         </div>
         <div className="mt-5 h-2 bg-white rounded-full w-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r w-[33%] from-[#7B4794]  to-[#01A657]"></div>
+          <div className={`h-full bg-gradient-to-r ${value} from-[#7B4794]  to-[#01A657]`}></div>
         </div>
       </div>
       <img

@@ -1,7 +1,7 @@
 import React from "react";
 import { RadioOption } from "@/components/showlist/TravelCategory";
 
-const categories: RadioOption[] = [
+export const categories: RadioOption[] = [
   { label: "بومگردی", value: "eco" },
   { label: "خارجی", value: "foreign" },
   { label: "ساحلی", value: "beach" },

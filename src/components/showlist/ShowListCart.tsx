@@ -29,7 +29,7 @@ const ShowListCart: React.FC = () => {
 
 
 const fetchCardlist =async(): Promise<Card[]>=>{
-  const response =await axios.get<Card[]>('http://mokhtari.v1r.ir/SafarJoo/api/trip');
+  const response =await axios.get<Card[]>('http://safarjoo.kavir-host-sub.ir/api/trip');
   return response.data;
 }
 
