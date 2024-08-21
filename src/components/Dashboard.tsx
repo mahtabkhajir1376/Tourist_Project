@@ -24,6 +24,18 @@ const Dashboard: React.FC = () => {
     { iconPath: "/svg/dashboard/setting_icon.svg", title: "تنظیمات",rout:"/dashboard/setting"  },
   ];
 
+const userDashboard =[
+  { iconPath: "/svg/dashboard/firstpage.svg", title: "صفحه اصلی",rout:"/" },
+  { iconPath: "/svg/dashboard/like-green.svg", title: "علاقه مندی ها",rout:"/user-dashboard/favorites" },
+  { iconPath: "/svg/dashboard/reservs.svg", title: "رزروهای من",rout:"/user-dashboard/reservation" },
+  { iconPath: "/svg/dashboard/pepoule-green.svg", title: "مسافرهای من",rout:"/user-dashboard" },
+  { iconPath: "/svg/dashboard/questions.svg", title: "سوالات متداول",rout:"/user-dashboard/common-questions" },
+  { iconPath: "/svg/dashboard/about-us.svg", title: "درباره ما",rout:"/user-dashboard/about-us" },
+
+]
+
+
+
 
 
 
@@ -38,11 +50,11 @@ const Dashboard: React.FC = () => {
         سفرجو
       </div>
       <div className=" flex flex-col justify-around items-center w-full h-[400px] mb-2 text-[#333333]  ">
-        {dashboardList.map((item) => {
+        {userDashboard.map((item) => {
           return (
             <Link
               href={item.rout}
-              className="flex flex-row justify-start items-center w-full hover:bg-[#D8BFD829] hover:border-l-8 hover:border-[#7B4794] hover:rounded-l-md pr-9 py-2"
+              className="flex flex-row justify-start items-center w-full hover:bg-[#D8BFD829] hover:border-l-8 hover:border-[#01A688] hover:rounded-l-md pr-9 py-2"
             >
               <img src={item.iconPath} alt=""  className="2xl:w-6 2xl:h-6 xl:w-6 xl:h-6 md:w-4 md:h-4 sm:w-2 sm:h-2 lg:w-5 lg:h-5"/>
               <p className="mr-6 2xl:text-sm md:text-[10px] sm:text-[8px] lg:text-xs font-medium">{item.title}</p>
