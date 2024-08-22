@@ -1,5 +1,6 @@
 import React from "react";
 import Dashboard from "@/components/Dashboard";
+import Navbar from "@/components/Navbar";
 
 export default function DashboardLayout({
   children,
@@ -7,10 +8,12 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-      <main className="flex flex-row bg-[#FCFCFC]">
-        <Dashboard />
-        {children}
-      </main>
+    <main className="flex flex-col  h-lvh ">
+      <Navbar bgColor="bg-[#F8F8F8]" />
+      <div className="flex flex-row  bg-[#F8F8F8] h-max">
+      <Dashboard />
+      {children}
+      </div>
+    </main>
   );
 }
-

@@ -31,8 +31,8 @@ const aboutusData = [
 
 function page() {
   return (
-    <div className="font-iransansNumber  w-full relative h-lvh  overflow-y-auto bg-[#F8F8F8] ">
-      <div className="w-[85.5%] bg-white max-h-max mx-auto my-4 rounded-md shadow-md mb-4">
+    <div className="font-iransansNumber  w-full  bg-[#F8F8F8] h-max   ">
+      <div className="w-[85.5%] bg-white max-h-max mx-auto my-4 rounded-md  mb-4">
         <Header />
         <div className="flex flex-row  w-[93%] justify-between items-center mx-auto my-4">
           <div className="flex flex-col 2xl:w-[60%]">
