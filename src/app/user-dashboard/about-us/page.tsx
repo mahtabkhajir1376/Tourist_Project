@@ -32,14 +32,14 @@ const aboutusData = [
 function page() {
   return (
     <div className="font-iransansNumber  w-full relative h-lvh  overflow-y-auto bg-[#F8F8F8] ">
-      <div className="w-[85.5%] bg-white h-[1994px] mx-auto my-4 rounded-md shadow-md mb-4">
+      <div className="w-[85.5%] bg-white max-h-max mx-auto my-4 rounded-md shadow-md mb-4">
         <Header />
         <div className="flex flex-row  w-[93%] justify-between items-center mx-auto my-4">
-          <div className="flex flex-col w-[60%]">
-            <h3 className="text-lg font-medium">
+          <div className="flex flex-col 2xl:w-[60%]">
+            <h3 className="font-medium 2xl:text-lg md:text-sm lg:text-base xl:text-lg">
               ما کی هستیم و چیکار میکنیم ؟
             </h3>
-            <p className="font-regular text-base leading-8 text-justify mt-12">
+            <p className="font-regular  leading-8 text-justify mt-12  2xl:text-base md:text-xs lg:text-sm xl:text-base 2xl:leading-8 md:leading-6 lg:leading-7 xl:leading-8 ">
               سلام خدمت تمام کاربران سفرجو ، عرضم به خدمت شما که سفرجو یک تیم
               بزرگ تهیه تورهای داخلی و خارجی برای مردم عزیز کشورمونه ، ما سعی
               کردیم هر توری که فکر میکنیم میتونه برای شما جذاب باشه رو جمع آوری
@@ -51,7 +51,7 @@ function page() {
           <img
             src="/image/dashboard/About us-fist.svg"
             alt=""
-            className=" h-[264px]"
+            className="  md:w-[40%] lg:w-[40%]"
           />
         </div>
         <div className="flex flex-col justify-between mt-36">

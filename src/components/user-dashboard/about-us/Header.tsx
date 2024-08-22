@@ -11,10 +11,10 @@ const Header: React.FC = () => {
         />
         سفرجو
       </div>
-      <h1 className="xl:px-12 sm:px-6 md:px-6  lg:px-6 py-2 mr-5  bg-gradient-to-r from-[#3C005A] to-[#01A688] inline-block  text-transparent bg-clip-text  font-demiBold xl:text-[32px] sm:text-xl md:text-2xl lg:text-3xl ">
+      <h1 className="xl:px-12 sm:px-6 md:px-2  lg:px-6 py-2 mr-5  bg-gradient-to-r from-[#3C005A] to-[#01A688] inline-block  text-transparent bg-clip-text  font-demiBold xl:text-[28px] sm:text-xl md:text-xl lg:text-2xl ">
         سفرجو دری به سوی رویایی ترین خاطرات (:
       </h1>
-      <span className="  bg-gradient-to-r  from-[#7B479400]  via-[#51687F58]   to-[#01A657]  via-[#7B4794]  via-[#28886B52]   to-[#01A65700]     w-[80%] h-[2px]  mx-auto mt-10">
+      <span className="  bg-gradient-to-r  from-[#7B479400]  via-[#51687F58]  via-[#01A657]  via-[#7B4794]  via-[#28886B52]   to-[#01A65700]     w-[80%] h-[2px]  mx-auto mt-10">
       </span>
     </div>
   );
