@@ -45,7 +45,7 @@ const FAQ: React.FC = () => {
       <div className="bg-white rounded-md shadow-md overflow-hidden">
         <div className="p-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="border-b border-gray-200">
+            <div key={index} className="border-b border-dashed  border-[#99DBCF]">
               <button
                 className="w-full text-left py-4 px-6 flex justify-between items-center hover:bg-gray-50 focus:outline-none"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
