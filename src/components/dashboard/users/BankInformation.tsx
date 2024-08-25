@@ -4,7 +4,7 @@ function BankInformation() {
   return (
     <div>
       <div className="my-0 mx-auto w-[88.5%]">
-        <div className="flex flex-row justify-between items-center  2xl:w-[27%] xl:w-[15%] md:w-[25%] lg:w-[20%]  mb-8 h-full">
+        <div className="flex flex-row justify-between items-center  2xl:w-[13%] xl:w-[15%] md:w-[25%] lg:w-[20%]  mb-8 h-full">
           <img src="/svg/dashboard/money_bag_icon.svg" alt="" />
           <h5 className=" font-regular 2xl:text-sm xl:text-sm md:text-xs lg:text-sm ">اطلاعات بانکی</h5>
         </div>

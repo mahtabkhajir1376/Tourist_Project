@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "@/components/user-dashboard/about-us/Header";
-import QuestionsandAnswers from "./QuestionsandAnswers";
+import QuestionsandAnswers from "../../../components/user-dashboard/about-us/QuestionsandAnswers";
 
 const aboutusData = [
   {
