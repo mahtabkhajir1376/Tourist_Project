@@ -1,8 +1,16 @@
 import React from 'react'
 
+import FAQ from '@/components/Panel/FAQ'
+
 function page() {
   return (
-    <div>common question</div>
+    <>
+    <div className='font-iransansNumber  '>
+      
+      
+    <FAQ/>
+    </div>
+    </>
   )
 }
 
