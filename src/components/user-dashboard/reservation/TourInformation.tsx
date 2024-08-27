@@ -35,7 +35,7 @@ const TourInformation: React.FC<ItemData> = ({
         <span className="text-xs font-regular text-[#01A657]">استرداد شد</span>
       ) : (
         <>
-          <Link href="" className="text-xs font-regular text-[#01A657]">
+          <Link href="/user-dashboard/reservInfo" className="text-xs font-regular text-[#01A657]">
             مشاهده جزئیات
           </Link>
           <input
