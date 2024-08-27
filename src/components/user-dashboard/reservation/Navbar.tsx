@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <div className="flex flex-row justify-between items-center w-[88%] mx-auto my-0 ">
       <div className="flex flex-row justify-between items-center bg-white w-[31%] rounded-md h-11">
-        <Link href="" className="px-5 py-3 font-medium text-sm hover:border-b-2 hover:border-[#01A657]">همه تورها</Link>
-        <Link href=""  className="px-5 py-3 font-medium text-sm  hover:border-b-2 hover:border-[#01A657]">لیست استرداد</Link>
+        <Link href="/user-dashboard/reservation" className="px-5 py-3 font-medium text-sm hover:border-b-2 hover:border-[#01A657]">همه تورها</Link>
+        <Link href="/user-dashboard/reservation/canceled"  className="px-5 py-3 font-medium text-sm  hover:border-b-2 hover:border-[#01A657]">لیست استرداد</Link>
       </div>
       <div className="w-[25%] flex flex-row justify-between items-center">
         <Button

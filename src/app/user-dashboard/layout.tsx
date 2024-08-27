@@ -10,10 +10,10 @@ export default function DashboardLayout({
   return (
     <div className="bg-[#F8F8F8]">
       <Navbar bgColor="bg-[#F8F8F8]" />
-      <main className="flex flex-row bg-[#FCFCFC]">
+      <main className=" bg-[#F8F8F8] flex flex-row">
         <Dashboard />
         {children}
       </main>
     </div>
-  );
+  )
 }
