@@ -1,8 +1,12 @@
 import React from 'react'
+import WithoutFavourite from '@/components/Panel/WithoutFavourite'
 
 function page() {
   return (
-    <div>without favorite</div>
+    <>
+      <WithoutFavourite />
+
+    </>
   )
 }
 
