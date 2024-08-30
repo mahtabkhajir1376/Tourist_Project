@@ -14,7 +14,7 @@ const Navbar: React.FC<Props> = ({ bgColor }) => {
 
   return (
     <nav
-      className={`flex flex-row items-center justify-between xl:px-8 xl:text-base xl:py-2 ${bgColor} font-semibold sm-w-full sm:px-2 sm:py-1 sm:text-sm md-text-base lg:text-lg xl:w-full md:w-full md:px-2 md:py-1 lg:px:6 lg:py-1 lg:w-full font-iransans`}
+      className={`flex flex-row items-center justify-between xl:px-8 xl:text-base xl:py-2 ${bgColor} font-semibold sm-w-full sm:px-2 sm:py-1 sm:text-sm md-text-base lg:text-lg xl:w-full md:w-full md:px-2 md:py-1 lg:px:6 lg:py-1 2xl:py-3 lg:w-full font-iransans`}
     >
       <div className="flex flex-row justify-between items-center xl:w-[35%] sm:w-[50%] md:w-[50%] lg:w-[40%]">
         <a

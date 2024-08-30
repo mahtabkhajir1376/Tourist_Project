@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { useEffect } from "react";
 import HeartCheckbox from "./LikeCheckBox";
 import axios from 'axios';
 import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 interface Card {
   id: string;
@@ -29,13 +29,14 @@ const ShowListCart: React.FC = () => {
 
 
 const fetchCardlist =async(): Promise<Card[]>=>{
-  const response =await axios.get<Card[]>('http://safarjoo.kavir-host-sub.ir/api/trip');
+  const response =await axios.get<Card[]>('http://mohammad-mokhtari.ir/safarjoo/api/trip');
   return response.data;
 }
 
 const { data, error, isLoading }  = useQuery<Card[], Error>({queryKey:['fetchCardlist'],queryFn:fetchCardlist});
 
 console.log(data)
+
 if (isLoading) {
   return <div>Loading...</div>;
 }
@@ -44,18 +45,11 @@ if (error) {
   return <div>An error occurred: {error.message}</div>;
 }
 
-  // useEffect(() => {
-  //   fetch("http://mokhtari.v1r.ir/SafarJoo/api/trip")
-  //     .then((Response) => Response.json())
-  //     .then((tourdata) => settourdata(tourdata))
-  //     .catch((error) => console.log(error));
-  // }, []);
 
-  // console.log(tourdata.data);
 
   return (
     <div className="flex flex-col w-[60%] mb-24 ">
-      {tourdata.data.map((item) => (
+      {data.data.map((item) => (
         <div
           key={item.id}
           className="flex flex-row justify-center items-center mb-4 bg-white w-full rounded-md h-[280px]   "
