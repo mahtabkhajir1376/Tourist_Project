@@ -8,12 +8,12 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <Navbar bgColor="bg-[#FcFcFc]" />
-      <main className="flex flex-row bg-[#FCFCFC]">
+    <div className="bg-[#F8F8F8]">
+      <Navbar bgColor="bg-[#F8F8F8]" />
+      <main className=" bg-[#F8F8F8] flex flex-row">
         <Dashboard />
         {children}
       </main>
-    </>
-  );
+    </div>
+  )
 }

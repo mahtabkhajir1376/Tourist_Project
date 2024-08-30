@@ -22,7 +22,7 @@ function BuyRecive() {
           className="xl:absolute xl:top-[80%] xl:left-[32%]  "
         />
       </div>
-      <TicketCard />
+      <TicketCard width="2xl:w-[67%] sm:w-[70%]" margin="mt-20 mb-16" shadowBox="shadow-2xl" />
       <Link
       href={""}
         className="w-full mx-auto my-10  flex flex-row justify-center "

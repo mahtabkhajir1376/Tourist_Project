@@ -4,7 +4,14 @@ import TicketInformation from "./TicketInfo";
 
 type ListofTicketInformation = Ticket[];
 
-const TicketCard = () => {
+interface Props {
+  width:string,
+  margin:string,
+  shadowBox:string,
+  bgColor?:string
+}
+
+const TicketCard:React.FC<Props> = ({width,margin,shadowBox,bgColor}) => {
   const listofTicketInformation: ListofTicketInformation = [
     {
       title: "نام تور :",
@@ -18,7 +25,7 @@ const TicketCard = () => {
   ];
 
   return (
-    <div className=" 2xl:w-[67%] sm:w-[70%] mx-auto mt-20 mb-16 shadow-2xl   h-[376px] rounded-xl grid grid-cols-3  2xl:px-16 xl:px-16 py-10 sm:px-8">
+    <div className={`${width} mx-auto ${margin} ${shadowBox} ${bgColor}   h-[376px] rounded-xl grid grid-cols-3  2xl:px-16 xl:px-16 py-10 sm:px-8`}>
       <div className=" col-span-1 py-4 border-l-2 border-dashed 2xl:pl-16 sm:pl-5 xl:pl-16  ">
         <div
           className={`flex flex-row justify-between items-center font-iransansNumber mb-7`}
