@@ -4,7 +4,13 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { SubmitHandler } from "react-hook-form";
-
+import axios from "axios";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { setToken } from "@/features/tokenSlice";
+import { useDispatch } from "react-redux";
+import { setuserInfo } from "@/features/tokenSlice";
+import { useSelector } from "react-redux";
+import { useRouter } from 'next/navigation';
 
 interface Data {
   phone_number: string;
@@ -13,6 +19,54 @@ interface Data {
 
 const PasswordForm: React.FC = () => {
   const [passwordeye, setpasswordeye] = useState<boolean>(false);
+  const [credentials, setCredentials] = useState<Data>({
+    phone_number: "",
+    password: "",
+  });
+  const token = useSelector((state) => state.auth.token);
+
+  const router = useRouter();
+
+
+  const dispatch = useDispatch();
+
+  const tokenFetch = useMutation({
+    mutationFn: (credentials) => {
+      return axios
+        .post("http://mohammad-mokhtari.ir/safarjoo/api/login", credentials, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          console.log("Response:", response.data);
+          return response.data;
+        })
+        .catch((error) => {
+          console.error(
+            "Error:",
+            error.response ? error.response.data : error.message
+          );
+          throw error;
+        });
+    },
+    onSuccess: (data) => {
+      dispatch(setToken(data.token));
+      dispatch(setuserInfo({
+        firstName: data.first_name,
+        lastName: data.last_name,
+        role: data.role,
+      })); 
+      router.push('/');
+    },
+  });
+
+
+
+
+const handleLogin = () => {
+  tokenFetch.mutate(credentials);
+};
 
   const handlepasswordeyeclick = () => {
     setpasswordeye(!passwordeye);
@@ -26,44 +80,8 @@ const PasswordForm: React.FC = () => {
     criteriaMode: "all",
   });
 
-
-
-
-
-
-
-  const logIn = async (data: Data) => {
-    console.log("Sending data:", data);
-
-    try {
-      const response = await fetch(
-        "http://mokhtari.v1r.ir/SafarJoo/api/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-          },
-          body: JSON.stringify(data),
-          credentials: "include",
-        }
-      );
-
-      if (!response.ok) {
-        const errorResponse = await response.json();
-        console.error("Error response from server:", errorResponse);
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const json = await response.json();
-      console.log("Token:", json.token);
-    } catch (error) {
-      console.error("There was a problem with the fetch operation:", error);
-    }
-  };
-
   const onSubmitform: SubmitHandler<Data> = (data) => {
-    logIn(data);
+    console.log(data);
   };
 
   return (
@@ -97,6 +115,7 @@ const PasswordForm: React.FC = () => {
           <h4 className="font-iransansNumber font-ultraLight 2xl:text-[10px] sm:text-[8px] md:text-[10px] mt-[12px]">
             سلام! برای ورود به سفر‌جو شماره موبایل یا ایمیل خود را وارد کنید.
           </h4>
+
           <input
             type="number"
             placeholder="شماره موبایل"
@@ -110,6 +129,10 @@ const PasswordForm: React.FC = () => {
               },
               required: "این فیلد اجباری می باشد",
             })}
+            value={credentials.phone_number}
+            onChange={(e) =>
+              setCredentials({ ...credentials, phone_number: e.target.value })
+            }
           />
           <ErrorMessage
             errors={errors}
@@ -144,6 +167,10 @@ const PasswordForm: React.FC = () => {
                 },
                 required: "این فیلد اجباری می باشد",
               })}
+              value={credentials.password}
+              onChange={(e) =>
+                setCredentials({ ...credentials, password: e.target.value })
+              }
             />
             {passwordeye ? (
               <img
@@ -179,17 +206,16 @@ const PasswordForm: React.FC = () => {
           <button
             type="submit"
             className="btn btn-success text-white 2xl:text-sm md:text-[10px] lg:text-xs xl:text-sm 2xl:w-[50%] sm:w-[70%]  mt-[32px]  w-full  sm:text-[8px]  rounded-md "
+            onClick={handleLogin}
           >
             ورود با رمز عبور
           </button>
-          {mutation.isError && <p>An error occurred: {mutation.error.message}</p>}
-          {mutation.isSuccess && <p>Data posted successfully!</p>}
 
           <div
             className="flex flex-row justify-between items-center font-medium 2xl:text-xs sm:text-[8px]  text-[#01A657] w-[50%] mt-5 
           "
           >
-            <Link href="/login-password/change-password">فراموشی رمز</Link>
+            <Link href="/login/change-password">فراموشی رمز</Link>
             <Link href="/Loginform/">ورود با رمز یکبار مصرف</Link>
           </div>
           <p className="2xl:text-[10px] sm:text-[8px] text-[#000000] font-ultraLight mt-4  md:text-[10px] py-2 ">

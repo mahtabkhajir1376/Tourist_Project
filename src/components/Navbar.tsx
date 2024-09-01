@@ -1,12 +1,19 @@
-"use client"
+"use client";
 import React from "react";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+
 
 type Props = {
   bgColor: string;
 };
 
 const Navbar: React.FC<Props> = ({ bgColor }) => {
+  const token = useSelector((state) => state.auth.token);
+  const userInfo = useSelector((state) => state.auth?.userInfo);
+
+  console.log(token);
+
   const navbarData = [
     { title: "پیام ها", src: "/svg/bell.svg", href: "/messages" },
     { title: "پشتیبانی", src: "/svg/Iconly.svg", href: "/support" },
@@ -21,22 +28,41 @@ const Navbar: React.FC<Props> = ({ bgColor }) => {
           href=""
           className="bg-gradient-to-r from-[#7B4794] to-[#01A688] text-transparent bg-clip-text flex flex-row justify-center items-center text-2xl font-iransansNumber font-demiBold"
         >
-          <img src="/svg/logo-new/Logo_dashboard.svg" className="w-8 m-2" alt="Logo" />
+          <img
+            src="/svg/logo-new/Logo_dashboard.svg"
+            className="w-8 m-2"
+            alt="Logo"
+          />
           سفرجو
         </a>
 
         {navbarData.map((item, index) => (
-          <Link href={item.href} key={index} className="flex flex-row justify-center items-center">
-            <img src={item.src} alt={item.title} className="xl:ml-2 sm:ml-1 md:ml-1 lg:ml-1 w-5 h-5" />
+          <Link
+            href={item.href}
+            key={index}
+            className="flex flex-row justify-center items-center"
+          >
+            <img
+              src={item.src}
+              alt={item.title}
+              className="xl:ml-2 sm:ml-1 md:ml-1 lg:ml-1 w-5 h-5"
+            />
             {item.title}
           </Link>
         ))}
       </div>
       <div className="xl:w-[14%] sm:w-[20%] md:w-[21%] lg:w-[17%]">
-        <Link href="/Loginform" className="flex flex-row justify-center">
-          <img src="/svg/person.svg" alt="Person" className="ml-3 w-5 h-5" />
-          ورود / ثبت نام
-        </Link>
+        {token ? (
+          <div className="flex flex-row justify-center">
+            <img src="/svg/person.svg" alt="Person" className="ml-3 w-5 h-5" />
+            {userInfo?.firstName} {userInfo.lastName}
+          </div>
+        ) : (
+          <Link href="/Loginform" className="flex flex-row justify-center">
+            <img src="/svg/person.svg" alt="Person" className="ml-3 w-5 h-5" />
+            ورود و ثبت نام
+          </Link>
+        )}
       </div>
     </nav>
   );
