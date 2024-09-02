@@ -5,76 +5,82 @@ import PopularTour from "./PopularTour";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { Card } from "../showlist/ShowListCart";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
+
+
 type Data = {
-  imageSrc: string;
-  title: string;
-  tourLocation: string;
-  primaryTourprice: number;
-  discountedPrice: number;
-  tourRate: number;
-  tourComments: number;
+  data:TourItem [];
+  links: {};
+  meta: {};
+};
+
+type TourItem = {
+  id: number;
+  tour_detail: {
+    id: number;
+    title: string;
+    description: string;
+    transport: string;
+    city_id: string;
+    stay_class: string;
+    details: {
+      services: string;
+      stay_details: string;
+      documents: string;
+      rules: string;
+    };
+    categories: [
+      {
+        id: number;
+        title: string;
+      }
+    ];
+    city: {
+      id: number;
+      city_name: string;
+    };
+    main_image: [];
+    additional_images: [];
+    tour_journey: [];
+  };
+  price: string;
+  discount_price: string | null;
+  capacity: string;
+  start_at: string;
+  end_at: string;
+  meal: number;
+  recommended: string;
+  popular: string;
 };
 
 type DataDiscount = Data[];
 
-const dataDiscount: DataDiscount = [
-  {
-    imageSrc: "/image/Imagecard.jpg",
-    title: "گلاب گیری کاشان / 3 روزه",
-    tourLocation: "تهران",
-    primaryTourprice: 2.75,
-    discountedPrice: 2000.0,
-    tourRate: 4.41,
-    tourComments: 136,
-  },
-  {
-    imageSrc: "/image/Imagecard2.svg",
-    title: "گلاب گیری کاشان / 3 روزه",
-    tourLocation: "تهران",
-    primaryTourprice: 2.75,
-    discountedPrice: 2000.0,
-    tourRate: 4.41,
-    tourComments: 136,
-  },
-  {
-    imageSrc: "/image/Imagecard3.svg",
-    title: "گلاب گیری کاشان / 3 روزه",
-    tourLocation: "تهران",
-    primaryTourprice: 2.75,
-    discountedPrice: 2000.0,
-    tourRate: 4.41,
-    tourComments: 136,
-  },
-];
 
 
+const fetchPopularTour = async (popular: boolean): Promise<Data[]> => {
+  const response = await axios.get<Data[]>(
+    "http://mohammad-mokhtari.ir/safarjoo/api/trip",
+    {
+      params: {
+        popular,
+      },
+    }
+  );
+  return response.data;
+};
 
 const SpecialdiscountSwiper: React.FC = () => {
+  const popular = true;
 
-
-  const fetchPopularTour = async (): Promise<Card[]> => {
-    const response = await axios.get<Card[]>(
-      "http://mohammad-mokhtari.ir/safarjoo/api/trip/2"
-    );
-    return response.data;
-  
-  };
-  
-  const { data, error, isLoading } = useQuery<Card[], Error>({
-    queryKey: ["fetchPopularTour"],
-    queryFn: fetchPopularTour ,
+  const { data, error, isLoading } = useQuery<Data[], Error>({
+    queryKey: ["fetchPopularTour", popular],
+    queryFn: () => fetchPopularTour(popular),
   });
-  
-  console.log(data)
 
 
-
-
-
+  const popularToursArray:TourItem[] = data?.data;
 
   return (
     <>
@@ -89,18 +95,18 @@ const SpecialdiscountSwiper: React.FC = () => {
         modules={[Navigation]}
         className="mySwiper w-[90%] mx-auto mb-24"
       >
-        {dataDiscount.map((item, index) => {
+        {popularToursArray?.map((item, index) => {
           return (
             <SwiperSlide className="w-[30%] h-[473px] my-10 mx-auto relative">
               <PopularTour
                 key={index}
-                imageSrc={item.imageSrc}
-                tourTitle={item.title}
-                tourRate={item.tourRate}
-                tourComments={item.tourComments}
-                discountedPrice={item.discountedPrice}
-                primaryTourprice={item.primaryTourprice}
-                tourLocation={item.tourLocation}
+                // imageSrc={item.tour_detail.main_image[0]}
+                tourTitle={item.tour_detail.description}
+                // tourRate={item.tourRate}
+                // tourComments={item.tourComments}
+                discountedPrice={item.discount_price}
+                primaryTourprice={item.price}
+                tourLocation={item.tour_detail.city.city_name}
               />
             </SwiperSlide>
           );

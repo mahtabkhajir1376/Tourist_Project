@@ -4,25 +4,32 @@ import SingleCategory from "./SingleCategory";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
+export type Data = {
+  success: string;
+  message: string;
+  data: item[];
+};
+type item = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+type data = {
+  title: String;
+  src: string;
+  imageHeight?: string;
+};
+
+type categoryDate = string[];
+
+
+
+
+
+
 const Category: React.FC = () => {
-  type Data = {
-    success: string;
-    message: string;
-    data: item[];
-  };
-  type item = {
-    id: string;
-    title: string;
-    description: string;
-  };
 
-  type data = {
-    title: String;
-    src: string;
-    imageHeight?: string;
-  };
-
-  type categoryDate = string[];
 
   const categoryImages: categoryDate = [
     "/image/category/forest.png",

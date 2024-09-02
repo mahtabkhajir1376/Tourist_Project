@@ -54,7 +54,7 @@ const ShowListCart: React.FC = () => {
 
   return (
     <div className="flex flex-col w-[60%] mb-24 ">
-      {data.data.map((item) => (
+      {data?.data.map((item) => (
         <div
           key={item.id}
           className="flex flex-row justify-center items-center mb-4 bg-white w-full rounded-md h-[280px]   "
@@ -72,7 +72,7 @@ const ShowListCart: React.FC = () => {
             />
           )}
 
-          <HeartCheckbox position="bottom-[86px] left-11" />
+          <HeartCheckbox position=" relative bottom-[86px] left-11" />
           <div className="flex flex-col justify-between items-center text-base font-medium w-full py-6 pl-7 mx-auto my-0 h-full ">
             <div className="flex flex-row w-full justify-between items-center pb-5i-login">
               <p className="font-medium text-base">{item.tour_detail.title}</p>

@@ -1,43 +1,60 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { Data } from "./Category";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 const images = [
-  {
-    title: " کویر گردی",
-    subtitle: "شبای کویر دیدن داره",
-    src: "/image/Desert.png",
-  },
-  {
-    title: "شمال گردی",
-    subtitle: "هوای شمال همیشه میچسبه",
-    src: "/image/North.png",
-  },
-  {
-    title: " تهرانگردی",
-    subtitle: "تهران و دست کم نگیر",
-    src: "/image/Tehran.png",
-  },
-
-  {
-    title: "جنوب گردی",
-    subtitle: "شور و حال جنوب محاله یادت بره",
-    src: "/image/South.png",
-  },
+  "/image/Desert.png",
+  "/image/North.png",
+  "/image/Tehran.png",
+  "/image/South.png",
 ];
 
+const fetchCategory = async (): Promise<Data> => {
+  const response = await axios.get<Data>(
+    "http://mohammad-mokhtari.ir/safarjoo/api/categories"
+  );
+
+  return response.data;
+};
+
 const WhatModelDoYouWant = () => {
+  const { data, error, isLoading } = useQuery<Data, Error>({
+    queryKey: ["fetchCategory"],
+    queryFn: fetchCategory,
+  });
+
+  const newArray = data?.data.slice(6, 12);
+  const finalArray =newArray?.map((item,index)=>{
+    return{
+      ...item,
+      imageUrl:images[index]
+    }
+  })
+  console.log(finalArray);
+
   return (
     <div className="bg-[#16BB9C1A] 2xl:h-[582px] xl:h-[580px] sm:h-[450px] lg:h-[500px] flex flex-col justify-center items-center">
       <div className=" flex justify-around flex-row 2xl:w-[85%] xl:w-[85%] sm:w-[95%] my-0 mx-auto 2xl:h-[450px] xl:h-[450px] sm:h-[300px] lg:h-[400px]">
-        {images.map((image, index) => (
+        {finalArray?.map((item, index) => (
           <div
             key={index}
             className=" items-center flex flex-col justify-around w-72 font-iransansNumber  "
           >
-            <img src={image.src} alt="" className="2xl:w-72 2xl:h-72 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-52  lg:h-52" />
+            <img
+              src={item.imageUrl}
+              alt=""
+              className="2xl:w-72 2xl:h-72 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-52  lg:h-52"
+            />
             <div className="flex flex-col items-center justify-center pt-2">
-              <h2 className="font-medium  2xl:text-[22px] xl:text-[22px] sm:text-sm lg:text-lg ">{image.title}</h2>
-              <h4 className="font-light 2xl:text-base xl:text-base sm:text-[12px] lg:text-lg  mt-2">{image.subtitle}</h4>
+              <h2 className="font-medium  2xl:text-[22px] xl:text-[22px] sm:text-sm lg:text-lg ">
+                {item.title}
+              </h2>
+              <h4 className="font-light 2xl:text-base xl:text-base sm:text-[12px] lg:text-lg  mt-2">
+                {item.description}
+              </h4>
             </div>
             <Link
               href="/ShowList"

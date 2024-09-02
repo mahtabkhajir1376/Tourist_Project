@@ -7,9 +7,9 @@ type Props ={
 
 const HeartCheckbox:React.FC<Props> = ({position}) => {
   return (
-    <label className={`relative inline-flex items-center cursor-pointer ${position}`}>
+    <label className={` inline-flex items-center cursor-pointer ${position}`}>
       <input type="checkbox" className="sr-only peer" />
-      <div className="w-8 h-8 flex items-center justify-center text-white peer-checked:text-red-500">
+      <div className="w-8 h-8 flex items-center justify-center text-white peer-checked:text-[#FF0200]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 29 30"
