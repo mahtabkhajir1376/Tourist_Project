@@ -9,7 +9,7 @@ type ImageObject = {
   original_url: string;
 };
 
-interface Card {
+export interface Card {
   id: string;
   destination: string;
   meal: string;

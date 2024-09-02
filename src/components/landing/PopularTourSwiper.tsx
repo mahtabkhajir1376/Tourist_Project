@@ -1,10 +1,13 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import PopularTour from "./PopularTour"
+import PopularTour from "./PopularTour";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { Card } from "../showlist/ShowListCart";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 type Data = {
   imageSrc: string;
@@ -48,7 +51,31 @@ const dataDiscount: DataDiscount = [
   },
 ];
 
+
+
 const SpecialdiscountSwiper: React.FC = () => {
+
+
+  const fetchPopularTour = async (): Promise<Card[]> => {
+    const response = await axios.get<Card[]>(
+      "http://mohammad-mokhtari.ir/safarjoo/api/trip/2"
+    );
+    return response.data;
+  
+  };
+  
+  const { data, error, isLoading } = useQuery<Card[], Error>({
+    queryKey: ["fetchPopularTour"],
+    queryFn: fetchPopularTour ,
+  });
+  
+  console.log(data)
+
+
+
+
+
+
   return (
     <>
       <div className="flex flex-row justify-between items-center w-[90%] mx-auto mt-24">
