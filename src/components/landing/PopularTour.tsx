@@ -7,7 +7,7 @@ type Props ={
   imageSrc?:string | null
   tourTitle:string,
   tourLocation:string,
-  primaryTourprice:string,
+  primaryTourprice:string 
   discountedPrice:string | null
   tourRate?:number | null
   tourComments?:number | null
@@ -43,16 +43,19 @@ const TourCardDiscount: React.FC<Props> = ({imageSrc,tourTitle,tourLocation,prim
               </div> 
             </div>
             <div className="flex flex-row justify-between items-center w-full py-2 xl:text-sm sm:text-[8px] md:text-[10px] lg:text-xs  font-medium">
-              <p className=" text-[#01A657] line-through font-iransansNumber font-medium ">
-                {`قیمت قبل : ${primaryTourprice} تومان`}
-              </p>
+              {
+                discountedPrice ?   <p className=" text-[#01A657] line-through font-iransansNumber font-medium ">
+                {`قیمت قبل : ${discountedPrice} تومان`}
+              </p> : <p></p>
+              }
+            
               <div className="flex flex-row justify-between items-center xl:w-[17%] sm:w-[22%] md:w-[22%] lg:w-[18%] xl:text-lg sm:text-[10px] md:text-xs lg:text-sm font-medium font-iransansNumber">
                 136
                 <img src="/svg/chatIcon.svg" alt=""className="sm:w-4 md:w-5 lg:w-6" />
               </div>
             </div>
             <div className="flex flex-row justify-between items-center xl:w-full sm:w-full py-2 xl:text-base sm:text-[10px] md:text-xs lg:text-sm font-medium font-iransansNumber  ">
-             {`قیمت : ${discountedPrice} تومان`}
+             {`قیمت : ${primaryTourprice} تومان`}
               <div className="flex flex-row justify-between items-center xl:w-[17%] sm:w-[23%] md:w-[23%] lg:w-[18%] xl:text-lg sm:text-[10px] md:text-xs lg:text-sm font-medium ">
                 4.41
                 <img src="/svg/starIcon.svg" alt="" className="sm:w-4 md:w-5 lg:w-6" />
