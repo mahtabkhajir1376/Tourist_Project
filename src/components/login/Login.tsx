@@ -8,6 +8,10 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { Data } from "../login-password/PasswordForm";
+import { SubmitHandler } from "react-hook-form";
+import { setToken } from "@/features/tokenSlice";
+import { useDispatch } from "react-redux";
 
 const schema = z.object({
   phoneNumber: z
@@ -26,6 +30,8 @@ const ErrorMessage: React.FC<{ message: string }> = ({ message }) => (
 
 const Login: React.FC = () => {
   const [credentials, setcredentials] = useState({ phone_number: "" });
+  const router = useRouter();
+  const dispatch = useDispatch();
 
   const tokenFetch = useMutation({
     mutationFn: (credentials) => {
@@ -51,6 +57,10 @@ const Login: React.FC = () => {
           throw error;
         });
     },
+    onSuccess: (data) => {
+      dispatch(setToken(data.verification_token));
+      router.push("/receive_code");
+    },
   });
 
   const handleLogin = () => {
@@ -65,10 +75,8 @@ const Login: React.FC = () => {
     resolver: zodResolver(schema),
   });
 
-  const router = useRouter();
-
-  const onSubmit = (data: FormValues) => {
-    router.push("/Loginform/ReceiveCode");
+  const onSubmitform: SubmitHandler<Data> = (data) => {
+    console.log(data);
   };
 
   return (
@@ -99,7 +107,7 @@ const Login: React.FC = () => {
             سلام! برای ورود به سفر‌جو شماره موبایل یا ایمیل خود را وارد کنید.
           </h4>
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(onSubmitform)}
             className="flex flex-col items-center w-full py-2 bg-white rounded-b-lg font-iransansNumber"
           >
             {errors.phoneNumber && (

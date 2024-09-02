@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from '@/components/Loginform/Login'
+import Login from '@/components/login/Login'
 
 
 export default function page() {

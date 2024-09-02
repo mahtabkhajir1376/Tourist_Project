@@ -58,7 +58,7 @@ const Navbar: React.FC<Props> = ({ bgColor }) => {
             {userInfo?.firstName} {userInfo.lastName}
           </div>
         ) : (
-          <Link href="/Loginform" className="flex flex-row justify-center">
+          <Link href="/signIn" className="flex flex-row justify-center">
             <img src="/svg/person.svg" alt="Person" className="ml-3 w-5 h-5" />
             ورود و ثبت نام
           </Link>

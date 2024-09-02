@@ -12,9 +12,9 @@ import { setuserInfo } from "@/features/tokenSlice";
 import { useSelector } from "react-redux";
 import { useRouter } from 'next/navigation';
 
-interface Data {
+export interface Data {
   phone_number: string;
-  password: string;
+  password?: string;
 }
 
 const PasswordForm: React.FC = () => {

@@ -9,6 +9,11 @@ import clsx from "clsx";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setToken } from "@/features/tokenSlice";
+import { useRouter } from "next/navigation";
+import { setuserInfo } from "@/features/tokenSlice";
 
 const schema = z.object({
   inputs: z
@@ -25,36 +30,32 @@ type FormValues = {
   inputs: string[];
 };
 
-
-
-
-
-
-
 const ReceiveCode: React.FC = () => {
   const inputCount = 4;
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [showTimer, setShowTimer] = useState<boolean>(false);
-  const [code, setcode] = useState({ code: "" });
-
+  const [code, setcode] = useState("");
+  const token = useSelector((state) => state.auth.token);
 
   useEffect(() => {
     console.log(code);
   }, [code]);
 
+  const dispatch = useDispatch();
 
+  const router = useRouter();
 
   const tokenFetch = useMutation({
-    mutationFn: (code) => {
+    mutationFn: () => {
       return axios
         .post(
           "http://mohammad-mokhtari.ir/safarjoo/api/verify_register_code",
-          code,
+          { code, verification_token: token },
           {
             headers: {
-              "Accept": "application/json",
-              "Content-Type": "application/json"
+              Accept: "application/json",
+              "Content-Type": "application/json",
             },
           }
         )
@@ -70,12 +71,23 @@ const ReceiveCode: React.FC = () => {
           throw error;
         });
     },
+    onSuccess: (data) => {
+      dispatch(setToken(data.token));
+      dispatch(
+        setuserInfo({
+          firstName: data.first_name,
+          lastName: data.last_name,
+          role: data.role,
+        })
+      );
+      router.push("/");
+    },
   });
 
   const handleLogin = () => {
-    //@ts-ignore
-    tokenFetch.mutate(code);
+    tokenFetch.mutate();
   };
+  console.log({ code, token });
 
   const {
     control,
@@ -135,7 +147,7 @@ const ReceiveCode: React.FC = () => {
               {" "}
               شماره موبایل را اشتباه وارد کرده اید؟ اصلاح کنید
             </h4>
-            <Link href={"/Loginform"}>
+            <Link href={"/signIn"}>
               <img
                 src="/image/LoginForm/Edit.png"
                 alt="Edit"
@@ -175,8 +187,7 @@ const ReceiveCode: React.FC = () => {
                           field.onChange(newValues);
                           const reversedValues = [...newValues].reverse();
                           const result = reversedValues.join("");
-                          console.log(result)
-                          setcode({ code: result });
+                          setcode(result);
                           console.log(code);
                         }}
                         className={clsx(
