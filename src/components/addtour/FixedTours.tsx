@@ -23,24 +23,20 @@ function Modal({ show, onClose, content }) {
   ];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-4 rounded-md shadow-lg w-[500px] h-[650px] flex flex-col justify-between">
-        <div className="flex flex-col gap-4 items-center mb-4 w-full">
+    <div className="fixed inset-0 bg-black  text-base font-medium bg-opacity-50 flex justify-center items-center">
+      <div className="bg-white p-4 rounded-md shadow-lg w-[480px] h-[600px] flex flex-col justify-between">
+        <div className="flex flex-col gap-4 items-center mb-4 w-full  p-6 ">
           {inputFields.map((field, index) => (
             <div key={index} className="flex flex-col w-full  pl-4 pr-4">
               <div className="flex items-center justify-between">
-                <img
-                  src="/image/LoginForm/Edit.png"
-                  alt="Edit"
-                  className="w-4 h-4 ml-2"
-                />
+             
                 <label className="w-1/4 text-right">{field.label}:</label>
                 <input
                   type="text"
                   className="input input-bordered input-success w-full h-8 max-w-xs"
                 />
               </div>
-              <span className="text-gray-400 text-[10px] mt-1  mr-[27%] text-right leading-4"> 
+              <span className="text-gray-400 text-[10px] mt-1  mr-[22%] text-right leading-4"> 
                 {field.name === "capacity"
                   ? "زمان دقیق روز و شب (مثال : 2 روز و 1 شب )"
                   : field.name === "off"
@@ -55,8 +51,8 @@ function Modal({ show, onClose, content }) {
           ))}
 
           
-          <div className="flex flex-row mt-4 justify-between items-center w-full">
-            <h2 className="text-base text-black font-regular w-[30%]">تاریخ برگزاری :</h2>
+          <div className="flex flex-row mt-4 justify-between items-center w-[93%] mb-4 ">
+            <p className="text-base text-black font-regular ">تاریخ برگزاری :</p>
             <div className="flex flex-col sm:flex-row justify-between items-center w-[70%]">
               <p className="text-[rgb(0,0,0,0.5)] font-light pl-2">از</p>
               <DatePicker
@@ -66,7 +62,7 @@ function Modal({ show, onClose, content }) {
                 animations={[transition({ duration: 800, from: 100 })]}
                 calendarPosition="bottom-right"
                 inputClass="custom-input border px-2 rounded-md placeholder:text-[#01A657] placeholder:text-xs placeholder:text-center border-[#01A657] w-[94%] h-8 p-1 bg-white shadow-md transition-shadow duration-200 text-center focus:outline-none focus:border-[#01A657]"
-                placeholder="__  / __  / __"
+                placeholder="__  /  __  /  __"
               />
               <p className="text-[rgb(0,0,0,0.5)] font-light pl-2">تا</p>
               <DatePicker
@@ -76,14 +72,14 @@ function Modal({ show, onClose, content }) {
                 animations={[transition({ duration: 800, from: 100 })]}
                 calendarPosition="bottom-right"
                 inputClass="custom-input border placeholder:text-[#01A657] px-2 placeholder:text-xs placeholder:text-center rounded-md border-[#01A657] w-[94%] h-8 flex flex-row justify-center items-center bg-white shadow-md transition-shadow duration-200 focus:outline-none focus:border-[#01A657]"
-                placeholder="__  / __  / __"
+                placeholder="__  /  __  /  __"
               />
             </div>
           </div>
 
           
-          <div className="flex flex-row mt-4 justify-between items-center w-full text-sm ">
-            <label className=" text-black font-regular w-[70%] text-right">
+          <div className="flex flex-row mt-1 justify-between items-center w-[93%] text-sm  ">
+            <label className=" font-medium w-[70%] text-right">
               الویت نمایش در بخش محبوب ها
             </label>
             <label className="cursor-pointer label">
@@ -96,9 +92,9 @@ function Modal({ show, onClose, content }) {
               />
             </label>
           </div>
-          <div className="flex flex-row mt-4 justify-between items-center w-full text-sm">
-            <label className=" text-black font-regular w-[70%] text-right">
-              الویت نمایش در بخش تخفیفات ویژه
+          <div className="flex flex-row mt-1 justify-between items-center w-[93%] text-sm">
+            <label className="  font-medium w-[70%] text-right">
+              پیشنهاد سفرجو
             </label>
             <div className="form-control">
               <label className="cursor-pointer label">
@@ -113,7 +109,7 @@ function Modal({ show, onClose, content }) {
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mb-4">
           <button
             onClick={onClose}
             className="bg-[#01A657] text-white px-4 py-2 rounded-md h-[40px] w-[250px]"
