@@ -32,7 +32,7 @@ const TourInformation: React.FC<ItemData> = ({
       <span className="text-sm font-medium">{` ${price}  تومان`}</span>
       <span className="text-base font-light">{date}</span>
       {canceled ? (
-        <span className="text-xs font-regular text-[#01A657]">استرداد شد</span>
+        <Link href="/Ticketrefund" className="text-xs font-regular text-[#01A657]">استرداد شد</Link>
       ) : (
         <>
           <Link href="/user-dashboard/reservInfo" className="text-xs font-regular text-[#01A657]">

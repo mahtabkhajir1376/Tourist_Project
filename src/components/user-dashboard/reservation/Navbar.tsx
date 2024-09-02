@@ -32,7 +32,7 @@ const Navbar = () => {
             margin="my-10"
           />
         </Link>
-        <Link href="" className="w-[46%] ">
+        <Link href="/Ticketrefund" className="w-[46%] ">
         <Button
           bgColor="bg-[#01A657]"
           titleBtn="استرداد"
