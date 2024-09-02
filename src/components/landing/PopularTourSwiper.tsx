@@ -10,13 +10,13 @@ import { useQuery } from "@tanstack/react-query";
 
 
 
-type Data = {
+export type Data = {
   data:TourItem [];
   links: {};
   meta: {};
 };
 
-type TourItem = {
+export type TourItem = {
   id: number;
   tour_detail: {
     id: number;

@@ -3,54 +3,47 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TourCardDiscount from "./TourCardDiscount";
 import Link from "next/link";
-
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import { Data } from "./PopularTourSwiper";
+import { TourItem } from "./PopularTourSwiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
-type Data = {
-  imageSrc: string;
-  title: string;
-  tourLocation: string;
-  primaryTourprice: number;
-  discountedPrice: number;
-  tourRate: number;
-  tourComments: number;
+
+
+const fetchSpecialdiscount = async (discount_only: boolean): Promise<Data[]> => {
+  const response = await axios.get<Data[]>(
+    "http://mohammad-mokhtari.ir/safarjoo/api/trip",
+    {
+      params: {
+        discount_only,
+      },
+    }
+  );
+  return response.data;
 };
 
-type DataDiscount = Data[];
 
-const dataDiscount: DataDiscount = [
-  {
-    imageSrc: "/image/Imagecard.jpg",
-    title: "گلاب گیری کاشان / 3 روزه",
-    tourLocation: "تهران",
-    primaryTourprice: 2.75,
-    discountedPrice: 2000.0,
-    tourRate: 4.41,
-    tourComments: 136,
-  },
-  {
-    imageSrc: "/image/Imagecard2.svg",
-    title: "گلاب گیری کاشان / 3 روزه",
-    tourLocation: "تهران",
-    primaryTourprice: 2.75,
-    discountedPrice: 2000.0,
-    tourRate: 4.41,
-    tourComments: 136,
-  },
-  {
-    imageSrc: "/image/Imagecard3.svg",
-    title: "گلاب گیری کاشان / 3 روزه",
-    tourLocation: "تهران",
-    primaryTourprice: 2.75,
-    discountedPrice: 2000.0,
-    tourRate: 4.41,
-    tourComments: 136,
-  },
-];
+
+
+
+
 
 const SpecialdiscountSwiper: React.FC = () => {
+
+  const discount_only = true;
+
+  const { data, error, isLoading } = useQuery<Data[], Error>({
+    queryKey: ["fetchSpecialdiscount", discount_only],
+    queryFn: () => fetchSpecialdiscount(discount_only),
+  });
+
+
+  const SpecialdiscountTours:TourItem[] = data?.data;
+
+
   return (
     <div className="bg-[#E8FCFF] h-[738px] flex flex-col items-center justify-center">
       <div className="flex flex-row justify-between items-center w-[90%] mx-auto  ">
@@ -70,18 +63,18 @@ const SpecialdiscountSwiper: React.FC = () => {
         modules={[Navigation]}
         className="mySwiper w-[90%] mx-auto my-0 "
       >
-        {dataDiscount.map((item, index) => {
+        {SpecialdiscountTours?.map((item, index) => {
           return (
             <SwiperSlide className="w-[30%]  my-10 mx-auto relative">
               <TourCardDiscount
                 key={index}
-                imageSrc={item.imageSrc}
-                tourTitle={item.title}
-                tourRate={item.tourRate}
-                tourComments={item.tourComments}
-                discountedPrice={item.discountedPrice}
-                primaryTourprice={item.primaryTourprice}
-                tourLocation={item.tourLocation}
+                // imageSrc={item.imageSrc}
+                tourTitle={item.tour_detail.description}
+                // tourRate={item.tourRate}
+                // tourComments={item.tourComments}
+                discountedPrice={item.discount_price}
+                primaryTourprice={item.price}
+                tourLocation={item.tour_detail.city.city_name}
               />
             </SwiperSlide>
           );
