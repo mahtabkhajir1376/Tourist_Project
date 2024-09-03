@@ -25,12 +25,15 @@ export type TourItem = {
     transport: string;
     city_id: string;
     stay_class: string;
+    average_score : null | number
+    comments_count:null | number
     details: {
       services: string;
       stay_details: string;
       documents: string;
       rules: string;
     };
+
     categories: [
       {
         id: number;
@@ -101,12 +104,13 @@ const SpecialdiscountSwiper: React.FC = () => {
               <PopularTour
                 key={index}
                 // imageSrc={item.tour_detail.main_image[0]}
-                tourTitle={item.tour_detail.description}
-                // tourRate={item.tourRate}
-                // tourComments={item.tourComments}
+                tourTitle={item.tour_detail.title}
+                tourRate={item.tour_detail.average_score}
+                tourComments={item.tour_detail.comments_count}
                 discountedPrice={item.discount_price}
                 primaryTourprice={item.price}
                 tourLocation={item.tour_detail.city.city_name}
+                moreDetail={item.tour_detail.description}
               />
             </SwiperSlide>
           );

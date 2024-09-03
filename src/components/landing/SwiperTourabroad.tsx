@@ -1,75 +1,43 @@
-'use client'
-import React from "react"; 
-import { Swiper, SwiperSlide } from "swiper/react"; 
-import "swiper/css"; 
-import "swiper/css/navigation"; 
-import { Navigation } from "swiper/modules"; 
+"use client";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 import TourboardCard from "./TourboardCard";
 import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { Data } from "./PopularTourSwiper";
+import { TourItem } from "./PopularTourSwiper";
 
-
-const CardSlider = [ 
- 
-  { 
-    tourTitle:'کشور تایلند', 
-    origin: 'تهران', 
-    Tourprice: 4.258, 
-    tourComments: 136, 
-    moredetails : '5 روزه /جاذبه های گردشگری تایلند', 
-    tourRate : 4.41, 
-    imageSrc: '/image/Imagecard2.svg', 
-     
-  }, 
-  { 
-    tourTitle:'کشور سوئیس', 
-    origin: 'تهران', 
-    Tourprice: 8.258, 
-    tourComments: 136, 
-    moredetails : '10 روزه /جاذبه های گردشگری سوئیس', 
-    tourRate : 4.41, 
-    imageSrc: '/image/Imagecard2.svg', 
-     
-  }, 
-  { 
-    tourTitle:'کشور امریکا', 
-    origin: 'تهران', 
-    Tourprice: 4.258, 
-    tourComments: 136, 
-    moredetails : ' 5 روزه /آبشار نیاگارا و',
-    tourRate : 4.41, 
-    imageSrc: '/image/Imagecard2.svg', 
-     
-  },
-  { 
-    tourTitle:'کشور امریکا', 
-    origin: 'تهران', 
-    Tourprice: 4.258, 
-    tourComments: 136, 
-    moredetails : '5 روزه /آبشار نیاگارا و', 
-    tourRate : 4.41, 
-    imageSrc: '/image/Imagecard2.svg', 
-     
-  }, 
-  { 
-    tourTitle:'کشور امریکا', 
-    origin: 'تهران', 
-    Tourprice: 4.258, 
-    tourComments: 136, 
-    moredetails : '5 روزه /آبشار نیاگارا و', 
-    tourRate : 4.41, 
-    imageSrc: '/image/Imagecard2.svg', 
-     
-  }, 
-  
-
-]; 
+const fetchTourboardSwiper = async (categories: number[]): Promise<Data[]> => {
+  const response = await axios.get<Data[]>(
+    "http://mohammad-mokhtari.ir/safarjoo/api/trip",
+    {
+      params: {
+        categories,
+      },
+    }
+  );
+  return response.data;
+};
 
 const SwiperTouraboard: React.FC = () => {
+  const categories = [6];
+
+  const { data, error, isLoading } = useQuery<Data[], Error>({
+    queryKey: ["fetchTourboardSwiper", categories],
+    queryFn: () => fetchTourboardSwiper(categories),
+  });
+
+  const tourboardTours: TourItem[] = data?.data;
+
   return (
     <div className=" h-[738px] flex flex-col items-center justify-center mt-16">
       <div className="flex flex-row justify-between items-center w-[90%] mx-auto mb-9">
         <h3 className="xl:text-[28px] font-medium sm:text-lg md:text-[22px] lg:text-[24px] 2xl:text-[28px]  ">
-        تورهای خارج از کشور رو دیدی ؟
+          تورهای خارج از کشور رو دیدی ؟
         </h3>
         <Link
           href="/ShowList"
@@ -84,18 +52,19 @@ const SwiperTouraboard: React.FC = () => {
         modules={[Navigation]}
         className="mySwiper w-[90%] mx-auto my-0 "
       >
-        {CardSlider.map((item, index) => {
+        {tourboardTours?.map((item, index) => {
           return (
             <SwiperSlide className="w-[30%]  my-10 mx-auto relative">
               <TourboardCard
                 key={index}
-                imageSrc={item.imageSrc}
-                tourTitle={item.tourTitle}
-                tourRate={item.tourRate}
-                tourComments={item.tourComments}
-                Tourprice={item.Tourprice}
-                tourLocation={item.origin}
-                moredetails={item.moredetails}
+                // imageSrc={item.imageSrc}
+                tourTitle={item.tour_detail.title}
+                tourRate={item.tour_detail.average_score}
+                tourComments={item.tour_detail.comments_count}
+                primaryTourprice={item.price}
+                tourLocation={item.tour_detail.city.city_name}
+                moredetails={item.tour_detail.description}
+                discountedPrice={item.discount_price}
               />
             </SwiperSlide>
           );

@@ -69,12 +69,13 @@ const SpecialdiscountSwiper: React.FC = () => {
               <TourCardDiscount
                 key={index}
                 // imageSrc={item.imageSrc}
-                tourTitle={item.tour_detail.description}
-                // tourRate={item.tourRate}
-                // tourComments={item.tourComments}
+                tourTitle={item.tour_detail.title}
+                tourRate={item.tour_detail.average_score}
+                tourComments={item.tour_detail.comments_count}
                 discountedPrice={item.discount_price}
                 primaryTourprice={item.price}
                 tourLocation={item.tour_detail.city.city_name}
+                moreDetail={item.tour_detail.description}
               />
             </SwiperSlide>
           );
