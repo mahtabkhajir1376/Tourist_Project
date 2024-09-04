@@ -63,7 +63,7 @@ const ShowListCart: React.FC = () => {
             <img
               src={item.tour_detail.main_image[0].original_url}
               alt=""
-              className=" rounded-xl py-6 pr-2 relative w-72 h-72  "
+              className="py-6 pr-2 relative w-72 h-72 rounded-xl  "
             />
           ) : (
             <img
