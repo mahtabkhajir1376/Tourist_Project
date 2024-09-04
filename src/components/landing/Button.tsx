@@ -10,11 +10,12 @@ type BTTON =ComponentPropsWithRef<"button"> & {
     padding:string,
     textColor?:string,
     margin?:string
+    
 }
 
-const Button:React.FC<BTTON>=({titleBtn,bgColor,border,fontSize,borderRadius,width,padding,textColor,margin})=> {
+const Button:React.FC<BTTON>=({titleBtn,bgColor,border,fontSize,borderRadius,width,padding,textColor,margin,onClick})=> {
   return (
-    <button className={`${bgColor} ${border} ${fontSize}  ${borderRadius} ${width} ${padding} ${textColor} ${margin}` }>{titleBtn}</button>
+    <button className={`${bgColor} ${border} ${fontSize}  ${borderRadius} ${width} ${padding} ${textColor} ${margin} ` } onClick={onClick}>{titleBtn}</button>
   )
 }
 

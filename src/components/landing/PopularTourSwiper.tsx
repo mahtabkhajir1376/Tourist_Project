@@ -104,6 +104,7 @@ const SpecialdiscountSwiper: React.FC = () => {
               <PopularTour
                 key={index}
                 // imageSrc={item.tour_detail.main_image[0]}
+                id={item.id}
                 tourTitle={item.tour_detail.title}
                 tourRate={item.tour_detail.average_score}
                 tourComments={item.tour_detail.comments_count}

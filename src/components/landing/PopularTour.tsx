@@ -1,9 +1,14 @@
 import React from "react";
 import Button from "./Button";
-import Link from "next/link";
 import HeartCheckbox from "../showlist/LikeCheckBox";
 import { CgMathPercent } from "react-icons/cg";
-
+import { Data } from "./PopularTourSwiper";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { setTourData, setTourId } from "@/features/tourSlice";
 
 type Props = {
   imageSrc?: string | null;
@@ -15,7 +20,11 @@ type Props = {
   tourComments?: number | null;
   key: number;
   moreDetail: string;
+  id: number;
 };
+
+
+
 
 const TourCardDiscount: React.FC<Props> = ({
   imageSrc,
@@ -27,23 +36,59 @@ const TourCardDiscount: React.FC<Props> = ({
   tourRate,
   key,
   moreDetail,
+  id,
 }) => {
+  const [selectedid, setselectedid] = useState<number | null>(null);
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const fetchdetailTour = async (id: number): Promise<Data[]> => {
+    try {
+      const response = await axios.get<Data[]>(
+        `  http://mohammad-mokhtari.ir/safarjoo/api/trip/${id}`
+      );
+      console.log("Data received:", response.data);
+      dispatch(setTourData(response.data))
+      return response.data;
+    } catch (error: any) {
+      if (axios.isAxiosError(error)) {
+        console.error("Server Error:", error.response?.data || error.message);
+      } else {
+        console.error("Unexpected Error:", error.message);
+      }
+      throw error;
+    }
+  };
+
+
+  const { data, error, isLoading } = useQuery<Data[], Error>({
+    queryKey: ["fetchdetailTour", selectedid],
+    queryFn: () => fetchdetailTour(selectedid!),
+  
+    enabled: !!selectedid,
+  });
+
+  const handleClick = (id: null) => {
+    setselectedid(id);
+    setTourId(id);
+    router.push("/detailspage");
+  };
+
   return (
     <div
       className="flex flex-col justify-between items-center xl:px-4 sm:px-1  "
       key={key}
     >
       <img src="/image/Imagecard2.svg" alt="" className="z-0 relative" />
-      <Link href={"/detailspage"}>
-        <Button
-          bgColor="bg-[#E8FCFF]"
-          titleBtn="مشاهده"
-          fontSize="xl:text-[12px] sm:text-[8px] md:text-[10px] lg:text-xs font-medium"
-          width="xl:w-24 absolute xl:bottom-[42%] xl:left-[6%] sm:bottom-[45%] sm:left-[5%] md:bottom-[43%] lg:bottom-[38%] xl:bottom-[34%] 2xl:bottom-[35%]"
-          borderRadius="rounded-md"
-          padding="xl:py-2 xl:px-8 sm:px-3 sm:py-1 lg:py-2 lg:px-6 "
-        />
-      </Link>
+      <Button
+        onClick={() => handleClick(id)}
+        bgColor="bg-[#E8FCFF]"
+        titleBtn="مشاهده"
+        fontSize="xl:text-[12px] sm:text-[8px] md:text-[10px] lg:text-xs font-medium"
+        width="xl:w-24 absolute xl:bottom-[42%] xl:left-[6%] sm:bottom-[45%] sm:left-[5%] md:bottom-[43%] lg:bottom-[38%] xl:bottom-[34%] 2xl:bottom-[35%]"
+        borderRadius="rounded-md"
+        padding="xl:py-2 xl:px-8 sm:px-3 sm:py-1 lg:py-2 lg:px-6 "
+      />
 
       <HeartCheckbox position=" absolute  xl:top-3 xl:left-7  sm:top-2 sm:left-3 sm:w-5 lg:w-7 lg:top-3 lg:left-4 z-10" />
 
@@ -60,7 +105,11 @@ const TourCardDiscount: React.FC<Props> = ({
           </div>
         </div>
         <div className="flex flex-row justify-between items-center w-full py-2 xl:text-sm sm:text-[8px] md:text-[10px] lg:text-xs  font-medium">
-          <p className={` font-iransansNumber font-medium text-sm ${discountedPrice ? "line-through": null}`} >
+          <p
+            className={` font-iransansNumber font-medium text-sm ${
+              discountedPrice ? "line-through" : null
+            }`}
+          >
             {`قیمت  : ${primaryTourprice} تومان`}
           </p>
           {discountedPrice ? (
@@ -72,7 +121,7 @@ const TourCardDiscount: React.FC<Props> = ({
             <p></p>
           )}
           <div className="flex flex-row justify-between items-center xl:w-[14%] sm:w-[22%] md:w-[22%] lg:w-[18%] xl:text-lg sm:text-[10px] md:text-xs lg:text-sm font-medium font-iransansNumber">
-            {tourComments ? <p>{tourComments}</p>:<p>0</p>}
+            {tourComments ? <p>{tourComments}</p> : <p>0</p>}
             <img
               src="/svg/chatIcon.svg"
               alt=""
