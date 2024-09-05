@@ -32,7 +32,7 @@ const TourboardCard: React.FC<Props> = ({
       className="flex flex-col justify-between items-center xl:px-4 sm:px-1 "
       key={key}
     >
-      <img src="/image/Imagecard2.svg" alt="" />
+      <img src={imageSrc} alt=""  className="w-full h-[329px] rounded-lg" />
       <Link href={"/detailspage"}>
         <Button
           bgColor="bg-[#DDFFF8]"

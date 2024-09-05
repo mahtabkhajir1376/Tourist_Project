@@ -20,7 +20,7 @@ type Props = {
   tourComments?: number | null;
   key: number;
   moreDetail: string;
-  id: number;
+  id: number ;
 };
 
 
@@ -40,7 +40,7 @@ const TourCardDiscount: React.FC<Props> = ({
 }) => {
   const [selectedid, setselectedid] = useState<number | null>(null);
   const router = useRouter();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const fetchdetailTour = async (id: number): Promise<Data[]> => {
     try {
@@ -48,7 +48,7 @@ const TourCardDiscount: React.FC<Props> = ({
         `  http://mohammad-mokhtari.ir/safarjoo/api/trip/${id}`
       );
       console.log("Data received:", response.data);
-      dispatch(setTourData(response.data))
+      // dispatch(setTourData(response.data))
       return response.data;
     } catch (error: any) {
       if (axios.isAxiosError(error)) {
@@ -70,8 +70,7 @@ const TourCardDiscount: React.FC<Props> = ({
 
   const handleClick = (id: null) => {
     setselectedid(id);
-    setTourId(id);
-    router.push("/detailspage");
+    router.push(`/detailspage/${id}`);
   };
 
   return (
@@ -79,7 +78,7 @@ const TourCardDiscount: React.FC<Props> = ({
       className="flex flex-col justify-between items-center xl:px-4 sm:px-1  "
       key={key}
     >
-      <img src="/image/Imagecard2.svg" alt="" className="z-0 relative" />
+      <img src={imageSrc} alt="" className="w-full h-[329px] rounded-lg" />
       <Button
         onClick={() => handleClick(id)}
         bgColor="bg-[#E8FCFF]"

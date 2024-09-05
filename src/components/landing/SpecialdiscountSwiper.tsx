@@ -68,7 +68,7 @@ const SpecialdiscountSwiper: React.FC = () => {
             <SwiperSlide className="w-[30%]  my-10 mx-auto relative">
               <TourCardDiscount
                 key={index}
-                // imageSrc={item.imageSrc}
+                imageSrc={item.tour_detail.main_image[0]?.original_url}
                 tourTitle={item.tour_detail.title}
                 tourRate={item.tour_detail.average_score}
                 tourComments={item.tour_detail.comments_count}

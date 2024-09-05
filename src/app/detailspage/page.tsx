@@ -7,8 +7,10 @@ import LawsandDocuments from '@/components/detailpage/LawsandDocuments';
 import TourProgressSwiper from '@/components/detailpage/TourProgressSwiper';
 import Comments from '@/components/detailpage/Comments';
 import Footer from '@/components/Footer';
+import { useRouter } from 'next/router';
 
-function DetailsPage() {
+function page() {
+
   return (
     <div className='font-iransans'>
     <Navbar/>
@@ -25,4 +27,4 @@ function DetailsPage() {
   )
 }
 
-export default DetailsPage;
+export default page;

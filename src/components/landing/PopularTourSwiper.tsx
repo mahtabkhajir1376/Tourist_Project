@@ -8,10 +8,8 @@ import { Navigation } from "swiper/modules";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-
-
 export type Data = {
-  data:TourItem [];
+  data: TourItem[];
   links: {};
   meta: {};
 };
@@ -25,8 +23,8 @@ export type TourItem = {
     transport: string;
     city_id: string;
     stay_class: string;
-    average_score : null | number
-    comments_count:null | number
+    average_score: null | number;
+    comments_count: null | number;
     details: {
       services: string;
       stay_details: string;
@@ -44,7 +42,7 @@ export type TourItem = {
       id: number;
       city_name: string;
     };
-    main_image: [];
+    main_image: [id: number, original_url: string];
     additional_images: [];
     tour_journey: [];
   };
@@ -59,8 +57,6 @@ export type TourItem = {
 };
 
 type DataDiscount = Data[];
-
-
 
 const fetchPopularTour = async (popular: boolean): Promise<Data[]> => {
   const response = await axios.get<Data[]>(
@@ -82,8 +78,7 @@ const SpecialdiscountSwiper: React.FC = () => {
     queryFn: () => fetchPopularTour(popular),
   });
 
-
-  const popularToursArray:TourItem[] = data?.data;
+  const popularToursArray: TourItem[] = data?.data;
 
   return (
     <>
@@ -103,7 +98,7 @@ const SpecialdiscountSwiper: React.FC = () => {
             <SwiperSlide className="w-[30%] h-[473px] my-10 mx-auto relative">
               <PopularTour
                 key={index}
-                // imageSrc={item.tour_detail.main_image[0]}
+                imageSrc={item.tour_detail.main_image[0]?.original_url}
                 id={item.id}
                 tourTitle={item.tour_detail.title}
                 tourRate={item.tour_detail.average_score}
