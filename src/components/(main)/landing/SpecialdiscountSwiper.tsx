@@ -10,12 +10,13 @@ import { TourItem } from "./PopularTourSwiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { BASE_URL_API } from "@/utils/services";
 
 
 
 const fetchSpecialdiscount = async (discount_only: boolean): Promise<Data[]> => {
   const response = await axios.get<Data[]>(
-    "http://mohammad-mokhtari.ir/safarjoo/api/trip",
+   ` ${BASE_URL_API}/trip`,
     {
       params: {
         discount_only,

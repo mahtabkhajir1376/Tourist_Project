@@ -106,7 +106,6 @@ const Banner: React.FC = () => {
 
   const bannerImages =data?.data[0].media[0].original_url
 
-  console.log(bannerImages)
 
   return (
     <>

@@ -10,10 +10,11 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Data } from "./PopularTourSwiper";
 import { TourItem } from "./PopularTourSwiper";
+import {BASE_URL_API} from "@/utils/services"
 
 const fetchTourboardSwiper = async (categories: number[]): Promise<Data[]> => {
   const response = await axios.get<Data[]>(
-    "http://mohammad-mokhtari.ir/safarjoo/api/trip",
+    `${BASE_URL_API}/trip`,
     {
       params: {
         categories,
