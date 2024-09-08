@@ -1,13 +1,13 @@
-import Header from "@/components/landing/Header";
-import Category from "@/components/landing/Category";
-import Banner from "@/components/landing/Banner";
-import  Footer from "@/components/Footer";
-import WhatModelDoYouWant from "@/components/landing/WhatModelDoYouWant";
-import SwiperTourabroad from "@/components/landing/SwiperTourabroad";
-import PopularTourSwiper from "@/components/landing/PopularTourSwiper";
-import SpecialdiscountSwiper from "@/components/landing/SpecialdiscountSwiper";
-import Options from "@/components/landing/Options";
-import TourGallary from "@/components/landing/TourGallary";
+import Header from "@/components/(main)/landing/Header";
+import Category from "@/components/(main)/landing/Category";
+import Banner from "@/components/(main)/landing/Banner";
+import  Footer from "@/components/(main)/Footer";
+import WhatModelDoYouWant from "@/components/(main)/landing/WhatModelDoYouWant";
+import SwiperTourabroad from "@/components/(main)/landing/SwiperTourabroad";
+import PopularTourSwiper from "@/components/(main)/landing/PopularTourSwiper";
+import SpecialdiscountSwiper from "@/components/(main)/landing/SpecialdiscountSwiper";
+import Options from "@/components/(main)/landing/Options";
+import TourGallary from "@/components/(main)/landing/TourGallary";
 
 import "./globals.css";
 

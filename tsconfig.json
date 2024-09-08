@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/TourInformation", "src/app/user-dashboard/favorites/p"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/(panel)/TourInformation", "src/app/user-dashboard/favorites/p"],
   "exclude": ["node_modules"]
 }

@@ -1,0 +1,30 @@
+import React from "react";
+import Navbar from "@/components/(main)/Navbar";
+import Numberofpeople from "@/components/(main)/showlist/Numberofpeople";
+import PriceRange from "@/components/(main)/showlist/PriceRange";
+import TravelCategory from "@/components/(main)/showlist/TravelCategory";
+import DateTime from "@/components/(main)/showlist/DateTime";
+import TheDesiredCity from "@/components/(main)/showlist/TheDesiredCity";
+import ShowListCart from "@/components/(main)/showlist/ShowListCart";
+
+export default function page() {
+  return (
+    <div className="font-iransansNumber bg-[#F8F8F8]    ">
+      <Navbar bgColor="bg-[#F8F8F8]" />
+
+      <h1 className=" text-2xl font-regular flex flex-row w-[90%] mx-auto my-8  ">
+        تخفیف های ویژه
+      </h1>
+      <div className="flex flex-row w-[90%]  justify-between items-start mx-auto my-0 ">
+        <div className="flex flex-col  w-[35%] h-[946px] mb-24 rounded-md py-8 px-7  shadow-xl shadow-[#E3EBE9]  bg-white ">
+          <Numberofpeople />
+          <DateTime />
+          <PriceRange />
+          <TheDesiredCity />
+          <TravelCategory />
+        </div>
+          <ShowListCart />
+      </div>
+    </div>
+  );
+}
