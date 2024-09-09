@@ -1,8 +1,11 @@
 import React from 'react';
+import Favourite from '@/components/Panel/Favourite';
 
 function page() {
   return (
-    <div>favorites</div>
+    <>
+    <Favourite/>
+    </>
   )
 }
 
