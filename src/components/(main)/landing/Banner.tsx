@@ -74,7 +74,9 @@ const Banner: React.FC = () => {
         <Button bgColor="bg-white" fontSize="text-sm font-medium" titleBtn="رزرو" borderRadius="rounded-md" width="w-[24.5%] h-[38px]" padding="px-4 py-2" position="bottom-6 right-4 absolute"  />
         </div>
         <div className=" h-1/2 bg-center bg-cover rounded-lg relative"  style={{backgroundImage: `url(${imageUrlSecound})`}} >
-        <Button bgColor="bg-white" fontSize="text-sm font-medium" titleBtn="رزرو" borderRadius="rounded-md" width="w-[24.5%] h-[38px]" padding="px-4 py-2" position="bottom-6 right-4 absolute"  />
+        <Button bgColor="bg-white" fontSize="text-sm font-medium" titleBtn="رزرو" borderRadius="rounded-md" width="w-[24.5%] h-[38px]" padding="px-4 py-2" position="bottom-6
+        
+        right-4 absolute"  />
         </div>
 
       </div>
