@@ -32,12 +32,12 @@ const Category: React.FC = () => {
 
 
   const categoryImages: categoryDate = [
-    "/image/category/forest.png",
-    "/image/category/beach.png",
-    "/image/category/mosque.png",
-    "/image/category/boom.png",
-    "/image/category/history.png",
-    "/image/category/forien.png"
+    "/image/home/category/forest.png",
+    "/image/home/category/beach.png",
+    "/image/home/category/mosque.png",
+    "/image/home/category/boom.png",
+    "/image/home/category/history.png",
+    "/image/home/category/forien.png"
   ];
 
   const fetchCategory = async (): Promise<Data> => {

@@ -6,10 +6,10 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
 const images = [
-  "/image/Desert.png",
-  "/image/North.png",
-  "/image/Tehran.png",
-  "/image/South.png",
+  "/image/home/what-model/Desert.png",
+  "/image/home/what-model/North.png",
+  "/image/home/what-model/Tehran.png",
+  "/image/home/what-model/South.png",
 ];
 
 const fetchCategory = async (): Promise<Data> => {

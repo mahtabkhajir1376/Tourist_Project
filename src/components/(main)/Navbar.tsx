@@ -12,7 +12,6 @@ const Navbar: React.FC<Props> = ({ bgColor }) => {
   const token = useSelector((state) => state.auth.token);
   const userInfo = useSelector((state) => state.auth?.userInfo);
 
-  console.log(token);
 
   const navbarData = [
     { title: "پیام ها", src: "/svg/bell.svg", href: "/messages" },

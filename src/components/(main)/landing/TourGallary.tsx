@@ -62,7 +62,7 @@ const TourGallary: React.FC = () => {
   console.log(finalMediaArray);
 
   return (
-    <div className="grid grid-cols-6  2xl:w-[90%] 2xl:h-[764px] sm:[80%] mx-auto my-0 2xl:gap-5 sm:gap-3 lg:[80%] lg:gap-2 ">
+    <div className="grid grid-cols-6  2xl:w-[90%] 2xl:h-[764px] sm:[80%] mx-auto mb-36 2xl:gap-5 sm:gap-3 lg:[80%] lg:gap-2 ">
       <div className="col-span-4  grid grid-rows-2 2xl: sm:gap-2 lg:gap-2">
         <ImageLayout
           height="h-[367px]"
