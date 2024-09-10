@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { useSelector } from "react-redux";
 import { TourItem } from "../landing/PopularTourSwiper";
 
 type data = {
@@ -17,21 +16,20 @@ const optionData: OptionData = [
   { title: "اقامت", describtion: "همه وعده ها" },
 ];
 
-const TourOptions: React.FC = () => {
-  const tourData: TourItem = useSelector((state) => state.tour.tourData);
+const TourOptions: React.FC = ({ tourData }: TourItem) => {
 
-  const finalData: TourItem = tourData?.data;
-  const stayDetail = finalData?.tour_detail.details?.stay_details.split("\n");
-  const services = finalData?.tour_detail.details?.services.split("\n");
-
+  const stayDetail = tourData?.tour_detail.details?.stay_details.split("\n");
+  const services = tourData?.tour_detail.details?.services.split("\n");
+  
+  console.log(tourData);
   return (
     <div className=" flex flex-col 2xl:w-[49%] sm:[35%] lg:w-[45%] mt-6 ">
       <div className="flex flex-row justify-between items-center 2xl:w-[50%] sm:w-[90%] md:w-[95%] lg:w-full xl:w-[78%] mb-20">
         <h1 className="2xl:text-2xl sm:text-[14px] font-medium md:text-base lg:text-lg xl:text-2xl">
-          {finalData?.tour_detail.title}
+          {tourData?.tour_detail.title}
         </h1>
         <h6 className="font-ultraLight 2xl:text-sm sm:text-[9px] md:text-xs xl:text-sm">
-          ({finalData?.tour_detail.description})
+          ({tourData?.tour_detail.description})
         </h6>
       </div>
       <div className="flex flex-row justify-start items-center 2xl:w-[90%] sm:w-[60%] md:w-[90%] lg:w-full">
