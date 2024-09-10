@@ -2,14 +2,15 @@
 import React from "react";
 import { TourItem } from "../landing/PopularTourSwiper";
 
-const LawsandDocuments: React.FC = () => {
-  // const finalData: TourItem = tourData?.data;
-  // const documents = finalData?.tour_detail.details?.documents.split("\n");
-  // const rules = finalData?.tour_detail.details?.rules.split("\n");
+
+const LawsandDocuments: React.FC = ({tourData}:TourItem) => {
+
+  const documents = tourData?.tour_detail.details?.documents.split("\n");
+  const rules = tourData?.tour_detail.details?.rules.split("\n");
 
   return (
     <div className="w-[90%] mx-auto my-0">
-      {/* <div className="mb-[78px] mt-40 font-iransansNumber">
+      <div className="mb-[78px] mt-40 font-iransansNumber">
         <h3 className="font-medium 2xl:text-[32px] mb-8  sm:text-lg lg:text-xl ">
           مدارک مورد نیاز :
         </h3>
@@ -38,7 +39,7 @@ const LawsandDocuments: React.FC = () => {
             </li>
           );
         })}
-      </div> */}
+      </div>
     </div>
   );
 };

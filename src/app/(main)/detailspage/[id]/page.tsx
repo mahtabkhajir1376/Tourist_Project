@@ -54,7 +54,7 @@ function page({ params }: Props) {
         <BuyForm />
       </div>
       <TourProgressSwiper />
-      <LawsandDocuments />
+      <LawsandDocuments tourData ={tourData}  />
       <Comments />
       <Footer />
     </div>
