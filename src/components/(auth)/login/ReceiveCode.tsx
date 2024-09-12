@@ -11,9 +11,10 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setToken } from "@/features/tokenSlice";
+import { setToken } from "@/container/tokenSlice";
 import { useRouter } from "next/navigation";
-import { setuserInfo } from "@/features/tokenSlice";
+import { setuserInfo } from "@/container/tokenSlice";
+import { BASE_URL_API } from "@/utils/services";
 
 const schema = z.object({
   inputs: z
@@ -50,7 +51,7 @@ const ReceiveCode: React.FC = () => {
     mutationFn: () => {
       return axios
         .post(
-          "http://mohammad-mokhtari.ir/safarjoo/api/verify_register_code",
+          `${BASE_URL_API}/verify_register_code`,
           { code, verification_token: token },
           {
             headers: {
@@ -81,6 +82,35 @@ const ReceiveCode: React.FC = () => {
         })
       );
       router.push("/");
+    },
+  });
+  const verifyResetPassword = useMutation({
+    mutationFn: () => {
+      return axios
+        .post(
+          `${BASE_URL_API}/verify_reset_password_code`,
+          { code, verification_token: token },
+          {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          console.log("Response:", response.data);
+          return response.data;
+        })
+        .catch((error) => {
+          console.error(
+            "Error:",
+            error.response ? error.response.data : error.message
+          );
+          throw error;
+        });
+    },
+    onSuccess: (data) => {
+      router.push("/login/change-password");
     },
   });
 

@@ -6,11 +6,12 @@ import { ErrorMessage } from "@hookform/error-message";
 import { SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { setToken } from "@/features/tokenSlice";
+import { setToken } from "@/container/tokenSlice";
 import { useDispatch } from "react-redux";
-import { setuserInfo } from "@/features/tokenSlice";
+import { setuserInfo } from "@/container/tokenSlice";
 import { useSelector } from "react-redux";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
+import { BASE_URL_API } from "@/utils/services";
 
 export interface Data {
   phone_number: string;
@@ -27,13 +28,12 @@ const PasswordForm: React.FC = () => {
 
   const router = useRouter();
 
-
   const dispatch = useDispatch();
 
   const tokenFetch = useMutation({
     mutationFn: (credentials) => {
       return axios
-        .post("http://mohammad-mokhtari.ir/safarjoo/api/login", credentials, {
+        .post(`${BASE_URL_API}/login`, credentials, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -52,21 +52,50 @@ const PasswordForm: React.FC = () => {
     },
     onSuccess: (data) => {
       dispatch(setToken(data.token));
-      dispatch(setuserInfo({
-        firstName: data.first_name,
-        lastName: data.last_name,
-        role: data.role,
-      })); 
-      router.push('/');
+      dispatch(
+        setuserInfo({
+          firstName: data.first_name,
+          lastName: data.last_name,
+          role: data.role,
+        })
+      );
+      router.push("/");
     },
   });
 
+  const forgotPassword = useMutation({
+    mutationFn: (credentials) => {
+      return axios
+        .post(`${BASE_URL_API}/request_reset_password`, credentials, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          console.log("Response:", response.data);
+          return response.data;
+        })
+        .catch((error) => {
+          console.error(
+            "Error:",
+            error.response ? error.response.data : error.message
+          );
+          throw error;
+        });
+    },
+    onSuccess: (data) => {
+      dispatch(setToken(data.verification_token));
+      router.push("/receive_code");
+    },
+  });
 
+  const handleForgotPassword = () => {
+    forgotPassword.mutate(credentials);
+  };
 
-
-const handleLogin = () => {
-  tokenFetch.mutate(credentials);
-};
+  const handleLogin = () => {
+    tokenFetch.mutate(credentials);
+  };
 
   const handlepasswordeyeclick = () => {
     setpasswordeye(!passwordeye);
@@ -215,7 +244,9 @@ const handleLogin = () => {
             className="flex flex-row justify-between items-center font-medium 2xl:text-xs sm:text-[8px]  text-[#01A657] w-[50%] mt-5 
           "
           >
-            <Link href="/login/change-password">فراموشی رمز</Link>
+            <Link href="" onClick={handleForgotPassword}>
+              فراموشی رمز
+            </Link>
             <Link href="/Loginform/">ورود با رمز یکبار مصرف</Link>
           </div>
           <p className="2xl:text-[10px] sm:text-[8px] text-[#000000] font-ultraLight mt-4  md:text-[10px] py-2 ">

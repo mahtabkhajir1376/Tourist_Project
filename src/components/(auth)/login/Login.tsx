@@ -10,8 +10,9 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { Data } from "../login-password/PasswordForm";
 import { SubmitHandler } from "react-hook-form";
-import { setToken } from "@/features/tokenSlice";
+import { setToken } from "@/container/tokenSlice";
 import { useDispatch } from "react-redux";
+import { BASE_URL_API } from "@/utils/services";
 
 const schema = z.object({
   phoneNumber: z
@@ -37,7 +38,7 @@ const Login: React.FC = () => {
     mutationFn: (credentials) => {
       return axios
         .post(
-          "http://mohammad-mokhtari.ir/safarjoo/api/request_register",
+         `${BASE_URL_API}/request_register`,
           credentials,
           {
             headers: {
