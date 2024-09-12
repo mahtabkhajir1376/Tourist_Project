@@ -2,10 +2,10 @@
 
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { TourItem } from "../landing/PopularTourSwiper";
 
 type Data = {
   imageSrc: string;
@@ -35,7 +35,14 @@ const dataProgress: DataProgress = [
   },
 ];
 
-const TourProgressSwiper: React.FC = () => {
+const TourProgressSwiper: React.FC = ({tourData}:TourItem) => {
+
+
+// const finalData =tourData?.
+
+console.log(tourData);
+
+
   return (
     <>
       <h3 className="2xl:text-2xl sm:text-lg md:text-xl xl:text-2xl font-demiBold w-[90%] mx-auto 2xl:mt-20  mb-9 sm:mt-5 ">

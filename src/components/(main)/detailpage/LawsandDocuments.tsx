@@ -1,13 +1,12 @@
 "use client";
 import React from "react";
 import { TourItem } from "../landing/PopularTourSwiper";
-import { useSelector } from "react-redux";
 
-const LawsandDocuments: React.FC = () => {
-  const tourData: TourItem = useSelector((state) => state.tour.tourData);
-  const finalData: TourItem = tourData?.data;
-  const documents = finalData?.tour_detail.details?.documents.split("\n");
-  const rules = finalData?.tour_detail.details?.rules.split("\n");
+
+const LawsandDocuments: React.FC = ({tourData}:TourItem) => {
+
+  const documents = tourData?.tour_detail.details?.documents.split("\n");
+  const rules = tourData?.tour_detail.details?.rules.split("\n");
 
   return (
     <div className="w-[90%] mx-auto my-0">

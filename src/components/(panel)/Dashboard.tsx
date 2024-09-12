@@ -45,7 +45,7 @@ const userDashboard =[
         سفرجو
       </div>
       <div className=" flex flex-col justify-around items-center w-full h-[400px] mb-2 text-[#333333]  ">
-        {userDashboard.map((item) => {
+        {dashboardList.map((item) => {
           return (
             <Link
               href={item.rout}
