@@ -53,9 +53,9 @@ function page({ params }: Props) {
         <TourOptions tourData ={tourData} />
         <BuyForm />
       </div>
-      <TourProgressSwiper />
+      <TourProgressSwiper tourData={tourData} />
       <LawsandDocuments tourData ={tourData}  />
-      <Comments />
+      <Comments tourData={tourData} />
       <Footer />
     </div>
   );
